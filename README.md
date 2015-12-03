@@ -18,3 +18,21 @@ Screenshot
 -----------------------
 
 <img alt="Yorkie App" src="https://github.com/carlbutron/YorkieApp/blob/master/Readme-png/YorkieApp.png"  />
+
+
+*LOCAL NOTIFICATIONS
+-----------------------
+
+Pills = notification 1 day before.
+
+Medicine = notification 1 day before.
+
+Hair Salon = notification 3 days before and 1 day before.
+
+Antiparasitic = notification 3 days before and 1 day before.
+
+Bath = notification 3 days before and 1 day before.
+
+Dental care = notification 5 days before and 1 day before.
+
+Vaccines = notification 5 days before and 1 day before.
