@@ -1,0 +1,48 @@
+
+/* Class = "UILabel"; text = "15th September"; ObjectID = "3Mn-i0-aIG"; */
+"3Mn-i0-aIG.text" = "15th September";
+
+/* Class = "UINavigationItem"; title = "Add Yorkie"; ObjectID = "4WR-HE-Fj4"; */
+"4WR-HE-Fj4.title" = "Add Yorkie";
+
+/* Class = "UILabel"; text = "15th September"; ObjectID = "CGB-P4-iUm"; */
+"CGB-P4-iUm.text" = "15th September";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "HWp-lh-Pyv"; */
+"HWp-lh-Pyv.text" = "Label";
+
+/* Class = "UILabel"; text = "Jupiter"; ObjectID = "NwA-NA-kHw"; */
+"NwA-NA-kHw.text" = "Jupiter";
+
+/* Class = "UILabel"; text = "Jupiter"; ObjectID = "Ob1-rv-KmB"; */
+"Ob1-rv-KmB.text" = "Jupiter";
+
+/* Class = "UILabel"; text = "Jupiter"; ObjectID = "URn-gV-b92"; */
+"URn-gV-b92.text" = "Jupiter";
+
+/* Class = "UITextField"; placeholder = "Name"; ObjectID = "WmR-Cu-xVb"; */
+"WmR-Cu-xVb.placeholder" = "Name";
+
+/* Class = "UIButton"; normalTitle = "Delete"; ObjectID = "d1L-O1-vb2"; */
+"d1L-O1-vb2.normalTitle" = "Delete";
+
+/* Class = "UINavigationItem"; title = "Yorkies"; ObjectID = "f19-sO-9CW"; */
+"f19-sO-9CW.title" = "Yorkies";
+
+/* Class = "UITextField"; placeholder = "Date of birth"; ObjectID = "jIV-Em-iVi"; */
+"jIV-Em-iVi.placeholder" = "Date of birth";
+
+/* Class = "UILabel"; text = "Jupiter"; ObjectID = "q6F-rY-yVd"; */
+"q6F-rY-yVd.text" = "Jupiter";
+
+/* Class = "UILabel"; text = "15th September"; ObjectID = "qSn-Rd-qri"; */
+"qSn-Rd-qri.text" = "15th September";
+
+/* Class = "UITextField"; placeholder = "Weight"; ObjectID = "sap-PB-XH0"; */
+"sap-PB-XH0.placeholder" = "Weight";
+
+/* Class = "UITextField"; placeholder = "Gender"; ObjectID = "tvJ-Tx-eCQ"; */
+"tvJ-Tx-eCQ.placeholder" = "Gender";
+
+/* Class = "UILabel"; text = "15th September"; ObjectID = "vOw-Rj-uw4"; */
+"vOw-Rj-uw4.text" = "15th September";

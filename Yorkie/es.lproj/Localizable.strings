@@ -1,0 +1,102 @@
+/*
+ Localizable.strings
+ Yorkie
+ 
+ Created by Carlos Butron on 17/07/15.
+ Copyright (c) 2015 Carlos Butron. All rights reserved.
+ */
+
+"Cancel" = "Cancelar";
+"Save" = "Guardar";
+"Add Yorkie" = "Añadir Yorkie";
+"Edit Yorkie" = "Editar Yorkie";
+"Name" = "Nombre";
+"Date of birth" = "Fecha Nac.";
+"years" = "años";
+"year" = "año";
+"month" = "mes";
+"months" = "meses";
+"day" = "día";
+"days" = "días";
+"Weight" = "Peso";
+"Gender" = "Género";
+"Delete" = "Borrar";
+"No event" = "Sin evento";
+"Male" = "Macho";
+"Female" = "Hembra";
+"Confirm deleted" = "Corfirmar borrado";
+"Are you sure you want to delete this Yorkie?" = "¿Está seguro/a que quiere borrar este Yorkie?";
+"Edit photo" = "Editar foto";
+"Error" = "Error";
+"Device has no camera" = "El dispositivo no tiene cámara";
+"OK" = "Aceptar";
+"Alert" = "Atención";
+"Fill name field before save" = "Rellene el campo nombre antes de guardar";
+"Fill start date field before save" = "Rellene la fecha de inicio antes de guardar";
+"Select the operation to proceed" = "Seleccione una opción";
+"Select Photo" = "Seleccionar foto";
+"Take Photo" = "Hacer foto";
+"Name exists" = "El nombre ya existe";
+"Edit" = "Editar";
+"Done" = "Hecho";
+"Send us an email" = "Envíenos un email";
+"Rate Yorkie" = "Valore Yorkie";
+"Credits" = "Créditos";
+"Settings" = "Ajustes";
+"Send" = "Enviar";
+"Send email" = "Enviar email";
+"Rate" = "Valorar";
+"Version" = "Versión";
+"Development" = "Desarrollo";
+"Thanks to" = "Gracias a";
+"Write a comment" = "Escriba un comentario";
+"Please set a number of stars" = "Por favor seleccione un número de estrellas";
+"Thanks" = "Gracias";
+"Tap 'edit' to fill" = "Pulse 'editar' para";
+"date of birth, weight" = "rellenar los datos";
+"and gender" = "de su Yorkie";
+"add weight" = "añada peso";
+"add date of birth" = "añada fecha nac.";
+"add gender" = "añada género";
+"Next" = "Próximo";
+"Hair Salon" = "Peluquería";
+"Bath" = "Baño";
+"Antiparasitic" = "Antiparásitos";
+"Dental Care" = "Cuidado dental";
+"Vaccines" = "Vacunación";
+"Pills" = "Pastilla";
+"Medicine" = "Medicina";
+"Start" = "Inicio";
+"Repeat every" = "Repetir cada";
+"Edit Routine" = "Editar Rutina";
+"Start date" = "Fecha de inicio";
+"Frequency" = "Repetir en días";
+"Comment" = "Comentario";
+"Are you sure you want to delete this routine?" = "¿Está seguro/a que quiere borrar esta rutina?";
+"Never" = "Nunca";
+"Every day" = "Todos los días";
+"Every week" = "Todas las semanas";
+"Every 2 weeks" = "Cada 2 semanas";
+"Every 3 weeks" = "Cada 3 semanas";
+"Every month" = "Todos los meses";
+"Every 2 months" = "Cada 2 meses";
+"Every 3 months" = "Cada 3 meses";
+"Every 6 months" = "Cada 6 meses";
+"Every year" = "Todos los años";
+"Custom" = "Personalizado";
+"Repeat every year" = "Repetir cada año";
+"Reminder" = "Recordatorio";
+"has a bath pending" = "tiene baño";
+"has an appointment at the hair salon" = "tiene peluquería";
+"needs to take the antiparasitic pill" = "necesita tomar antiparásitos";
+"needs a dental care" = "necesita su limpieza de dientes";
+"needs the vaccines" = "necesita sus vacunas";
+"needs the pills" = "necesita tomar su pastilla";
+"needs the medicine" = "necesita tomar su medicina";
+"soon" = "proximamente";
+"tomorrow" = "mañana";
+"Content Manager" = "Contenidos";
+"Dog Age real/human" = "Edad del perro real/humana";
+//images
+"introImage" = "introes";
+"buyImage" = "buyes";
