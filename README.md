@@ -1,4 +1,5 @@
 # YorkieApp
+-----------------------
 
 This application will help you, in an easy way, taking care of your dog.
 
@@ -13,7 +14,7 @@ No need to worry, when the appointment finished, will be automatically generated
 This App is easy to use. It has a nice design that will undoubtedly improve when you add a picture of your Yorkie.
 
 
-Screenshot & Demo Video
+Screenshot
 -----------------------
 
-<img alt="Yorkie App" src="iPhone5-1.png"  />
+<img alt="Yorkie App" src="https://github.com/carlbutron/YorkieApp/blob/master/Readme-png/YorkieApp.png"  />
