@@ -11,16 +11,12 @@
 @implementation LoadImageFromBundle
 
 + (UIImage*)loadImage: (NSString*)imageString {
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
-                                                         NSUserDomainMask, YES);
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,vNSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
-    NSString* path = [documentsDirectory stringByAppendingPathComponent:
-                      [NSString stringWithString: imageString] ];
+    NSString* path = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithString: imageString]];
     UIImage* image = [UIImage imageWithContentsOfFile:path];
+    
     return image;
 }
 
 @end
-
-
-
