@@ -8,7 +8,6 @@
 
 #import "Yorkie.h"
 
-
 @implementation Yorkie
 
 - (instancetype) initWithYorkieID:(NSInteger )yorkieID
@@ -18,21 +17,16 @@
                   andWithBornDate:(NSString *)bornDate
                     andWithWeight:(Weight *)weight {
     
-    
     if (self = [super init]) {
-        
         _yorkieID = yorkieID;
         _photo = photo;
         _name = name;
         _gender = gender;
         _bornDate = bornDate;
         _weight = weight;
-        
     }
     
     return self;
-    
 }
-
 
 @end
