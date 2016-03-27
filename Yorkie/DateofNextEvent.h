@@ -18,12 +18,3 @@
 + (NSString *)age:(NSDate *)dateOfBirth;
 
 @end
-
-
-
-
-
-
-
-
-
