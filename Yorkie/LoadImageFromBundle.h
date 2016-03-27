@@ -13,6 +13,4 @@
 
 + (UIImage*)loadImage: (NSString*)imageString;
 
-
 @end
-
