@@ -10,10 +10,7 @@
 #import "NotificationMessage.h"
 #import "NotificationBeforeDays.h"
 
-
-
 @implementation DateofNextEvent
-
 
 + (BOOL)noticeNextEventDate:(NSDate *)myDate withBeforeDays:(NSInteger)beforeDays withRoutineID:(NSInteger)routineID{
     
@@ -35,8 +32,6 @@
     todayPlus = [calendar dateFromComponents:componentsTodayPlus];
     myDate = [calendar dateFromComponents:componentsMyDate];
 
-  
-    
         //sum before days to today
         todayPlus = [cal dateByAddingUnit:NSCalendarUnitDay
                              value:beforeDays
@@ -45,7 +40,6 @@
     
         NSComparisonResult result = [myDate compare:todayPlus];
     
-
         //    switch (result)
         //    {
         //        case NSOrderedAscending: NSLog(@"%@ is in future from %@", myDate, today); break;
@@ -71,56 +65,35 @@
                     NSString *documentsDir = [docPaths objectAtIndex:0];
                     NSString *dbPath = [documentsDir stringByAppendingPathComponent:@"yorkie.sqlite"];
                     
-                    
                     FMDatabase *database = [FMDatabase databaseWithPath:dbPath];
                     [database open];
                     
                     //edit Yorkie Row
                     BOOL successYorkie = [database executeUpdate:@"UPDATE routine SET startDate = '', lastDate = '' , frequency = '', comment = '' WHERE idRoutine = ?", [NSString stringWithFormat:@"%ld", (long)routineID], nil];
                     
-                    
                     if (!successYorkie) {
                         NSLog(@"%s: insert error: %@", __FUNCTION__, [database lastErrorMessage]);
-                        
                         // do whatever you need to upon error
                     }
                     
                     [database close];
                     
                     [[NSNotificationCenter defaultCenter] postNotificationName:@"ReloadAppDelegateTable" object:nil];
-
-                    
                 }
-            
-            
         } else {
-                
             red = NO;
-
         }
         
     return red;
-    
 }
 
-
-+ (NSDate*)nextEventDate:(NSDate*)myDate withFrequency:(NSInteger)frequency{
-    
-    
-    
-    
++ (NSDate*)nextEventDate:(NSDate*)myDate withFrequency:(NSInteger)frequency {
     
     if (myDate==NULL) {
-    
         return myDate;
-    
     } else if (frequency==0) {
-        
         return myDate;
-        
     } else {
-    
-    
         //get today date
         NSCalendar *cal = [NSCalendar currentCalendar];
         NSDate * today = [NSDate date];
@@ -134,59 +107,35 @@
         today = [calendar dateFromComponents:componentsToday];
         myDate = [calendar dateFromComponents:componentsMyDate];
         
-    
         NSComparisonResult result = [today compare:myDate];
-    
-    
     
     //if date is equal today or future than today then return this date
     //if ((result==NSOrderedSame) || (result==NSOrderedAscending)) {
         if (result==NSOrderedAscending) {
-
-        return myDate;
-        
-    } else { //if date is in past sum
-        
-        while ((result==NSOrderedDescending) || (result==NSOrderedSame)) {
-            
+            return myDate;
+        } else { //if date is in past sum
+            while ((result==NSOrderedDescending) || (result==NSOrderedSame)) {
             // set up date components
             myDate = [cal dateByAddingUnit:NSCalendarUnitDay
                                      value:frequency
                                     toDate:myDate
                                    options:0];
-            
-
-            
-        result = [today compare:myDate];
-        }
-        
+            result = [today compare:myDate];
+         }
     }
-    
-    
 
-    
     return myDate;
-    
     }
-    
 }
-
 
 //nextEventDateWithNotificationUpdate
 + (NSDate*)nextEventDateWithNotificationUpdate:(NSDate*)myDate withRoutineTypeID:(NSInteger)routineTypeID withFrequency:(NSInteger)frequency  withAdviceBefore:(NSInteger)adviceBefore withNameYorkie:(NSString *)nameYorkie andDatabase:(FMDatabase *)database {
     
-    
     if (myDate==NULL) {
-        
         return myDate;
-        
     } else if (frequency==0) {
-        
         return myDate;
-        
     } else {
-        
-        
         //get today date
         NSCalendar *cal = [NSCalendar currentCalendar];
         NSDate * today = [NSDate date];
@@ -200,47 +149,30 @@
         today = [calendar dateFromComponents:componentsToday];
         myDate = [calendar dateFromComponents:componentsMyDate];
         
-        
         NSComparisonResult result = [today compare:myDate];
-        
-        
         
         //if date is equal today or future than today then return this date
         if ((result==NSOrderedSame) || (result==NSOrderedAscending)) {
-            
             return myDate;
-            
         } else { //if date is in past sum
-            
             while (result==NSOrderedDescending) {
-                
                 // set up date components
                 myDate = [cal dateByAddingUnit:NSCalendarUnitDay
                                          value:frequency
                                         toDate:myDate
                                        options:0];
-                
-                
                 result = [today compare:myDate];
             }
-            
 
-            
-            
             //edit Yorkie Row
             BOOL successYorkie = [database executeUpdate:@"UPDATE routine SET lastDate = ? WHERE idRoutine = ?", [NSString stringWithFormat:@"%@", myDate], [NSString stringWithFormat:@"%ld", (long)routineTypeID], nil];
-            
-            
+
             if (!successYorkie) {
                 NSLog(@"%s: insert error: %@", __FUNCTION__, [database lastErrorMessage]);
-                
                 // do whatever you need to upon error
             }
             
-            
-            
             //HERE PUT THE CODE TO DELETE LAST NOTIFICATIONS AND ADD NEW NOTIFICATIONS
-            
             
             //SET LOCAL NOTIFICATIONS.
             
@@ -258,10 +190,8 @@
             
             
             //SECOND CREATE NEW NOTIFICATIONS (1 DAY BEFORE AND OTHER)
-            
-            
+
             //NOTIFY 1 DAY BEFORE
-            
             NSCalendar *cal1 = [NSCalendar currentCalendar];
             NSDate *notifyDate1 = myDate;
             //substract the days of frequency from the date of textfield
@@ -276,7 +206,6 @@
             //formato español 14-08-2015 12.00h  (NOTE: SPANISH FORMAT IS THE ORIGINAL TIME +2H)
             notifyDate1 = [notifyDate1 dateByAddingTimeInterval:60*60*12*1];
             
-            
             // Schedule the notification
             UILocalNotification* localNotification1 = [[UILocalNotification alloc] init];
             localNotification1.fireDate = notifyDate1; //date
@@ -288,7 +217,6 @@
             localNotification1.applicationIconBadgeNumber = [[UIApplication sharedApplication] applicationIconBadgeNumber] + 1;
             
             [[UIApplication sharedApplication] scheduleLocalNotification:localNotification1];
-            
             
             //NOTIFY WITH LONG ADVICE
             if ((adviceBefore==3) || (adviceBefore==5)) {
@@ -307,7 +235,6 @@
                 //formato español 14-08-2015 12.00h  (NOTE: SPANISH FORMAT IS THE ORIGINAL TIME +2H)
                 notifyDateLong = [notifyDateLong dateByAddingTimeInterval:60*60*12*1];
                 
-                
                 // Schedule the notification
                 UILocalNotification* localNotificationLong = [[UILocalNotification alloc] init];
                 localNotificationLong.fireDate = notifyDateLong; //date
@@ -319,88 +246,61 @@
                 localNotificationLong.applicationIconBadgeNumber = [[UIApplication sharedApplication] applicationIconBadgeNumber] + 1;
                 
                 [[UIApplication sharedApplication] scheduleLocalNotification:localNotificationLong];
-                
             }
-
-            
-            
-            
-            
-            
-            
         }
-        
-        
-        
-        
+
         return myDate;
-        
     }
-    
 }
-
-
-
-
 
 //CALCULATE AGE FROM BIRTHDAY TO SET IN TABLEVIEW
 //AND WRITE IN FORMAT "14th september" or "14 de septiembre"
 + (NSString *)age:(NSDate *)dateOfBirth {
     
-if (dateOfBirth) {
-    //locale info
-    NSString *language;
-    NSInteger years;
-    NSInteger months;
-    NSInteger days = 0;
-    NSString *daySuffix;
-    NSString *newDate;
+    if (dateOfBirth) {
+       //locale info
+        NSString *language;
+        NSInteger years;
+        NSInteger months;
+        NSInteger days = 0;
+        NSString *daySuffix;
+        NSString *newDate;
     
-    //iPhone language
-    language = [[NSLocale preferredLanguages] objectAtIndex:0];
+        //iPhone language
+        language = [[NSLocale preferredLanguages] objectAtIndex:0];
     
-    NSCalendar* calendar = [NSCalendar currentCalendar];
-    NSDateComponents* components = [calendar components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay fromDate:dateOfBirth]; // Get necessary date components
+        NSCalendar* calendar = [NSCalendar currentCalendar];
+        NSDateComponents* components = [calendar components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay fromDate:dateOfBirth]; // Get necessary date components
     
-    months = [components month]; //gives you month
-    days = [components day]; //gives you day
-    years = [components year]; // gives you year
+        months = [components month]; //gives you month
+        days = [components day]; //gives you day
+        years = [components year]; // gives you year
     
-    
-    if ([language isEqualToString:@"es"]) {
-        
-        daySuffix=@" de";
-        
-    } else {
-        
-        if ((days==1) || (days==21) || (days==31)){
-            daySuffix=@"st";
-        } else if ((days==2) || (days==22)){
-            daySuffix=@"nd";
-        } else if ((days==3) || (days==23)){
-            daySuffix=@"rd";
+        if ([language isEqualToString:@"es"]) {
+            daySuffix=@" de";
         } else {
-            daySuffix=@"th";
+            if ((days==1) || (days==21) || (days==31)){
+                daySuffix=@"st";
+            } else if ((days==2) || (days==22)){
+                daySuffix=@"nd";
+            } else if ((days==3) || (days==23)){
+                daySuffix=@"rd";
+            } else {
+                daySuffix=@"th";
+            }
         }
+    
+        //get a month in int format and return the name of month
+        NSDateFormatter *formate = [NSDateFormatter new];
+        NSArray *monthNames = [formate standaloneMonthSymbols];
+        NSString *monthName = [monthNames objectAtIndex:(months - 1)];
+
+        newDate = [NSString stringWithFormat:@"%ld%@ %@", (long)days, daySuffix, monthName];
+    
+        return newDate;
     }
-    
-    //get a month in int format and return the name of month
-    NSDateFormatter *formate = [NSDateFormatter new];
-    NSArray *monthNames = [formate standaloneMonthSymbols];
-    NSString *monthName = [monthNames objectAtIndex:(months - 1)];
-    
-    
-    newDate = [NSString stringWithFormat:@"%ld%@ %@", (long)days, daySuffix, monthName];
-    
-    return newDate;
-    
-}
     NSString *newDate;
     return newDate;
 }
-
-
-
-
 
 @end
