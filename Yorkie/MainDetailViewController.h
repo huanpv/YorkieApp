@@ -15,9 +15,7 @@
 @property BOOL save;
 @property BOOL edit;
 @property NSInteger idYorkie;
-
-@property (nonatomic, strong) NSString *cellIdentifier; //personal size of cell from Main collectionView
 @property NSInteger iphoneModel; //to save the iPhone model and present the screen size in a perfect way
-
+@property (nonatomic, strong) NSString *cellIdentifier; //personal size of cell from Main collectionView
 
 @end
