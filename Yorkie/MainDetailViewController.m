@@ -17,37 +17,26 @@
 
 @interface MainDetailViewController ()
 
-
 @property (nonatomic, strong) NSString *decimal;
-
-@property (nonatomic, strong) NSMutableArray * yorkieArray;
 @property (nonatomic, strong) NSString *region;
+@property (nonatomic, strong) NSMutableArray * yorkieArray;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
-
-
 
 @end
 
-
-
 @implementation MainDetailViewController
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
 }
 
-
--(void)databaseDidOpen {
+- (void)databaseDidOpen {
 
     self.decimal = [[NSLocale currentLocale] objectForKey:NSLocaleDecimalSeparator];
     
     NSArray *docPaths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
     NSString *documentsDir = [docPaths objectAtIndex:0];
     NSString *dbPath = [documentsDir stringByAppendingPathComponent:@"yorkie.sqlite"];
-    
-    
     FMDatabase *database = [FMDatabase databaseWithPath:dbPath];
     [database open];
     
@@ -70,7 +59,6 @@
             yorkie.bornDate = [self age:date];
         }
         
-        
         Weight * weight = [[Weight alloc] init];
         
         if ([NSString stringWithFormat:@"%f",[results doubleForColumn:@"weight"]]!=0) {
@@ -78,41 +66,25 @@
         }
         
         yorkie.weight = weight;
-
-        
         weight.date = [results stringForColumn:@"date"];
-        
-        
         [self.yorkieArray addObject:yorkie];    
-        
     }
     
     [database close];
-    
-    
-    
 }
 
 //protocol-delegate if user edit yorkie data reload collectionCell
--(void)reloadDetail {
-    
+- (void)reloadDetail {
     [self.collectionView reloadData];
-    
 }
-
 
 //set custom navigation bar
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     self.region = [[NSLocale currentLocale] objectForKey:NSLocaleCountryCode];
-
     [self styleNavBar];
     [self databaseDidOpen];
-
-    
 }
-
-
 
 //custom navigation bar
 - (void)styleNavBar {
@@ -129,18 +101,13 @@
     self.navigationItem.leftBarButtonItem = leftButton;
 }
 
-
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
 
 - (IBAction)actionEditButton:(id)sender {
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    
     MainSaveViewController *sVC = [storyboard instantiateViewControllerWithIdentifier:@"addyorkie"];
     
     sVC.edit = YES;
@@ -150,21 +117,13 @@
     
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:sVC];
     [self presentViewController:navController animated:YES completion:nil];
-    
 }
-
 
 - (IBAction)actionDoneButton:(id)sender {
-    
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
-    
 }
 
-
-
-
 //CALCULATE AGE FROM BITHDAY
-
 - (NSString *)age:(NSDate *)dateOfBirth {
     NSInteger years;
     NSInteger months;
@@ -176,9 +135,7 @@
     NSDateComponents *dateComponentsNow = [calendar components:unitFlags fromDate:[NSDate date]];
     NSDateComponents *dateComponentsBirth = [calendar components:unitFlags fromDate:dateOfBirth];
     
-    if (([dateComponentsNow month] < [dateComponentsBirth month]) ||
-        
-        (([dateComponentsNow month] == [dateComponentsBirth month]) && ([dateComponentsNow day] < [dateComponentsBirth day]))) {
+    if (([dateComponentsNow month] < [dateComponentsBirth month]) || (([dateComponentsNow month] == [dateComponentsBirth month]) && ([dateComponentsNow day] < [dateComponentsBirth day]))) {
         years = [dateComponentsNow year] - [dateComponentsBirth year] - 1;
     } else {
         years = [dateComponentsNow year] - [dateComponentsBirth year];
@@ -203,7 +160,6 @@
 //    "month" = "month";
 //    "months" = "months";
 //    NSLocalizedString(@"Edit", nil)
-    
     if (years == 0 && months == 0) {
         if (days == 1) {
             return [NSString stringWithFormat:@"%ld %@", (long)days, NSLocalizedString(@"day", nil)];
@@ -235,36 +191,28 @@
     }
 }
 
-
-
-
-
 //********COLLECTION VIEW***********//
 #pragma mark - UICollectionView Methods
-
 
 //elements of Collection View
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return 1;
 }
 
-
 //table highlight when tap photo disallow
--(BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     return YES;
 }
 
-
 //table highlight when tap photo disallow
--(BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
+- (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
     return NO;
 }
 
--(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     // NOTE: This is called, as long as both shouldSelectItemAtIndexPath: AND shouldHighlightItemAtIndexPath: return YES. If either returns NO, the cell is not actually selected.
     NSLog(@"Did select collection view cell: %@", indexPath);
 }
-
 
 //get the cell of Collection View
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -287,9 +235,7 @@
     maskLayer.frame = yorkieCollectionCell.viewYorkie.bounds;
     maskLayer.path = maskPath.CGPath;
     yorkieCollectionCell.viewYorkie.layer.mask = maskLayer;
-    //
-    
-    
+
     Yorkie *yorkie = self.yorkieArray[indexPath.row];
     
     yorkieCollectionCell.imageYorkie.image = [LoadImageFromBundle loadImage:yorkie.photo];
@@ -315,14 +261,10 @@
         else {
            yorkieCollectionCell.weightYorkieLabel.text = [NSString stringWithFormat:@"%@ kg", yorkie.weight.weight];
         }
-        
     }
     
-    
     yorkieCollectionCell.genderYorkieLabel.text = yorkie.gender;
-    
     yorkieCollectionCell.cellIdentifier = self.cellIdentifier;
-    
     
     //TAP on photo
     UITapGestureRecognizer *tapPhoto=[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(cellTap:)];
@@ -337,7 +279,6 @@
     //TAP on textfield gender
     UITapGestureRecognizer *tapGender=[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(cellTap:)];
 
-    
     [yorkieCollectionCell.imageYorkie addGestureRecognizer:tapPhoto];
     [yorkieCollectionCell.labelYorkie addGestureRecognizer:tapLabel];
     [yorkieCollectionCell.detailValuesView addGestureRecognizer:tapView];
@@ -345,54 +286,33 @@
     [yorkieCollectionCell.weightYorkieLabel addGestureRecognizer:tapWeight];
     [yorkieCollectionCell.genderYorkieLabel addGestureRecognizer:tapGender];
     
-
     //if borndate, weight and gender are empty then
     if (([yorkie.weight.weight isEqual:@0]) && (yorkie.bornDate==NULL) && ([yorkieCollectionCell.genderYorkieLabel.text isEqualToString:@""]) ) {
         
         yorkieCollectionCell.ageYorkieLabel.text = NSLocalizedString(@"Tap 'edit' to fill", nil);
         yorkieCollectionCell.weightYorkieLabel.text = NSLocalizedString(@"date of birth, weight", nil);
         yorkieCollectionCell.genderYorkieLabel.text = NSLocalizedString(@"and gender", nil);
-        
-        
     } else {
-        
         if ([yorkie.weight.weight isEqual:@0]){
-            
             yorkieCollectionCell.weightYorkieLabel.text = NSLocalizedString(@"add weight", nil);
-            
         }
         
         if (yorkie.bornDate==NULL) {
-            
             yorkieCollectionCell.ageYorkieLabel.text = NSLocalizedString(@"add date of birth", nil);
-            
         }
         
         if ([yorkieCollectionCell.genderYorkieLabel.text isEqualToString:@""]) {
-            
             yorkieCollectionCell.genderYorkieLabel.text = NSLocalizedString(@"add gender", nil);
-            
         }
-        
-        
     }
     
-    
     return yorkieCollectionCell;
-    
 }
 
-
-
-
-
-
 //tap photo yorkie or label name
--(void)cellTap:(UISwipeGestureRecognizer *)gesture
-{
+- (void)cellTap:(UISwipeGestureRecognizer *)gesture {
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    
     MainSaveViewController *sVC = [storyboard instantiateViewControllerWithIdentifier:@"addyorkie"];
     
     sVC.edit = YES;
@@ -402,13 +322,7 @@
     
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:sVC];
     [self presentViewController:navController animated:YES completion:nil];
-    
 }
-
-
-
-
-
 
 #pragma mark - CollectionView layout
 
@@ -430,7 +344,6 @@
         case 7:
             mElementSize = CGSizeMake(389, 656);
             break;
-            
         default:
             mElementSize = CGSizeMake(389, 656);
             break;
@@ -438,7 +351,6 @@
     
     return mElementSize;
 }
-
 
 //vertical separation between cells
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
@@ -456,13 +368,11 @@
         case 7: //iPhone 6 Plus
             return 0.0;
             break;
-            
         default: //default
             return 0.0;
             break;
     }
 }
-
 
 //horizontal separation between cells
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
@@ -480,20 +390,15 @@
         case 7: //iPhone 6 Plus
             return 25.0;
             break;
-            
         default: //default
             return 0.0;
             break;
     }
     
-    
 }
-
-
 
 // Layout: Set Edges
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
-    
     
     switch (self.iphoneModel) {
         case 4: //iPhone 4
@@ -508,17 +413,14 @@
         case 7: //iPhone 6 plus
             return UIEdgeInsetsMake(0,12,0,0);
             break;
-            
         default: //default
             return UIEdgeInsetsMake(0,0,0,0);// top, left, bottom, right
             break;
     }
-    
 }
 
-
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section
-{
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section {
+    
     switch (self.iphoneModel) {
         case 4: //iPhone 4
             return CGSizeMake(19, 0);
@@ -532,14 +434,10 @@
         case 7: //iPhone 6 plus
             return CGSizeMake(12, 0);
             break;
-            
         default: //default
             return CGSizeMake(0, 0);
             break;
     }
-    
-    
 }
-
 
 @end
