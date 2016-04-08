@@ -12,5 +12,4 @@
 
 + (NSString*)notificationMessage:(NSInteger)routineTypeID withYorkieName:(NSString *)yorkieName;
 
-
 @end
