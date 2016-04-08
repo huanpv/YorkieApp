@@ -34,6 +34,4 @@
                       andImageDesc:(NSString *)imageDesc
                       andImageName:(NSString *)imageName;
 
-
-
 @end
