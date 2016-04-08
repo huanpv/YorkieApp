@@ -10,7 +10,6 @@
 
 @implementation Routine
     
-
 - (instancetype) initWithRoutineID:(NSInteger )routineID
                        andYorkieID:(NSInteger )yorkieID
                   andRoutineTypeID:(NSInteger )routineTypeID
@@ -23,9 +22,7 @@
                       andImageDesc:(NSString *)imageDesc
                       andImageName:(NSString *)imageName {
  
-    
     if (self = [super init]) {
-        
         _routineID = routineID;
         _yorkieID = yorkieID;
         _routineTypeID = routineTypeID;
@@ -37,11 +34,9 @@
         _frecuency = frecuency;
         _imageDesc = imageDesc;
         _imageName = imageName;
-        
     }
     
     return self;
-    
 }
 
 @end
