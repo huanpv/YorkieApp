@@ -13,5 +13,4 @@
 
 + (void)routineDelete:(NSInteger)idYorkie withRoutineNumber:(NSInteger)routineNumber;
 
-
 @end
