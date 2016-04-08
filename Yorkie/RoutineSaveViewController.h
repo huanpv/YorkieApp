@@ -12,18 +12,9 @@
 
 @interface RoutineSaveViewController : UIViewController<UITextFieldDelegate, UIPickerViewDataSource,UIPickerViewDelegate, UIActionSheetDelegate, UIImagePickerControllerDelegate, UIAlertViewDelegate, UITextFieldLimitDelegate, UITextViewDelegate>
 
-
-//@property NSInteger idYorkie;
 @property NSInteger idRoutine;
-
 @property NSInteger iphoneModel; //to save the iPhone model and present the screen size in a perfect way
-
-//when user comes from RoutineViewController and edit
-@property (nonatomic, strong) Routine *routine;
-
+@property (nonatomic, strong) Routine *routine; //when user comes from RoutineViewController and edit
 @property BOOL edit;
-
-
-
 
 @end
