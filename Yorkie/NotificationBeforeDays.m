@@ -12,7 +12,6 @@
 
 + (NSInteger)notificationBeforeDays:(NSInteger)routineTypeID {
     
-    
     NSInteger beforeDays;
     switch (routineTypeID) {
         case 1: //hair salon
@@ -36,14 +35,11 @@
         case 7: //medicine
             beforeDays = 1;
             break;
-            
         default:
             break;
     }
     
-    
     return beforeDays;
-    
 }
 
 @end
