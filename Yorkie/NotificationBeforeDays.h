@@ -12,5 +12,4 @@
 
 + (NSInteger)notificationBeforeDays:(NSInteger)routineTypeID;
 
-
 @end
