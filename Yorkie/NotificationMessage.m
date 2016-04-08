@@ -35,14 +35,11 @@
         case 7: //medicine
             noticeName = [NSString stringWithFormat:@"%@ %@", yorkieName, NSLocalizedString(@"needs the medicine", nil)];
             break;
-            
         default:
             break;
     }
 
-    
     return noticeName;
-    
 }
 
 @end
