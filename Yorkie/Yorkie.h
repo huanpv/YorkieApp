@@ -18,13 +18,11 @@
 @property (nonatomic, strong) NSString *bornDate;
 @property (nonatomic, strong) Weight   *weight;
 
-
 - (instancetype) initWithYorkieID:(NSInteger )yorkieID
                    andWithPicture:(NSString *)photo
                       andWithName:(NSString *)name
                     andWithGender:(NSString *)gender
                   andWithBornDate:(NSString *)bornDate
                     andWithWeight:(Weight *)weight;
-
 
 @end
