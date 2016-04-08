@@ -5,7 +5,8 @@
 //  Created by Carlos Butron on 19/05/15.
 //  Copyright (c) 2015 Carlos Butron. All rights reserved.
 //
-// THIS CONTROL IS TO SAVE, EDIT OR DELETE A YORKIE DAT
+
+/* THIS CONTROL IS TO SAVE, EDIT OR DELETE A YORKIE DAT */
 
 #import "MainSaveViewController.h"
 #import "sqlite3.h"
@@ -24,9 +25,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *dateOfBirthYorkieLabel;
 @property (weak, nonatomic) IBOutlet UITextField *genderYorkieLabel;
 @property (weak, nonatomic) IBOutlet UITextField *weightYorkieLabel;
-
-//property picker (male/female)
-@property (nonatomic, strong) UIPickerView *myPickerView;
+@property (nonatomic, strong) UIPickerView *myPickerView; //property picker (male/female)
 @property (nonatomic, strong) NSArray *pickerArray;
 @property (strong, nonatomic) UIDatePicker *datePicker;
 @property CGPoint originalCenter;
@@ -37,9 +36,7 @@
 @property (weak, nonatomic) IBOutlet UIView *photoEditView;
 @property (weak, nonatomic) IBOutlet UILabel *labelEditPhoto;
 @property (weak, nonatomic) IBOutlet UIView *viewPhoto;
-
 @property (strong, nonatomic) NSString *nameCheck;
-
 
 //locale info
 @property (nonatomic, strong) NSString *language;
@@ -48,9 +45,6 @@
 
 @property NSInteger cellHeight; //cell size
 
-
-
-
 @end
 
 bool isNameCheck;
@@ -58,11 +52,8 @@ bool isCamera;
 
 @implementation MainSaveViewController
 
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     [self.nameYorkieLabel setLimit:10];
     
     //iPhone language
@@ -70,9 +61,7 @@ bool isCamera;
     self.decimal = [[NSLocale currentLocale] objectForKey:NSLocaleDecimalSeparator];
     self.region = [[NSLocale currentLocale] objectForKey:NSLocaleCountryCode];
     
-
     if (self.edit) {
-        
         //set the title with nslocalized tu support
         self.title = [NSString stringWithFormat:NSLocalizedString(@"Edit Yorkie", nil)];
         
@@ -90,23 +79,18 @@ bool isCamera;
                 
                 NSArray* barButtons = [self.navigationItem.rightBarButtonItems arrayByAddingObject: myTrash];
                 self.navigationItem.rightBarButtonItems = barButtons;
-                
                 }
                 break;
-                
             default:
                 self.deleteButton.hidden = NO;
                 break;
         }
         
-         //if the origin is edit yorkie show delete button
-        
+        //if the origin is edit yorkie show delete button
         //set the values of edited yorkie in textfields
-        
         NSArray *docPaths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
         NSString *documentsDir = [docPaths objectAtIndex:0];
         NSString *dbPath = [documentsDir stringByAppendingPathComponent:@"yorkie.sqlite"];
-        
         
         FMDatabase *database = [FMDatabase databaseWithPath:dbPath];
         [database open];
@@ -123,7 +107,6 @@ bool isCamera;
             
             if ([NSString stringWithFormat:@"%f",[results doubleForColumn:@"weight"]]!=0) {
                 self.weightYorkieLabel.text = [results stringForColumn:@"weight"];
-
             }
             
             if ([self.decimal isEqualToString:@","]){
@@ -135,13 +118,8 @@ bool isCamera;
         
         [self.photoYorkieImageView setAccessibilityIdentifier:[results stringForColumn:@"photo"]];
         }
-        
         [database close];
-        
-    
-        
     } else { //if the origin is add yorkie hide delete button
-        
         self.deleteButton.hidden = YES;
     }
     
@@ -149,7 +127,6 @@ bool isCamera;
     [self.deleteButton setTitle:[NSString stringWithFormat:NSLocalizedString(@"Delete", nil)] forState:UIControlStateNormal];
     [self.deleteButton setTitle:[NSString stringWithFormat:NSLocalizedString(@"Delete", nil)] forState:UIControlStateSelected];
     self.deleteButton.layer.cornerRadius = 5;  //delete button corner radius
-    
     
     //notification of keyboard willshow and willhide
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -161,12 +138,10 @@ bool isCamera;
                                              selector:@selector(keyboardWillHide:)
                                                  name:UIKeyboardWillHideNotification
                                                object:nil];
-    
 
     //original position of view
     self.originalCenter = self.view.center;
     
-
     //picker with weight
     [self addPickerView];
     
@@ -180,31 +155,21 @@ bool isCamera;
         [self.datePicker setDate:[NSDate date]];
         } else {
         NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-        
             //multilingual support to show date of birth
             if ([self.region isEqualToString:@"US"]) { //if is "US"
                 
-                NSString *str = self.dateOfBirthYorkieLabel.text; /// here this is your date with format dd-MM-yyy
-                
-                [dateFormat setDateFormat:@"dd/MM/yyyy"]; //// here set format of date which is in your output date (means above str with format)
-                
+                NSString *str = self.dateOfBirthYorkieLabel.text; // here this is your date with format dd-MM-yyy
+                [dateFormat setDateFormat:@"dd/MM/yyyy"]; // here set format of date which is in your output date (means above str with format)
                 NSDate *date = [dateFormat dateFromString: str]; // here you can fetch date from string with define format
-                
                 dateFormat = [[NSDateFormatter alloc] init];
-                [dateFormat setDateFormat:@"MM/dd/yyyy"];// here set format which you want...
-                
+                [dateFormat setDateFormat:@"MM/dd/yyyy"]; // here set format which you want...
                 NSString *convertedString = [dateFormat stringFromDate:date]; //here convert date in NSString
                 self.dateOfBirthYorkieLabel.text = convertedString;
-                
             } else { //if is "es" or others
-                
                 [dateFormat setDateFormat:@"dd/MM/yyyy"];
             }
-        
         NSDate *eventDate = [dateFormat dateFromString:self.dateOfBirthYorkieLabel.text];
-
         [self.datePicker setDate:eventDate];
-            
         }
     } else { //if come from save set date picker is equal to altual date
         //set the title with nslocalized to support
@@ -214,12 +179,9 @@ bool isCamera;
     
     self.datePicker.datePickerMode = UIDatePickerModeDate;
     [self.datePicker addTarget:self action:@selector(updateTextField:) forControlEvents:UIControlEventValueChanged];
-   
     [self.dateOfBirthYorkieLabel setInputView:self.datePicker];
-    
-    
+
     //set the placeholder of textfield to support multilingual
-    
     NSAttributedString *nameYorkieLabel = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:NSLocalizedString(@"Name", nil)]];
     self.nameYorkieLabel.attributedPlaceholder = nameYorkieLabel;
     self.nameYorkieLabel.tintColor = [UIColor colorWithRed:230.0/255.0 green:151.0/255.0 blue:40.0/255.0 alpha:1];
@@ -236,7 +198,6 @@ bool isCamera;
     self.weightYorkieLabel.attributedPlaceholder = weightYorkieLabel;
     self.weightYorkieLabel.tintColor = [UIColor colorWithRed:230.0/255.0 green:151.0/255.0 blue:40.0/255.0 alpha:1];
     self.weightYorkieLabel.clearButtonMode = UITextFieldViewModeWhileEditing;
-
     self.labelEditPhoto.text = [NSString stringWithFormat:NSLocalizedString(@"Edit photo", nil)];
     
     //set delegates keyboard textfields to hide keyboard on enter
@@ -245,17 +206,12 @@ bool isCamera;
     self.genderYorkieLabel.delegate = self;
     self.weightYorkieLabel.delegate = self;
     
-
     //round the image of the form
     self.photoYorkieImageView.clipsToBounds = YES;
     self.photoYorkieImageView.layer.masksToBounds = YES;
     [self.photoYorkieImageView setContentMode:UIViewContentModeScaleAspectFill];
     self.photoYorkieImageView.layer.cornerRadius = 5;
-    
 
-    
-    
-    
     //singleTAP in imageView
     UITapGestureRecognizer *singleTap =  [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTapping:)];
     [singleTap setNumberOfTapsRequired:1];
@@ -275,41 +231,31 @@ bool isCamera;
                                                              delegate:nil
                                                     cancelButtonTitle:[NSString stringWithFormat:NSLocalizedString(@"OK", nil)]
                                                     otherButtonTitles: nil];
-        
     isCamera = NO;
     [myAlertView show];
-        
     } else {
         isCamera = YES;
     }
-    
-
 }
 
--(void)viewDidAppear:(BOOL)animated {
+- (void)viewDidAppear:(BOOL)animated {
     
     //Create a transparent view with rect up corners and round bottom corners
     UIBezierPath *maskPath;
     maskPath = [UIBezierPath bezierPathWithRoundedRect:self.photoEditView.bounds
                                      byRoundingCorners:(UIRectCornerBottomLeft|UIRectCornerBottomRight)
                                            cornerRadii:CGSizeMake(5.0, 5.0)];
-    
     CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
     maskLayer.frame = self.photoEditView.bounds;
     maskLayer.path = maskPath.CGPath;
     self.photoEditView.layer.mask = maskLayer;
-    //
-    
 }
-
 
 //set custom navigation bar
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self styleNavBar];
-    
 }
-
 
 //custom navigation bar
 - (void)styleNavBar {
@@ -318,7 +264,6 @@ bool isCamera;
     self.navigationController.navigationBar.translucent = YES;
     self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:230.0/255.0 green:151.0/255.0 blue:40.0/255.0 alpha:1];
 }
-
 
 #pragma mark - Keyboard Control
 //control keyboard appears to move view position
@@ -335,23 +280,16 @@ bool isCamera;
         //multilingual support to show date of birth
         if ([self.region isEqualToString:@"US"]) { //if is "US"
             
-            NSString *str = self.dateOfBirthYorkieLabel.text; /// here this is your date with format dd-MM-yyy
-            
-            [dateFormat setDateFormat:@"dd/MM/yyyy"]; //// here set format of date which is in your output date (means above str with format)
-            
+            NSString *str = self.dateOfBirthYorkieLabel.text; // here this is your date with format dd-MM-yyy
+            [dateFormat setDateFormat:@"dd/MM/yyyy"]; // here set format of date which is in your output date (means above str with format)
             NSDate *date = [dateFormat dateFromString: str]; // here you can fetch date from string with define format
-            
             dateFormat = [[NSDateFormatter alloc] init];
             [dateFormat setDateFormat:@"MM/dd/yyyy"];// here set format which you want...
-            
             NSString *convertedString = [dateFormat stringFromDate:date]; //here convert date in NSString
             self.dateOfBirthYorkieLabel.text = convertedString;
-            
         } else { //if is "es" or others
-            
             [dateFormat setDateFormat:@"dd/MM/yyyy"];
         }
-
         textField.text = [NSString stringWithFormat:@"%@", [dateFormat stringFromDate: self.datePicker.date]];
     }
     
@@ -363,15 +301,12 @@ bool isCamera;
 
         self.genderYorkieLabel.text = ww;
     }
-    
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
-    
     /* resign first responder, hide keyboard, move views */
 }
-
 
 - (void)keyboardWillShow:(NSNotification*)notification {
     
@@ -383,17 +318,14 @@ bool isCamera;
     if ((self.currentTextFieldOriginY+self.currentTextFieldHeight+25) > (self.view.frame.size.height-deltaHeight)) {
         self.view.center = CGPointMake(self.originalCenter.x, self.originalCenter.y + ((self.view.frame.size.height-deltaHeight)-(self.currentTextFieldOriginY+self.currentTextFieldHeight+14)) );
     }
-
 }
 
 - (void)keyboardWillHide:(NSNotification*)notification {
     self.view.center = self.originalCenter;
-
-
 }
 
-
 #pragma mark - datepicker bornDate textfield
+
 - (void)updateTextField:(UIDatePicker *)sender
 {
     UIDatePicker *picker = (UIDatePicker*)self.dateOfBirthYorkieLabel.inputView;
@@ -413,8 +345,8 @@ bool isCamera;
     self.dateOfBirthYorkieLabel.text = [NSString stringWithFormat:@"%@",dateString];
 }
 
-
 #pragma mark - picker view gender textfield
+
 - (void)addPickerView{
     self.pickerArray = [[NSArray alloc]initWithObjects:[NSString stringWithFormat:NSLocalizedString(@"Male", nil)],[NSString stringWithFormat:NSLocalizedString(@"Female", nil)], nil];
     self.myPickerView = [[UIPickerView alloc]init];
@@ -428,36 +360,27 @@ bool isCamera;
     } else {
         [self.myPickerView selectRow:0 inComponent:0 animated:YES];
     }
-    
-    
+
     self.genderYorkieLabel.inputView = self.myPickerView;
 }
-
 
 //Picker View Data source
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
     return 1;
 }
 
-
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
     return [self.pickerArray count];
 }
-
-
 
 //Picker View Delegate
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
     [self.genderYorkieLabel setText:[self.pickerArray objectAtIndex:row]];
 }
 
-
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
     return [self.pickerArray objectAtIndex:row];
 }
-
-
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -471,17 +394,12 @@ bool isCamera;
 }
 
 //if press save or cancel when keyboard shows, to dismiss keyboard velocity syncronized with dismissview
--(void)textFieldsResignFirstResponder{
-    
+- (void)textFieldsResignFirstResponder{
     [self.nameYorkieLabel resignFirstResponder];
     [self.dateOfBirthYorkieLabel resignFirstResponder];
     [self.genderYorkieLabel resignFirstResponder];
     [self.weightYorkieLabel resignFirstResponder];
-    
 }
-
-
-
 
 //EDIT and SAVE action. Values defined in origin MainViewController
 - (IBAction)actionSaveAddYorkie:(id)sender {
@@ -492,23 +410,16 @@ bool isCamera;
     NSArray *docPaths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
     NSString *documentsDir = [docPaths objectAtIndex:0];
     NSString *dbPath = [documentsDir stringByAppendingPathComponent:@"yorkie.sqlite"];
-    
-    
+
     FMDatabase *database = [FMDatabase databaseWithPath:dbPath];
     [database open];
-    
-    
-
-        
+  
     if (self.nameYorkieLabel.text.length==0){ //filter to check name Yorkie not empty
-        
-        
         //filter to check if name is empty
-       NSAttributedString *nameYorkieLabel = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:NSLocalizedString(@"Name", nil)] attributes:@{ NSForegroundColorAttributeName : [UIColor redColor] }];
+        NSAttributedString *nameYorkieLabel = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:NSLocalizedString(@"Name", nil)] attributes:@{ NSForegroundColorAttributeName : [UIColor redColor] }];
         self.nameYorkieLabel.attributedPlaceholder = nameYorkieLabel;
         self.nameYorkieLabel.clearButtonMode = UITextFieldViewModeWhileEditing;
-        
-        
+
         UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Alert", nil)]
                                                               message:[NSString stringWithFormat:NSLocalizedString(@"Fill name field before save", nil)]
                                                              delegate:nil
@@ -517,7 +428,6 @@ bool isCamera;
         [database close];
         [myAlertView show];
         isNameCheck = TRUE;
-        
     }
     
     //filter to check name Yorkie not duplicate
@@ -525,14 +435,12 @@ bool isCamera;
     
     //self.namecheck has the value of original name
     //if user edit yorkie and save with a name that exist. "if" will be true
-    
     if (![self.nameYorkieLabel.text isEqualToString:self.nameCheck]) {
         
         //get the idYorkie from the last save to use in save weight table
         NSUInteger count = [database intForQuery:@"SELECT COUNT(name) from yorkie where upper(name)= ? ", [self.nameYorkieLabel.text uppercaseString], nil];
         
         if (count > 0) {
-            
             UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Alert", nil)]
                                                                   message:[NSString stringWithFormat:NSLocalizedString(@"Name exists", nil)]
                                                                  delegate:nil
@@ -541,253 +449,195 @@ bool isCamera;
             [database close];
             [myAlertView show];
             isNameCheck = TRUE;
-            
         }
-        
-        
     }
-    
-    
-    
+
     if (!isNameCheck) {
+        //if press save or cancel when keyboard shows, to dismiss keyboard velocity syncronized with dismissview
+        [self textFieldsResignFirstResponder];
+        //actual date for weight
+        NSDateFormatter *DateFormatter=[[NSDateFormatter alloc] init];
+        [DateFormatter setDateFormat:@"dd-MM-yyyy hh:mm:ss"];
 
-        
-    //if press save or cancel when keyboard shows, to dismiss keyboard velocity syncronized with dismissview
-    [self textFieldsResignFirstResponder];
-        
-    //actual date for weight
-    NSDateFormatter *DateFormatter=[[NSDateFormatter alloc] init];
-    [DateFormatter setDateFormat:@"dd-MM-yyyy hh:mm:ss"];
-    
-    
+         //if we need to save yorkie
+        if (self.save) {
+            NSString *currentImageName = [NSString stringWithFormat:@"%@.png",self.nameYorkieLabel.text];
+            self.photoYorkieImageView.accessibilityIdentifier = currentImageName;
 
+            [self saveImage:self.photoYorkieImageView.image];
+            NSString *name = self.nameYorkieLabel.text;
+            NSString *gender = self.genderYorkieLabel.text;
+            NSString *bornDate = self.dateOfBirthYorkieLabel.text;
+        
+            //to save format date with multilingual support
+            // "es" - "en" and others
+            //allways save in "es" format dd/MM/yyyy
+            if ([self.region isEqualToString:@"US"]) {
+                NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+                NSString *str = self.dateOfBirthYorkieLabel.text; /// here this is your date with format dd-MM-yyy
+            
+                [dateFormat setDateFormat:@"MM/dd/yyyy"]; //// here set format of date which is in your output date (means above str with format)
+            
+                NSDate *date = [dateFormat dateFromString: str]; // here you can fetch date from string with define format
+            
+                dateFormat = [[NSDateFormatter alloc] init];
+                [dateFormat setDateFormat:@"dd/MM/yyyy"];// here set format which you want...
+            
+                NSString *convertedString = [dateFormat stringFromDate:date]; //here convert date in NSString
+                self.dateOfBirthYorkieLabel.text = convertedString;
+                bornDate = self.dateOfBirthYorkieLabel.text;
+                }
     
-    //if we need to save yorkie
-    if (self.save) {
+            //save in Yorkie Table
+            BOOL successYorkie = [database executeUpdate:@"INSERT INTO yorkie (photo, name, gender, bornDate) VALUES (?, ?, ?, ?)", [NSString stringWithFormat:@"%@", currentImageName], [NSString stringWithFormat:@"%@", name], [NSString stringWithFormat:@"%@", gender], [NSString stringWithFormat:@"%@", bornDate], nil];
+        
+            //get the idYorkie from the last save to use in save weight table
+            FMResultSet *results = [database executeQuery:@"SELECT idYorkie from yorkie where name= ? and gender= ? and bornDate= ?", [NSString stringWithFormat:@"%@", name], [NSString stringWithFormat:@"%@", gender], [NSString stringWithFormat:@"%@", bornDate], nil];
+        
+            while([results next]) {
+                self.idYorkie = [results intForColumn:@"idYorkie"];
+            }
 
-    
-        NSString *currentImageName = [NSString stringWithFormat:@"%@.png",self.nameYorkieLabel.text];
-        self.photoYorkieImageView.accessibilityIdentifier = currentImageName;
+            if (!successYorkie) {
+                NSLog(@"%s: insert error: %@", __FUNCTION__, [database lastErrorMessage]);
+                // do whatever you need to upon error
+            }
 
-        [self saveImage:self.photoYorkieImageView.image];
-        NSString *name = self.nameYorkieLabel.text;
-        NSString *gender = self.genderYorkieLabel.text;
-        NSString *bornDate = self.dateOfBirthYorkieLabel.text;
-        
-        //to save format date with multilingual support
-        // "es" - "en" and others
-        //allways save in "es" format dd/MM/yyyy
-        //
-        if ([self.region isEqualToString:@"US"]) {
-            
-            NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-            NSString *str = self.dateOfBirthYorkieLabel.text; /// here this is your date with format dd-MM-yyy
-            
-            [dateFormat setDateFormat:@"MM/dd/yyyy"]; //// here set format of date which is in your output date (means above str with format)
-            
-            NSDate *date = [dateFormat dateFromString: str]; // here you can fetch date from string with define format
-            
-            dateFormat = [[NSDateFormatter alloc] init];
-            [dateFormat setDateFormat:@"dd/MM/yyyy"];// here set format which you want...
-            
-            NSString *convertedString = [dateFormat stringFromDate:date]; //here convert date in NSString
-            self.dateOfBirthYorkieLabel.text = convertedString;
-            bornDate = self.dateOfBirthYorkieLabel.text;
-            
-        }
-    
-        //save in Yorkie Table
-        BOOL successYorkie = [database executeUpdate:@"INSERT INTO yorkie (photo, name, gender, bornDate) VALUES (?, ?, ?, ?)", [NSString stringWithFormat:@"%@", currentImageName], [NSString stringWithFormat:@"%@", name], [NSString stringWithFormat:@"%@", gender], [NSString stringWithFormat:@"%@", bornDate], nil];
-        
-        //get the idYorkie from the last save to use in save weight table
-        FMResultSet *results = [database executeQuery:@"SELECT idYorkie from yorkie where name= ? and gender= ? and bornDate= ?", [NSString stringWithFormat:@"%@", name], [NSString stringWithFormat:@"%@", gender], [NSString stringWithFormat:@"%@", bornDate], nil];
-        
-        while([results next]) {
-            
-            self.idYorkie = [results intForColumn:@"idYorkie"];
-            
-        }
+            //to accept format weight number with spanish regional format 0,0
+            //and transform to international format
+            float number = [[self.weightYorkieLabel.text stringByReplacingOccurrencesOfString:@"," withString:@"."] floatValue];
+            //weight number in spanish regional format
+            self.weightYorkieLabel.text = [NSString stringWithFormat:@"%.1f",number];
 
-        if (!successYorkie) {
-            NSLog(@"%s: insert error: %@", __FUNCTION__, [database lastErrorMessage]);
-        
-            // do whatever you need to upon error
-        }
-        
-        
-        
-        //to accept format weight number with spanish regional format 0,0
-        //and transform to international format
-        float number = [[self.weightYorkieLabel.text stringByReplacingOccurrencesOfString:@"," withString:@"."] floatValue];
-        //weight number in spanish regional format
-        self.weightYorkieLabel.text = [NSString stringWithFormat:@"%.1f",number];
-        
-        
-        //save in Weight table
-        BOOL successWeight = [database executeUpdate:@"INSERT INTO weight (idYorkie, weight, date) VALUES (?, ?, ?)", [NSString stringWithFormat:@"%ld", (long)self.idYorkie ], [NSString stringWithFormat:@"%@", self.weightYorkieLabel.text], [DateFormatter stringFromDate:[NSDate date]], nil];
-        
-        
-        if (!successWeight) {
-            NSLog(@"%s: insert error: %@", __FUNCTION__, [database lastErrorMessage]);
-            
-            // do whatever you need to upon error
-        }
-        
-        
+            //save in Weight table
+            BOOL successWeight = [database executeUpdate:@"INSERT INTO weight (idYorkie, weight, date) VALUES (?, ?, ?)", [NSString stringWithFormat:@"%ld", (long)self.idYorkie ], [NSString stringWithFormat:@"%@", self.weightYorkieLabel.text], [DateFormatter stringFromDate:[NSDate date]], nil];
+
+            if (!successWeight) {
+                NSLog(@"%s: insert error: %@", __FUNCTION__, [database lastErrorMessage]);
+                // do whatever you need to upon error
+            }
+
             //SAVE ROUTINES
             //routine 1 = Hair Salon
             BOOL successRoutine1 = [database executeUpdate:@"INSERT INTO routine (idYorkie, idRoutineType) VALUES (?, ?)", [NSString stringWithFormat:@"%ld", (long)self.idYorkie ], [NSString stringWithFormat:@"1"]];
-        
-        
+
             if (!successRoutine1) {
                 NSLog(@"%s: insert error: %@", __FUNCTION__, [database lastErrorMessage]);
-            
                 // do whatever you need to upon error
             }
             //SAVE ROUTINES
             //routine 2 = Bath
             BOOL successRoutine2 = [database executeUpdate:@"INSERT INTO routine (idYorkie, idRoutineType) VALUES (?, ?)", [NSString stringWithFormat:@"%ld", (long)self.idYorkie ], [NSString stringWithFormat:@"2"]];
-        
-        
+
             if (!successRoutine2) {
                 NSLog(@"%s: insert error: %@", __FUNCTION__, [database lastErrorMessage]);
-            
                 // do whatever you need to upon error
             }
+            
             //SAVE ROUTINES
             //routine 3 = Antiparasitic
             BOOL successRoutine3 = [database executeUpdate:@"INSERT INTO routine (idYorkie, idRoutineType) VALUES (?, ?)", [NSString stringWithFormat:@"%ld", (long)self.idYorkie ], [NSString stringWithFormat:@"3"]];
-        
-        
+
             if (!successRoutine3) {
                 NSLog(@"%s: insert error: %@", __FUNCTION__, [database lastErrorMessage]);
-            
                 // do whatever you need to upon error
             }
+            
             //SAVE ROUTINES
             //routine 4 = Dental Care
             BOOL successRoutine4 = [database executeUpdate:@"INSERT INTO routine (idYorkie, idRoutineType) VALUES (?, ?)", [NSString stringWithFormat:@"%ld", (long)self.idYorkie ], [NSString stringWithFormat:@"4"]];
-        
-        
+
             if (!successRoutine4) {
                 NSLog(@"%s: insert error: %@", __FUNCTION__, [database lastErrorMessage]);
-            
                 // do whatever you need to upon error
             }
+            
             //SAVE ROUTINES
             //routine 5 = Vaccines
             BOOL successRoutine5 = [database executeUpdate:@"INSERT INTO routine (idYorkie, idRoutineType) VALUES (?, ?)", [NSString stringWithFormat:@"%ld", (long)self.idYorkie ], [NSString stringWithFormat:@"5"]];
-        
-        
+
             if (!successRoutine5) {
                 NSLog(@"%s: insert error: %@", __FUNCTION__, [database lastErrorMessage]);
-            
                 // do whatever you need to upon error
             }
+            
             //SAVE ROUTINES
             //routine 6 = Vaccines
             BOOL successRoutine6 = [database executeUpdate:@"INSERT INTO routine (idYorkie, idRoutineType) VALUES (?, ?)", [NSString stringWithFormat:@"%ld", (long)self.idYorkie ], [NSString stringWithFormat:@"6"]];
-        
-        
+
             if (!successRoutine6) {
                 NSLog(@"%s: insert error: %@", __FUNCTION__, [database lastErrorMessage]);
-            
                 // do whatever you need to upon error
             }
+            
             //SAVE ROUTINES
             //routine 7 = Vaccines
             BOOL successRoutine7 = [database executeUpdate:@"INSERT INTO routine (idYorkie, idRoutineType) VALUES (?, ?)", [NSString stringWithFormat:@"%ld", (long)self.idYorkie ], [NSString stringWithFormat:@"7"]];
-        
-        
+
             if (!successRoutine7) {
                 NSLog(@"%s: insert error: %@", __FUNCTION__, [database lastErrorMessage]);
-            
                 // do whatever you need to upon error
             }
+        } else {  //if we need to edit Yorkie
+            NSString *currentImageName = [NSString stringWithFormat:@"%@.png",self.nameYorkieLabel.text]; //name of actual selected yorkie
+            self.photoYorkieImageView.accessibilityIdentifier = currentImageName;
+            [self saveImage:self.photoYorkieImageView.image];
+            NSString *name = self.nameYorkieLabel.text;
+            NSString *gender = self.genderYorkieLabel.text;
+            NSString *bornDate = self.dateOfBirthYorkieLabel.text;
+
+            //to edit format date with multilingual support
+            // "es" - "en" and others
+            //allways save in "es" format dd/MM/yyyy
+            //
         
-        
-        
-    
-    } else {  //if we need to edit Yorkie
-        
-        NSString *currentImageName = [NSString stringWithFormat:@"%@.png",self.nameYorkieLabel.text]; //name of actual selected yorkie
-        self.photoYorkieImageView.accessibilityIdentifier = currentImageName;
-        [self saveImage:self.photoYorkieImageView.image];
-        NSString *name = self.nameYorkieLabel.text;
-        NSString *gender = self.genderYorkieLabel.text;
-        NSString *bornDate = self.dateOfBirthYorkieLabel.text;
-        
-        
-        //to edit format date with multilingual support
-        // "es" - "en" and others
-        //allways save in "es" format dd/MM/yyyy
-        //
-        
-        if ([self.region isEqualToString:@"US"]) {
-            if (!self.dateOfBirthYorkieLabel.text.length==0) {
-            NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-            NSString *str = self.dateOfBirthYorkieLabel.text; /// here this is your date with format dd-MM-yyy
+            if ([self.region isEqualToString:@"US"]) {
+                if (!self.dateOfBirthYorkieLabel.text.length==0) {
+                    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+                    NSString *str = self.dateOfBirthYorkieLabel.text; /// here this is your date with format dd-MM-yyy
             
-            [dateFormat setDateFormat:@"MM/dd/yyyy"]; //// here set format of date which is in your output date (means above str with format)
+                    [dateFormat setDateFormat:@"MM/dd/yyyy"]; //// here set format of date which is in your output date (means above str with format)
             
-            NSDate *date = [dateFormat dateFromString: str]; // here you can fetch date from string with define format
+                    NSDate *date = [dateFormat dateFromString: str]; // here you can fetch date from string with define format
             
-            dateFormat = [[NSDateFormatter alloc] init];
-            [dateFormat setDateFormat:@"dd/MM/yyyy"];// here set format which you want...
+                    dateFormat = [[NSDateFormatter alloc] init];
+                    [dateFormat setDateFormat:@"dd/MM/yyyy"];// here set format which you want...
             
-            NSString *convertedString = [dateFormat stringFromDate:date]; //here convert date in NSString
-            bornDate = convertedString;
+                    NSString *convertedString = [dateFormat stringFromDate:date]; //here convert date in NSString
+                    bornDate = convertedString;
+                }
             }
-        }
         
-        //edit Yorkie Row
-        BOOL successYorkie = [database executeUpdate:@"UPDATE yorkie SET photo = ?, name = ?, gender = ?, bornDate = ? WHERE idYorkie = ?", [NSString stringWithFormat:@"%@", currentImageName], [NSString stringWithFormat:@"%@", name], [NSString stringWithFormat:@"%@", gender], [NSString stringWithFormat:@"%@", bornDate ], [NSString stringWithFormat:@"%ld", (long)self.idYorkie], nil];
+            //edit Yorkie Row
+            BOOL successYorkie = [database executeUpdate:@"UPDATE yorkie SET photo = ?, name = ?, gender = ?, bornDate = ? WHERE idYorkie = ?", [NSString stringWithFormat:@"%@", currentImageName], [NSString stringWithFormat:@"%@", name], [NSString stringWithFormat:@"%@", gender], [NSString stringWithFormat:@"%@", bornDate ], [NSString stringWithFormat:@"%ld", (long)self.idYorkie], nil];
 
-        
-        if (!successYorkie) {
-            NSLog(@"%s: insert error: %@", __FUNCTION__, [database lastErrorMessage]);
-            
-            // do whatever you need to upon error
-        }
-        
-        
-        
-        //to accept format weight number with spanish regional format 0,0
-        //and transform to international format
-        float number = [[self.weightYorkieLabel.text stringByReplacingOccurrencesOfString:@"," withString:@"."] floatValue];
-        //weight number in spanish regional format
-        self.weightYorkieLabel.text = [NSString stringWithFormat:@"%.1f",number];
-        
-        
-        //edit Weight row
-        BOOL successWeight = [database executeUpdate:@"UPDATE weight SET weight = ?, date = ? WHERE idYorkie = ?", [NSString stringWithFormat:@"%@", self.weightYorkieLabel.text], [DateFormatter stringFromDate:[NSDate date]], [NSString stringWithFormat:@"%ld", (long)self.idYorkie], nil];
-        
-        
-        if (!successWeight) {
-            NSLog(@"%s: insert error: %@", __FUNCTION__, [database lastErrorMessage]);
-            
-            // do whatever you need to upon error
-        }
+            if (!successYorkie) {
+                NSLog(@"%s: insert error: %@", __FUNCTION__, [database lastErrorMessage]);
+                // do whatever you need to upon error
+             }
 
-    //hey delegate the user edit yorkie data then reload collectionCell
-      [[self delegate] reloadDetail];
-        
-    }
+            //to accept format weight number with spanish regional format 0,0
+            //and transform to international format
+            float number = [[self.weightYorkieLabel.text stringByReplacingOccurrencesOfString:@"," withString:@"."] floatValue];
+            //weight number in spanish regional format
+            self.weightYorkieLabel.text = [NSString stringWithFormat:@"%.1f",number];
+
+            //edit Weight row
+            BOOL successWeight = [database executeUpdate:@"UPDATE weight SET weight = ?, date = ? WHERE idYorkie = ?", [NSString stringWithFormat:@"%@", self.weightYorkieLabel.text], [DateFormatter stringFromDate:[NSDate date]], [NSString stringWithFormat:@"%ld", (long)self.idYorkie], nil];
+
+            if (!successWeight) {
+                NSLog(@"%s: insert error: %@", __FUNCTION__, [database lastErrorMessage]);
+                // do whatever you need to upon error
+            }
+
+            //hey delegate the user edit yorkie data then reload collectionCell
+            [[self delegate] reloadDetail];
+        }
     
-    [database close];
-    
-
+        [database close];
         [self dismissViewControllerAnimated:YES completion:nil];
-
-    
     }
-
-    
-    
 }
-
-
-
 
 #pragma -delete yorkie Methods
 
@@ -801,9 +651,7 @@ bool isCamera;
                           cancelButtonTitle:[NSString stringWithFormat:NSLocalizedString(@"Cancel", nil)]
                           otherButtonTitles:[NSString stringWithFormat:NSLocalizedString(@"Delete", nil)],nil];
     [alert show];
-    
 }
-
 
 //alertview to confirm delete Yorkie action
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -816,13 +664,10 @@ bool isCamera;
             //do something
         }
             break;
-            
         case 1:
         {
-            
             //delete yorkie
             [YorkieDelete yorkieDelete:self.idYorkie];
-            
             //delete all the routines of yorkie
             //routine 1 = Hair Salon
             //routine 2 = Bath
@@ -832,25 +677,16 @@ bool isCamera;
             //routine 6 = Pills
             //routine 7 = Medicine
             for (int i=1; i<8; i++) {
-                
                 [RoutineDelete routineDelete:self.idYorkie withRoutineNumber:i];
-                
             }
-            
-            
-            [self.presentingViewController.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 
+            [self.presentingViewController.presentingViewController dismissViewControllerAnimated:YES completion:nil];
         }
             break;
-            
-            
         default:
             break;
     }
-    
 }
-
-
 
 #pragma -mark hide keyboard Methods
 
@@ -866,22 +702,17 @@ bool isCamera;
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [UIView animateWithDuration:0.2 animations:^{
-        
         self.view.center = self.originalCenter;
     }];
 
     [self.view endEditing:YES];
 }
 
-
-
-
 #pragma -mark yorkieImageView Methods
 
 //***YORKIEIMAGEVIEW CONTROL *******
-
 //SingleTap in imageView
--(void)singleTapping:(UIGestureRecognizer *)recognizer
+- (void)singleTapping:(UIGestureRecognizer *)recognizer
 {
     if (isCamera) { //if the iphone have a camera
     UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Select the operation to proceed", nil)]
@@ -899,14 +730,11 @@ bool isCamera;
                                                     otherButtonTitles:[NSString stringWithFormat:NSLocalizedString(@"Select Photo", nil)], nil];
     [actionSheet showInView:self.view];
     }
-    
-    
-    
+  
 }
 
-
 //actionSheet to select imageAction
--(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
 
     //action cancel
     if (buttonIndex == actionSheet.cancelButtonIndex)
@@ -925,9 +753,7 @@ bool isCamera;
         
         [self presentViewController:picker animated:YES completion:NULL];
     }
-    
 }
-
 
 //get the image
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
@@ -936,16 +762,13 @@ bool isCamera;
     self.photoYorkieImageView.image = chosenImage;
 
     [picker dismissViewControllerAnimated:YES completion:NULL];
-    
 }
 
 //cancel picker
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
     
     [picker dismissViewControllerAnimated:YES completion:NULL];
-    
 }
-
 
 //save image name.png in documents directory
 - (void)saveImage: (UIImage*)image
@@ -963,11 +786,5 @@ bool isCamera;
         [data writeToFile:path atomically:YES];
     }
 }
-
-
-
-
-
-
 
 @end
