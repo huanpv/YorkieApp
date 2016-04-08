@@ -13,18 +13,14 @@
 - (instancetype) initWithWeightID:(NSNumber *)weightID
                     andWithWeight:(NSNumber *)weight
                       andWithDate:(NSString   *)date {
-    
-        
+ 
     if (self = [super init]) {
-        
         _weightID = weightID;
         _weight = weight;
         _date = date;
-        
     }
     
     return self;
-    
 }
 
 @end
