@@ -18,8 +18,8 @@
 **  every year+ - 4+ human years
 */
 
-+ (NSInteger)dogAge:(NSDate *)dateOfBirth {
-    
++ (NSInteger)dogAge:(NSDate *)dateOfBirth 
+{
     NSInteger years;
     NSInteger months;
     NSInteger days = 0;
