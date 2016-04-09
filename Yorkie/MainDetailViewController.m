@@ -26,12 +26,13 @@
 
 @implementation MainDetailViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad 
+{
     [super viewDidLoad];
 }
 
-- (void)databaseDidOpen {
-
+- (void)databaseDidOpen 
+{
     self.decimal = [[NSLocale currentLocale] objectForKey:NSLocaleDecimalSeparator];
     
     NSArray *docPaths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
@@ -74,12 +75,14 @@
 }
 
 //protocol-delegate if user edit yorkie data reload collectionCell
-- (void)reloadDetail {
+- (void)reloadDetail 
+{
     [self.collectionView reloadData];
 }
 
 //set custom navigation bar
-- (void)viewWillAppear:(BOOL)animated {
+- (void)viewWillAppear:(BOOL)animated 
+{
     [super viewWillAppear:animated];
     self.region = [[NSLocale currentLocale] objectForKey:NSLocaleCountryCode];
     [self styleNavBar];
@@ -87,7 +90,8 @@
 }
 
 //custom navigation bar
-- (void)styleNavBar {
+- (void)styleNavBar 
+{
     [self.navigationController.navigationBar setBarStyle:UIBarStyleBlack];
     [self.navigationController.navigationBar setBackgroundColor:[UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:255.0/255.0 alpha:1]];
     self.navigationController.navigationBar.translucent = YES;
@@ -101,12 +105,13 @@
     self.navigationItem.leftBarButtonItem = leftButton;
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning 
+{
     [super didReceiveMemoryWarning];
 }
 
-- (IBAction)actionEditButton:(id)sender {
-    
+- (IBAction)actionEditButton:(id)sender 
+{
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     MainSaveViewController *sVC = [storyboard instantiateViewControllerWithIdentifier:@"addyorkie"];
     
@@ -119,12 +124,14 @@
     [self presentViewController:navController animated:YES completion:nil];
 }
 
-- (IBAction)actionDoneButton:(id)sender {
+- (IBAction)actionDoneButton:(id)sender 
+{
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 
 //CALCULATE AGE FROM BITHDAY
-- (NSString *)age:(NSDate *)dateOfBirth {
+- (NSString *)age:(NSDate *)dateOfBirth 
+{
     NSInteger years;
     NSInteger months;
     NSInteger days = 0;
@@ -195,28 +202,32 @@
 #pragma mark - UICollectionView Methods
 
 //elements of Collection View
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section 
+{
     return 1;
 }
 
 //table highlight when tap photo disallow
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath 
+{
     return YES;
 }
 
 //table highlight when tap photo disallow
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
+- (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath 
+{
     return NO;
 }
 
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath 
+{
     // NOTE: This is called, as long as both shouldSelectItemAtIndexPath: AND shouldHighlightItemAtIndexPath: return YES. If either returns NO, the cell is not actually selected.
     NSLog(@"Did select collection view cell: %@", indexPath);
 }
 
 //get the cell of Collection View
--(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    
+-(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath 
+{
     MainCollectionCell * yorkieCollectionCell = [collectionView dequeueReusableCellWithReuseIdentifier:self.cellIdentifier forIndexPath:indexPath];
     
     yorkieCollectionCell.imageYorkie.clipsToBounds = YES;
@@ -310,8 +321,8 @@
 }
 
 //tap photo yorkie or label name
-- (void)cellTap:(UISwipeGestureRecognizer *)gesture {
-    
+- (void)cellTap:(UISwipeGestureRecognizer *)gesture 
+{
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     MainSaveViewController *sVC = [storyboard instantiateViewControllerWithIdentifier:@"addyorkie"];
     
@@ -327,8 +338,8 @@
 #pragma mark - CollectionView layout
 
 // Layout: Set cell size
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath 
+{
     CGSize mElementSize = CGSizeMake(0, 0);
     
     switch (self.iphoneModel) {
@@ -353,8 +364,8 @@
 }
 
 //vertical separation between cells
-- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
-    
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section 
+{
     switch (self.iphoneModel) {
         case 4: //iPhone 4
             return 0.0;
@@ -375,8 +386,8 @@
 }
 
 //horizontal separation between cells
-- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
-    
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section 
+{
     switch (self.iphoneModel) {
         case 4: //iPhone 4
             return 38.0;
@@ -394,12 +405,11 @@
             return 0.0;
             break;
     }
-    
 }
 
 // Layout: Set Edges
-- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
-    
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section 
+{
     switch (self.iphoneModel) {
         case 4: //iPhone 4
             return UIEdgeInsetsMake(8,18,0,0);
@@ -419,8 +429,8 @@
     }
 }
 
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section {
-    
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section 
+{
     switch (self.iphoneModel) {
         case 4: //iPhone 4
             return CGSizeMake(19, 0);
