@@ -9,6 +9,7 @@
 #import "SettingsCreditsViewController.h"
 
 @interface SettingsCreditsViewController ()
+
 @property (weak, nonatomic) IBOutlet UIView *versionView;
 @property (weak, nonatomic) IBOutlet UIView *developmentView;
 @property (weak, nonatomic) IBOutlet UIView *thankstoView;
@@ -21,7 +22,8 @@
 
 @implementation SettingsCreditsViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad 
+{
     [super viewDidLoad];
     
     self.versionView.layer.cornerRadius = 5.0;
@@ -36,7 +38,8 @@
     self.title = NSLocalizedString(@"Credits", nil);
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning 
+{
     [super didReceiveMemoryWarning];
 }
 
