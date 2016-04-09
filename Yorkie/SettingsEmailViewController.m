@@ -22,7 +22,8 @@
 
 @implementation SettingsEmailViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad 
+{
     [super viewDidLoad];
 
     self.commentLabel.text = NSLocalizedString(@"Write a comment", nil);
@@ -73,8 +74,8 @@
 #pragma mark - Keyboard Control
 //control keyboard appears to move view position
 
-- (void)keyboardWillShow:(NSNotification*)notification {
-    
+- (void)keyboardWillShow:(NSNotification*)notification 
+{
     //get the frame origin y of the send button
     self.currentTextFieldOriginY = self.emailButton.frame.origin.y;
     self.currentTextFieldHeight = self.emailButton.frame.size.height;
@@ -103,22 +104,26 @@
     }
 }
 
-- (void)keyboardWillHide:(NSNotification*)notification {
+- (void)keyboardWillHide:(NSNotification*)notification 
+{
     self.view.center = self.originalCenter;
 }
 
-- (IBAction)actionSend:(id)sender {
+- (IBAction)actionSend:(id)sender 
+{
     [self sendEmail];
 }
 
 
 
 //hide keyboard on touch outside textField
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event 
+{
     [self.view endEditing:YES];
 }
 
-- (void)sendEmail {
+- (void)sendEmail 
+{
     // From within your active view controller
     if([MFMailComposeViewController canSendMail]) {
         MFMailComposeViewController *mailCont = [[MFMailComposeViewController alloc] init];
@@ -131,8 +136,8 @@
     }
 }
 
-- (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error {
-    
+- (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error 
+{
     switch (result) {
         case MFMailComposeResultSent:
             //NSLog(@"You sent the email.");
@@ -154,7 +159,8 @@
     [controller dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning 
+{
     [super didReceiveMemoryWarning];
 }
 
