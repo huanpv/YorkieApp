@@ -11,34 +11,24 @@
 @interface SettingsEmailViewController ()
 @property (weak, nonatomic) IBOutlet UITextView *emailTextView;
 @property (weak, nonatomic) IBOutlet UIButton *emailButton;
-
 //to move view on textview edit
 @property CGPoint originalCenter;
 @property CGFloat currentTextFieldOriginY;
 @property CGFloat currentTextFieldHeight;
 @property (weak, nonatomic) IBOutlet UILabel *commentLabel;
-
 @property NSInteger iphoneModel; //to save the iPhone model and present the screen size in a perfect way
-
 
 @end
 
 @implementation SettingsEmailViewController
 
-
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
+
     self.commentLabel.text = NSLocalizedString(@"Write a comment", nil);
-    
     //get screen size
     CGRect screen = [[UIScreen mainScreen] bounds];
     CGFloat height = CGRectGetHeight(screen);
-    
-    
     //set model (get the iPhone model screen size and set the custom cell for that size)
     switch ((int)height) {
         case 480:
@@ -53,26 +43,18 @@
         case 736:
             self.iphoneModel = 7;
             break;
-            
         default:
             self.iphoneModel = 7;
             break;
     }
     
-    
-    
-    
     self.title = NSLocalizedString(@"Send email", nil);
-    
     self.automaticallyAdjustsScrollViewInsets = NO;
-    
     [self.emailButton setTitle:NSLocalizedString(@"Send", nil) forState:UIControlStateNormal];
     self.emailButton.layer.cornerRadius = 5;
     self.emailTextView.layer.cornerRadius = 5;
     
     self.emailTextView.delegate = self;
-    
-
     
     //notification of keyboard willshow and willhide
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -84,24 +66,12 @@
                                              selector:@selector(keyboardWillHide:)
                                                  name:UIKeyboardWillHideNotification
                                                object:nil];
-    
-    
     //original position of view
     self.originalCenter = self.view.center;
 }
 
-
-
 #pragma mark - Keyboard Control
 //control keyboard appears to move view position
-
--(void)textViewDidBeginEditing:(UITextView *)textView{
-    
-    
-    
-}
-
-
 
 - (void)keyboardWillShow:(NSNotification*)notification {
     
@@ -113,63 +83,42 @@
     CGSize kbSize = [[info objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size;
     CGFloat deltaHeight = kbSize.height;
     
-    
     switch (self.iphoneModel) {
         case 4: {
             self.currentTextFieldOriginY = self.emailTextView.frame.origin.y+self.emailTextView.frame.size.height;
             if ((self.currentTextFieldOriginY) > (self.view.frame.size.height-deltaHeight)) {
                 self.view.center = CGPointMake(self.originalCenter.x, self.originalCenter.y + ((self.view.frame.size.height-deltaHeight)-(self.currentTextFieldOriginY+10)) );
             } }
-            
             break;
         case 6: {
             if ((self.currentTextFieldOriginY+self.currentTextFieldHeight+25) > (self.view.frame.size.height-deltaHeight)) {
                 self.view.center = CGPointMake(self.originalCenter.x, self.originalCenter.y + ((self.view.frame.size.height-deltaHeight)-(self.currentTextFieldOriginY+self.currentTextFieldHeight+48)) );
             } }
             break;
-            
         default: {
             if ((self.currentTextFieldOriginY+self.currentTextFieldHeight+25) > (self.view.frame.size.height-deltaHeight)) {
                 self.view.center = CGPointMake(self.originalCenter.x, self.originalCenter.y + ((self.view.frame.size.height-deltaHeight)-(self.currentTextFieldOriginY+self.currentTextFieldHeight+25)) );
             } }
             break;
     }
-
-
-    
 }
 
 - (void)keyboardWillHide:(NSNotification*)notification {
     self.view.center = self.originalCenter;
-    
-    
 }
 
-
-
-
-
-
-
-
 - (IBAction)actionSend:(id)sender {
-    
     [self sendEmail];
-    
 }
 
 
 
 //hide keyboard on touch outside textField
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     [self.view endEditing:YES];
 }
 
-
-
--(void)sendEmail {
+- (void)sendEmail {
     // From within your active view controller
     if([MFMailComposeViewController canSendMail]) {
         MFMailComposeViewController *mailCont = [[MFMailComposeViewController alloc] init];
@@ -188,8 +137,6 @@
         case MFMailComposeResultSent:
             //NSLog(@"You sent the email.");
             [self.navigationController popViewControllerAnimated:YES];
-
-
             break;
         case MFMailComposeResultSaved:
             //NSLog(@"You saved a draft of this email");
@@ -207,13 +154,8 @@
     [controller dismissViewControllerAnimated:YES completion:nil];
 }
 
-
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
-
 
 @end
