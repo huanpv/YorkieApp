@@ -52,7 +52,8 @@ bool isCamera;
 
 @implementation MainSaveViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad 
+{
     [super viewDidLoad];
     [self.nameYorkieLabel setLimit:10];
     
@@ -238,8 +239,8 @@ bool isCamera;
     }
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    
+- (void)viewDidAppear:(BOOL)animated 
+{
     //Create a transparent view with rect up corners and round bottom corners
     UIBezierPath *maskPath;
     maskPath = [UIBezierPath bezierPathWithRoundedRect:self.photoEditView.bounds
@@ -252,13 +253,15 @@ bool isCamera;
 }
 
 //set custom navigation bar
-- (void)viewWillAppear:(BOOL)animated {
+- (void)viewWillAppear:(BOOL)animated 
+{
     [super viewWillAppear:animated];
     [self styleNavBar];
 }
 
 //custom navigation bar
-- (void)styleNavBar {
+- (void)styleNavBar 
+{
     [self.navigationController.navigationBar setBarStyle:UIBarStyleBlack];
     [self.navigationController.navigationBar setBackgroundColor:[UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:255.0/255.0 alpha:1]];
     self.navigationController.navigationBar.translucent = YES;
@@ -308,8 +311,8 @@ bool isCamera;
     /* resign first responder, hide keyboard, move views */
 }
 
-- (void)keyboardWillShow:(NSNotification*)notification {
-    
+- (void)keyboardWillShow:(NSNotification*)notification 
+{
     NSDictionary *info = [notification userInfo];
     CGSize kbSize = [[info objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size;
     CGFloat deltaHeight = kbSize.height;
@@ -320,7 +323,8 @@ bool isCamera;
     }
 }
 
-- (void)keyboardWillHide:(NSNotification*)notification {
+- (void)keyboardWillHide:(NSNotification*)notification 
+{
     self.view.center = self.originalCenter;
 }
 
@@ -347,7 +351,8 @@ bool isCamera;
 
 #pragma mark - picker view gender textfield
 
-- (void)addPickerView{
+- (void)addPickerView
+{
     self.pickerArray = [[NSArray alloc]initWithObjects:[NSString stringWithFormat:NSLocalizedString(@"Male", nil)],[NSString stringWithFormat:NSLocalizedString(@"Female", nil)], nil];
     self.myPickerView = [[UIPickerView alloc]init];
     self.myPickerView.backgroundColor = [UIColor colorWithRed:123.0/255.0 green:178.0/255.0 blue:185.0/255.0 alpha:1];
@@ -365,36 +370,43 @@ bool isCamera;
 }
 
 //Picker View Data source
-- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
     return 1;
 }
 
-- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+{
     return [self.pickerArray count];
 }
 
 //Picker View Delegate
-- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+{
     [self.genderYorkieLabel setText:[self.pickerArray objectAtIndex:row]];
 }
 
-- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
     return [self.pickerArray objectAtIndex:row];
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning 
+{
     [super didReceiveMemoryWarning];
 }
 
 //button cancel on navigation bar
-- (IBAction)actionCancelAddYorkie:(id)sender {
+- (IBAction)actionCancelAddYorkie:(id)sender 
+{
     [self textFieldsResignFirstResponder];
     //if press save or cancel when keyboard shows, to dismiss keyboard velocity syncronized with dismissview
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 //if press save or cancel when keyboard shows, to dismiss keyboard velocity syncronized with dismissview
-- (void)textFieldsResignFirstResponder{
+- (void)textFieldsResignFirstResponder
+{
     [self.nameYorkieLabel resignFirstResponder];
     [self.dateOfBirthYorkieLabel resignFirstResponder];
     [self.genderYorkieLabel resignFirstResponder];
@@ -402,8 +414,8 @@ bool isCamera;
 }
 
 //EDIT and SAVE action. Values defined in origin MainViewController
-- (IBAction)actionSaveAddYorkie:(id)sender {
-    
+- (IBAction)actionSaveAddYorkie:(id)sender 
+{
     isNameCheck = FALSE;
     
     //open database
@@ -642,8 +654,8 @@ bool isCamera;
 #pragma -delete yorkie Methods
 
 //action delete Yorkie
-- (IBAction)actionDelete:(id)sender {
-    
+- (IBAction)actionDelete:(id)sender 
+{
     UIAlertView *alert = [[UIAlertView alloc]
                           initWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Confirm deleted", nil)]
                           message:[NSString stringWithFormat:NSLocalizedString(@"Are you sure you want to delete this Yorkie?", nil)]
@@ -730,12 +742,11 @@ bool isCamera;
                                                     otherButtonTitles:[NSString stringWithFormat:NSLocalizedString(@"Select Photo", nil)], nil];
     [actionSheet showInView:self.view];
     }
-  
 }
 
 //actionSheet to select imageAction
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
-
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
     //action cancel
     if (buttonIndex == actionSheet.cancelButtonIndex)
     {
@@ -756,8 +767,8 @@ bool isCamera;
 }
 
 //get the image
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
-    
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info 
+{
     UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
     self.photoYorkieImageView.image = chosenImage;
 
@@ -765,8 +776,8 @@ bool isCamera;
 }
 
 //cancel picker
-- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
-    
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker 
+{
     [picker dismissViewControllerAnimated:YES completion:NULL];
 }
 
