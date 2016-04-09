@@ -11,7 +11,8 @@
 @implementation UITextFieldLimit
 @synthesize limit,limitLabel,delegate;
 
-- (id)initWithFrame:(CGRect)frame {
+- (id)initWithFrame:(CGRect)frame 
+{
     self = [super initWithFrame:frame];
     if (self) {
         limit=10;// -- Default limit
@@ -21,7 +22,8 @@
     return self;
 }
 
-- (id)initWithCoder:(NSCoder *)inCoder {
+- (id)initWithCoder:(NSCoder *)inCoder 
+{
     self = [super initWithCoder:inCoder];
     if (self) {
         limit=10;// -- Default limit
@@ -31,20 +33,24 @@
     return self;
 }
 
-- (long)limit {
+- (long)limit 
+{
     return limit;
 }
 
-- (void)initializeLimitLabel {
+- (void)initializeLimitLabel 
+{
     [self initializeLimitLabelWithFont:[UIFont fontWithName:@"AppleSDGothicNeo-Light" size:14.0] andTextColor:[UIColor redColor]];// <-- Customize the label font and color. BUT! By customizing the size and, you will have to change the bounds
 }
 
-- (void)setLimit:(long)theLimit {
+- (void)setLimit:(long)theLimit 
+{
     limit=theLimit;
     [self textField:self shouldChangeCharactersInRange:NSMakeRange(0, 0) replacementString:@""];
 }
 
-- (void)initializeLimitLabelWithFont:(UIFont *)font andTextColor:(UIColor *)textColor {
+- (void)initializeLimitLabelWithFont:(UIFont *)font andTextColor:(UIColor *)textColor 
+{
     limitLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.bounds.size.width-([[NSNumber numberWithFloat:font.pointSize] doubleValue]*(2.285714)), 8, 30, self.bounds.size.height)];
 
     [limitLabel setTextColor:textColor];
@@ -61,8 +67,8 @@
     limitLabel.hidden=YES;
 }
 
-- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
-    
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string 
+{
     long MAXLENGTH=limit;
     
     NSString *newText = [textField.text stringByReplacingCharactersInRange:range withString:string];    
@@ -91,14 +97,16 @@
     return YES;
 }
 
-- (void)textFieldDidEndEditing:(UITextField *)textField {
+- (void)textFieldDidEndEditing:(UITextField *)textField 
+{
     if([self.delegate respondsToSelector:@selector(textFieldDidEndEditing:)]) {
         [self.delegate textFieldDidEndEditing:self];//UITextFieldDelegate
     }
     limitLabel.hidden=YES;
 }
-- (void)textFieldDidBeginEditing:(UITextField *)textField {
-    
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField 
+{
     [limitLabel setText:[NSString stringWithFormat:@"%lu",limit-textField.text.length]];
     
     if([self.delegate respondsToSelector:@selector(textFieldDidBeginEditing:)]) {
@@ -109,8 +117,8 @@
     }
 }
 
-- (void)shakeLabel {
-    
+- (void)shakeLabel 
+{
     CABasicAnimation *shake = [CABasicAnimation animationWithKeyPath:@"position"];
     [shake setDuration:0.1];
     [shake setRepeatCount:2];
@@ -123,28 +131,32 @@
 }
 
 //UITextFieldDelegate
-- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField 
+{
     if([self.delegate respondsToSelector:@selector(textFieldShouldBeginEditing:)]) {
         return [self.delegate textFieldShouldBeginEditing:self];
     }
     return YES;
 }
 
-- (BOOL)textFieldShouldClear:(UITextField *)textField {
+- (BOOL)textFieldShouldClear:(UITextField *)textField 
+{
     if([self.delegate respondsToSelector:@selector(textFieldShouldClear:)]) {
         return [self.delegate textFieldShouldClear:self];
     }
     return YES;
 }
 
-- (BOOL)textFieldShouldEndEditing:(UITextField *)textField {
+- (BOOL)textFieldShouldEndEditing:(UITextField *)textField 
+{
     if([self.delegate respondsToSelector:@selector(textFieldShouldEndEditing:)]) {
         return [self.delegate textFieldShouldEndEditing:self];
     }
     return YES;
 }
 
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+- (BOOL)textFieldShouldReturn:(UITextField *)textField 
+{
     if([self.delegate respondsToSelector:@selector(textFieldShouldReturn:)]) {
         return [self.delegate textFieldShouldReturn:self];
     }
