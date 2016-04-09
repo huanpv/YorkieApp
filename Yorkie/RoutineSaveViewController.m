@@ -43,11 +43,10 @@
 
 @end
 
-
 @implementation RoutineSaveViewController
 
-- (void)viewDidLoad {
-    
+- (void)viewDidLoad 
+{
     [super viewDidLoad];
     
     [self.deleteButton setTitle:NSLocalizedString(@"Delete", nil) forState:UIControlStateNormal];
@@ -90,7 +89,6 @@
     
     if (self.edit) { //if come from edit set date is equal to saved yorkie date
         self.daysTextField.text = [NSString stringWithFormat:@"%ld", (long)self.routine.frecuency];
-        
         //set frequency text
         switch (self.routine.frecuency) {
             case 0:
@@ -123,7 +121,6 @@
             case 365:
                 self.frequencyTextField.text = NSLocalizedString(@"Every year", nil);
                 break;
-                
             default: {
                 self.frequencyTextField.text = NSLocalizedString(@"Custom", nil);
                 self.daysTextField.enabled = TRUE;
@@ -149,7 +146,6 @@
                 self.startDateTextField.text = self.routine.startDate;
                 [dateFormat setDateFormat:@"dd/MM/yyyy"];
             }
-        
             if (self.startDateTextField.text.length==0){
                 [self.datePicker setDate:[NSDate date]];
             } else {
@@ -185,7 +181,8 @@
     self.commentTextField.delegate = self;
 }
 
-- (void)viewWillAppear:(BOOL)animated {
+- (void)viewWillAppear:(BOOL)animated 
+{
     //disabled days textfield until frequency textfield are in custom mode
     if ([self.frequencyTextField.text isEqualToString:NSLocalizedString(@"Custom", nil)]) {
         self.daysTextField.enabled = TRUE;
@@ -242,7 +239,6 @@
     CGFloat height = CGRectGetHeight(screen);
     
     if (self.edit) {
-        
         //set delete button to support iPhone 4s
         switch ((int)height) {
             case 480: {
@@ -251,7 +247,6 @@
                 UIBarButtonItem *myTrash = [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemTrash
                                                                                      target: self
                                                                                      action: @selector(actionDeleteButton:)];
-            
                 NSArray* barButtons = [self.navigationItem.rightBarButtonItems arrayByAddingObject: myTrash];
                 self.navigationItem.rightBarButtonItems = barButtons;
             }
@@ -280,7 +275,8 @@
 
 #pragma mark - Keyboard Control
 //control keyboard appears to move view position
-- (void)textFieldDidBeginEditing:(UITextField *)textField {
+- (void)textFieldDidBeginEditing:(UITextField *)textField 
+{
     //get the frame origin y of the active textField
     self.currentTextFieldOriginY = self.viewSaveRoutine.frame.origin.y;
     self.currentTextFieldHeight = self.viewSaveRoutine.frame.size.height;
@@ -303,7 +299,6 @@
     }
     
     if (textField.tag ==2) {
-        
         NSInteger indexSelected = [self.myPickerView selectedRowInComponent:0];
         [self.myPickerView selectRow:indexSelected inComponent:0 animated:YES];
         NSString *frequencyPicker = [[self.myPickerView delegate] pickerView:self.myPickerView titleForRow:indexSelected forComponent:0];
@@ -360,12 +355,13 @@
     }
 }
 
-- (void)textFieldDidEndEditing:(UITextField *)textField {
+- (void)textFieldDidEndEditing:(UITextField *)textField 
+{
     /* resign first responder, hide keyboard, move views */
 }
 
-- (void)keyboardWillShow:(NSNotification*)notification {
-    
+- (void)keyboardWillShow:(NSNotification*)notification 
+{
     NSDictionary *info = [notification userInfo];
     CGSize kbSize = [[info objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size;
     CGFloat deltaHeight = kbSize.height;
@@ -376,13 +372,15 @@
     }
 }
 
-- (void)keyboardWillHide:(NSNotification*)notification {
+- (void)keyboardWillHide:(NSNotification*)notification 
+{
     self.view.center = self.originalCenter;    
 }
 
 #pragma mark - datepicker bornDate textfield
 
-- (void)updateTextField:(UIDatePicker *)sender {
+- (void)updateTextField:(UIDatePicker *)sender 
+{
     UIDatePicker *picker = (UIDatePicker*)self.startDateTextField.inputView;
 
     NSDateComponents *dateComponents = [NSDateComponents new];
@@ -409,13 +407,15 @@
 
 #pragma -mark hide keyboard Methods
 //hide keyboard on return
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+- (BOOL)textFieldShouldReturn:(UITextField *)textField 
+{
     [textField resignFirstResponder];
     return YES;
 }
 
 //hide keyboard on touch outside textField
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event 
+{
     [UIView animateWithDuration:0.2 animations:^{
         self.view.center = self.originalCenter;
     }];
@@ -423,7 +423,8 @@
     [self.view endEditing:YES];
 }
 
-- (IBAction)actionDeleteButton:(id)sender {
+- (IBAction)actionDeleteButton:(id)sender 
+{
     UIAlertView *alert = [[UIAlertView alloc]
                           initWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Confirm deleted", nil)]
                           message:[NSString stringWithFormat:NSLocalizedString(@"Are you sure you want to delete this routine?", nil)]
@@ -434,7 +435,8 @@
 }
 
 //alertview to confirm delete Yorkie action
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex 
+{
     switch (buttonIndex) {
         case 0:
         {
@@ -476,7 +478,8 @@
     
 }
 
-- (IBAction)actionSaveButton:(id)sender {
+- (IBAction)actionSaveButton:(id)sender 
+{
     if ([self.startDateTextField.text isEqualToString:@""]) { //filter to check start date not empty
         
             NSAttributedString *startDateLabel = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:NSLocalizedString(@"Start date", nil)] attributes:@{ NSForegroundColorAttributeName : [UIColor redColor] }];
@@ -697,7 +700,8 @@
    
 }
 
-- (void)notificationWithName:(NSString*)notifyName andLongAdvice:(BOOL)notifyWithLongAdvice andDaysBefore:(NSInteger)beforeDays andStartDate:(NSDate *)notifyDate {
+- (void)notificationWithName:(NSString*)notifyName andLongAdvice:(BOOL)notifyWithLongAdvice andDaysBefore:(NSInteger)beforeDays andStartDate:(NSDate *)notifyDate 
+{
     //NOTIFY 1 DAY BEFORE
     NSCalendar *cal1 = [NSCalendar currentCalendar];
     NSDate *notifyDate1 = notifyDate;
@@ -753,14 +757,16 @@
     }
 }
 
-- (IBAction)actionCancelButton:(id)sender {
+- (IBAction)actionCancelButton:(id)sender 
+{
     [self textFieldsResignFirstResponder];
     //if press save or cancel when keyboard shows, to dismiss keyboard velocity syncronized with dismissview
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 //if press save or cancel when keyboard shows, to dismiss keyboard velocity syncronized with dismissview
-- (void)textFieldsResignFirstResponder {
+- (void)textFieldsResignFirstResponder 
+{
     [self.startDateTextField resignFirstResponder];
     [self.frequencyTextField resignFirstResponder];
     [self.commentTextField resignFirstResponder];
@@ -769,7 +775,8 @@
 
 #pragma mark - picker view frequency textfield
 
-- (void)addPickerView {
+- (void)addPickerView 
+{
     self.pickerArray = [[NSArray alloc]initWithObjects:[NSString stringWithFormat:NSLocalizedString(@"Never", nil)],[NSString stringWithFormat:NSLocalizedString(@"Every day", nil)], [NSString stringWithFormat:NSLocalizedString(@"Every week", nil)], [NSString stringWithFormat:NSLocalizedString(@"Every 2 weeks", nil)], [NSString stringWithFormat:NSLocalizedString(@"Every 3 weeks", nil)], [NSString stringWithFormat:NSLocalizedString(@"Every month", nil)], [NSString stringWithFormat:NSLocalizedString(@"Every 2 months", nil)], [NSString stringWithFormat:NSLocalizedString(@"Every 3 months", nil)], [NSString stringWithFormat:NSLocalizedString(@"Every 6 months", nil)],  [NSString stringWithFormat:NSLocalizedString(@"Every year", nil)], [NSString stringWithFormat:NSLocalizedString(@"Custom", nil)], nil];
     self.myPickerView = [[UIPickerView alloc]init];
     self.myPickerView.backgroundColor = [UIColor colorWithRed:123.0/255.0 green:178.0/255.0 blue:185.0/255.0 alpha:1];
@@ -814,21 +821,23 @@
             [self.myPickerView selectRow:0 inComponent:0 animated:YES];
             break;
     }
-
     self.frequencyTextField.inputView = self.myPickerView;
 }
 
 //Picker View Data source
-- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView 
+{
     return 1;
 }
 
-- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component 
+{
     return [self.pickerArray count];
 }
 
 //Picker View Delegate
-- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component 
+{
     [self.frequencyTextField setText:[self.pickerArray objectAtIndex:row]];
     
     switch (row) {
@@ -876,17 +885,18 @@
             self.daysTextField.enabled = TRUE;
             self.daysTextField.text = @"";
             break;
-            
         default:
             break;
     }
 }
 
-- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
     return [self.pickerArray objectAtIndex:row];
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning 
+{
     [super didReceiveMemoryWarning];
 }
 
