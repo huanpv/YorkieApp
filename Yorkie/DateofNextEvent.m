@@ -12,8 +12,8 @@
 
 @implementation DateofNextEvent
 
-+ (BOOL)noticeNextEventDate:(NSDate *)myDate withBeforeDays:(NSInteger)beforeDays withRoutineID:(NSInteger)routineID{
-    
++ (BOOL)noticeNextEventDate:(NSDate *)myDate withBeforeDays:(NSInteger)beforeDays withRoutineID:(NSInteger)routineID
+{
     BOOL red=FALSE;
     
     //get today date
@@ -87,8 +87,8 @@
     return red;
 }
 
-+ (NSDate*)nextEventDate:(NSDate*)myDate withFrequency:(NSInteger)frequency {
-    
++ (NSDate*)nextEventDate:(NSDate*)myDate withFrequency:(NSInteger)frequency 
+{
     if (myDate==NULL) {
         return myDate;
     } else if (frequency==0) {
@@ -129,8 +129,8 @@
 }
 
 //nextEventDateWithNotificationUpdate
-+ (NSDate*)nextEventDateWithNotificationUpdate:(NSDate*)myDate withRoutineTypeID:(NSInteger)routineTypeID withFrequency:(NSInteger)frequency  withAdviceBefore:(NSInteger)adviceBefore withNameYorkie:(NSString *)nameYorkie andDatabase:(FMDatabase *)database {
-    
++ (NSDate*)nextEventDateWithNotificationUpdate:(NSDate*)myDate withRoutineTypeID:(NSInteger)routineTypeID withFrequency:(NSInteger)frequency  withAdviceBefore:(NSInteger)adviceBefore withNameYorkie:(NSString *)nameYorkie andDatabase:(FMDatabase *)database 
+{
     if (myDate==NULL) {
         return myDate;
     } else if (frequency==0) {
@@ -255,8 +255,8 @@
 
 //CALCULATE AGE FROM BIRTHDAY TO SET IN TABLEVIEW
 //AND WRITE IN FORMAT "14th september" or "14 de septiembre"
-+ (NSString *)age:(NSDate *)dateOfBirth {
-    
++ (NSString *)age:(NSDate *)dateOfBirth 
+{
     if (dateOfBirth) {
        //locale info
         NSString *language;
