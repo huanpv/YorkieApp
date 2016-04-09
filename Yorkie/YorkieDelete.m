@@ -23,23 +23,14 @@
     //DELETE in Yorkie
     [database executeUpdate:@"DELETE FROM yorkie WHERE idYorkie= ?", [NSString stringWithFormat:@"%ld", (long)idYorkie], nil];
     
-    
     //DELETE in Weight table
     BOOL successWeight = [database executeUpdate:@"DELETE FROM weight WHERE idYorkie= ?", [NSString stringWithFormat:@"%ld", (long)idYorkie ], nil];
     
-    
     if (!successWeight) {
         NSLog(@"%s: insert error: %@", __FUNCTION__, [database lastErrorMessage]);
-        
-        // do whatever you need to upon error
     }
     
-    
-    
-    
-    
     [database close];
-    
 }
 
 @end
