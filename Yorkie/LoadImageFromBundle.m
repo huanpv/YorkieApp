@@ -10,7 +10,8 @@
 
 @implementation LoadImageFromBundle
 
-+ (UIImage*)loadImage: (NSString*)imageString {
++ (UIImage*)loadImage: (NSString*)imageString 
+{
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,vNSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
     NSString* path = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithString: imageString]];
