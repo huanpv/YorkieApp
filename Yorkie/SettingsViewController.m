@@ -36,17 +36,19 @@
     self.title = NSLocalizedString(@"Settings", nil);
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning 
+{
     [super didReceiveMemoryWarning];
 }
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView 
+{
     return 2;
 }
 
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section 
+{
     if (section == 0) {
         return 3;
     } else {
@@ -55,8 +57,8 @@
 }
 
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section 
+{
     if (section ==0) {
         return @"Settings";
     } else {
@@ -64,7 +66,8 @@
     }
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath 
+{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UIViewController *viewController = nil;
@@ -89,13 +92,12 @@
                 break;
         }
     }
-    
     [[self navigationController] pushViewController:viewController animated:YES];
 }
 
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
     CGRect screen = [[UIScreen mainScreen] bounds];
     CGFloat height = CGRectGetHeight(screen);
     
@@ -108,12 +110,11 @@
             self.cellHeight = 55;
             break;
     }
-    
     return self.cellHeight;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath 
+{
     SettingsTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"feedbackCell"];
 
     if (indexPath.section == 0) {
@@ -127,7 +128,6 @@
     }
     
     if (indexPath.section == 1) {
-    
         cell.labelFeedback.text = self.labelFeedbackArray[indexPath.row];
         UIImage *image = [UIImage imageNamed:self.imageFeedbackArray[indexPath.row]];
         [cell.imageFeedback setImage:image];
@@ -136,7 +136,6 @@
         bgColorView.backgroundColor = [UIColor colorWithRed:218.0/255.0 green:218.0/255.0 blue:218.0/255.0 alpha:0.35];
         [cell setSelectedBackgroundView:bgColorView];
     }
-  
     return cell;
 }
 
