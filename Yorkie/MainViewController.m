@@ -43,25 +43,29 @@ BOOL firstTime=YES; //if is the first init set the number of pages before compar
 
 @implementation MainViewController
 
-- (void)viewWillAppear:(BOOL)animated {
+- (void)viewWillAppear:(BOOL)animated 
+{
     [self styleNavBar];
     [self databaseDidOpen];
     [self reloadCollectionViewData];
 }
 
-- (void)reloadCollectionViewData {
+- (void)reloadCollectionViewData 
+{
     [self.collectionView reloadData];
 }
 
 //custom navigation bar
-- (void)styleNavBar {
+- (void)styleNavBar 
+{
     [self.navigationController.navigationBar setBarStyle:UIBarStyleBlack];
     [self.navigationController.navigationBar setBackgroundColor:[UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:255.0/255.0 alpha:1]];
     self.navigationController.navigationBar.translucent = YES;
     self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:230.0/255.0 green:151.0/255.0 blue:40.0/255.0 alpha:1];
 }
 
-- (void)viewDidLoad {
+- (void)viewDidLoad 
+{
     [super viewDidLoad];
 
     //if is the first use delete all the old local notifications
@@ -112,7 +116,8 @@ BOOL firstTime=YES; //if is the first init set the number of pages before compar
     [self.imageHelp setImage:[UIImage imageNamed:NSLocalizedString(@"introImage", nil)]];
 }
 
-- (void)databaseDidOpen {
+- (void)databaseDidOpen 
+{
     //copy database to DocumentDirectory
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
@@ -201,27 +206,32 @@ BOOL firstTime=YES; //if is the first init set the number of pages before compar
 
 #pragma mark - UICollectionView Methods
 
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section 
+{
     return self.yorkieArray.count;
 }
 
 //table highlight when tap photo disallow
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath 
+{
     return YES;
 }
 
 //table highlight when tap photo disallow
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
+- (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath 
+{
     return NO;
 }
 
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath 
+{
     // NOTE: This is called, as long as both shouldSelectItemAtIndexPath: AND shouldHighlightItemAtIndexPath: return YES. If either returns NO, the cell is not actually selected.
     //NSLog(@"Did select collection view cell: %@", indexPath);
 }
 
 //get the cell of Collection View
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath 
+{
     MainCollectionCell * yorkieCollectionCell = [collectionView dequeueReusableCellWithReuseIdentifier:self.cellIdentifier forIndexPath:indexPath];
     yorkieCollectionCell.imageYorkie.clipsToBounds = YES;
     yorkieCollectionCell.imageYorkie.layer.cornerRadius = 5;
@@ -269,7 +279,8 @@ BOOL firstTime=YES; //if is the first init set the number of pages before compar
 }
 
 //get the routine data to show in mainviewcontroller tableview
-- (NSArray *)databaseRoutineDidOpen:(NSInteger)idYorkie  {
+- (NSArray *)databaseRoutineDidOpen:(NSInteger)idYorkie  
+{
     NSArray *docPaths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
     NSString *documentsDir = [docPaths objectAtIndex:0];
     NSString *dbPath = [documentsDir stringByAppendingPathComponent:@"yorkie.sqlite"];
@@ -379,8 +390,8 @@ BOOL firstTime=YES; //if is the first init set the number of pages before compar
 }
 
 //tap photo yorkie or label name
-- (void)cellTap:(UISwipeGestureRecognizer *)gesture {
-    
+- (void)cellTap:(UISwipeGestureRecognizer *)gesture 
+{
     MainDetailViewController *dVC = [self.storyboard instantiateViewControllerWithIdentifier:@"YorkieDetail"];
     dVC.modalPresentationStyle = UIModalPresentationFullScreen;
     
@@ -408,8 +419,8 @@ BOOL firstTime=YES; //if is the first init set the number of pages before compar
 #pragma mark - CollectionView layout
 
 // Layout: Set cell size
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath 
+{
     CGSize mElementSize = CGSizeMake(0, 0);
     
     switch (self.iphoneModel) {
@@ -435,8 +446,8 @@ BOOL firstTime=YES; //if is the first init set the number of pages before compar
 }
 
 //vertical separation between cells
-- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
-    
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section 
+{
     switch (self.iphoneModel) {
         case 4: //iPhone 4
             return 0.0;
@@ -457,8 +468,8 @@ BOOL firstTime=YES; //if is the first init set the number of pages before compar
 }
 
 //horizontal separation between cells
-- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
-    
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section 
+{
     switch (self.iphoneModel) {
         case 4: //iPhone 4
             return 38.0;
@@ -479,8 +490,8 @@ BOOL firstTime=YES; //if is the first init set the number of pages before compar
 }
 
 // Layout: Set Edges
-- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
-
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section 
+{
     switch (self.iphoneModel) {
         case 4: //iPhone 4
             return UIEdgeInsetsMake(8,20,0,0);
@@ -498,7 +509,6 @@ BOOL firstTime=YES; //if is the first init set the number of pages before compar
             return UIEdgeInsetsMake(0,0,0,0);// top, left, bottom, right
             break;
     }
-    
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section
@@ -524,8 +534,8 @@ BOOL firstTime=YES; //if is the first init set the number of pages before compar
 
 #pragma mark - scrollView methods
 
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView 
+{
     //upload pageControlYorkie position
     CGFloat pageWidth = self.collectionView.frame.size.width;
     float currentPage = self.collectionView.contentOffset.x / pageWidth;
@@ -541,7 +551,8 @@ BOOL firstTime=YES; //if is the first init set the number of pages before compar
 #pragma mark - NSNotification to select table cell
 
 //send data to routineViewController
-- (void)tableCellDidSelect:(Routine*)cell {
+- (void)tableCellDidSelect:(Routine*)cell 
+{
     //if date is empty show "no event"
     if ((cell.startDate==NULL) || ([cell.startDate isEqualToString:@""])) {
         RoutineSaveViewController *dVC = [self.storyboard instantiateViewControllerWithIdentifier:@"SaveEditRoutine"];
@@ -566,7 +577,8 @@ BOOL firstTime=YES; //if is the first init set the number of pages before compar
     }
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender 
+{
     if ([[segue identifier] isEqualToString:@"save"]) {
         UINavigationController *navTmp = segue.destinationViewController;
         MainSaveViewController * sVC = ((MainSaveViewController *)[navTmp topViewController]);
@@ -575,7 +587,8 @@ BOOL firstTime=YES; //if is the first init set the number of pages before compar
     }
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning 
+{
     [super didReceiveMemoryWarning];
 }
 
