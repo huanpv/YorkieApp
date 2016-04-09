@@ -24,12 +24,14 @@
 
 @implementation RoutineViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad 
+{
     [super viewDidLoad];
 }
 
 //set custom navigation bar
-- (void)viewWillAppear:(BOOL)animated {
+- (void)viewWillAppear:(BOOL)animated 
+{
     [super viewWillAppear:animated];
     
     [self styleNavBar];
@@ -38,7 +40,8 @@
 }
 
 //custom navigation bar
-- (void)styleNavBar {
+- (void)styleNavBar 
+{
     [self.navigationController.navigationBar setBarStyle:UIBarStyleBlack];
     [self.navigationController.navigationBar setBackgroundColor:[UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:255.0/255.0 alpha:1]];
     self.navigationController.navigationBar.translucent = YES;
@@ -49,12 +52,13 @@
     self.navigationItem.rightBarButtonItem = anotherButton;
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning 
+{
     [super didReceiveMemoryWarning];
 }
 
-- (IBAction)actionEditButton:(id)sender {
-    
+- (IBAction)actionEditButton:(id)sender 
+{
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     RoutineSaveViewController *dVC = [storyboard instantiateViewControllerWithIdentifier:@"SaveEditRoutine"];
     
@@ -72,28 +76,32 @@
 #pragma mark - UICollectionView Methods
 
 //elements of Collection View
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section 
+{
     return 1;
 }
 
 //table highlight when tap photo disallow
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath 
+{
     return YES;
 }
 
 //table highlight when tap photo disallow
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
+- (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath 
+{
     return NO;
 }
 
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath 
+{
     // NOTE: This is called, as long as both shouldSelectItemAtIndexPath: AND shouldHighlightItemAtIndexPath: return YES. If either returns NO, the cell is not actually selected.
     NSLog(@"Did select collection view cell: %@", indexPath);
 }
 
 //get the cell of Collection View
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath 
+{
     RoutineCollectionCell * yorkieCollectionCell = [collectionView dequeueReusableCellWithReuseIdentifier:self.cellIdentifier forIndexPath:indexPath];
     
     yorkieCollectionCell.imageYorkie.image = [LoadImageFromBundle loadImage:self.title];
@@ -163,8 +171,8 @@
 }
 
 //tap photo yorkie or label name
-- (void)cellTap:(UISwipeGestureRecognizer *)gesture {
-    
+- (void)cellTap:(UISwipeGestureRecognizer *)gesture 
+{
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     RoutineSaveViewController *dVC = [storyboard instantiateViewControllerWithIdentifier:@"SaveEditRoutine"];
     
@@ -179,8 +187,8 @@
 }
 
 //get the routine data to show in routine view
-- (void)databaseRoutineDidOpen  {
-    
+- (void)databaseRoutineDidOpen 
+{
     NSArray *docPaths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
     NSString *documentsDir = [docPaths objectAtIndex:0];
     NSString *dbPath = [documentsDir stringByAppendingPathComponent:@"yorkie.sqlite"];
@@ -215,8 +223,8 @@
 #pragma mark - CollectionView layout
 
 // Layout: Set cell size
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath 
+{
     CGSize mElementSize = CGSizeMake(0, 0);
     
     switch (self.iphoneModel) {
@@ -242,8 +250,8 @@
 }
 
 //vertical separation between cells
-- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
-    
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section 
+{
     switch (self.iphoneModel) {
         case 4: //iPhone 4
             return 0.0;
@@ -264,8 +272,8 @@
 }
 
 //horizontal separation between cells
-- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
-    
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section 
+{
     switch (self.iphoneModel) {
         case 4: //iPhone 4
             return 38.0;
@@ -286,8 +294,8 @@
 }
 
 // Layout: Set Edges
-- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
-    
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section 
+{
     switch (self.iphoneModel) {
         case 4: //iPhone 4
             return UIEdgeInsetsMake(8,20,0,0);
@@ -307,7 +315,8 @@
     }
 }
 
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section {
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section 
+{
     switch (self.iphoneModel) {
         case 4: //iPhone 4
             return CGSizeMake(19, 0);
