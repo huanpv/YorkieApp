@@ -12,8 +12,8 @@
 
 @implementation YorkieDelete
 
-+ (void)yorkieDelete:(NSInteger)idYorkie {
-    
++ (void)yorkieDelete:(NSInteger)idYorkie 
+{
     NSArray *docPaths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
     NSString *documentsDir = [docPaths objectAtIndex:0];
     NSString *dbPath = [documentsDir stringByAppendingPathComponent:@"yorkie.sqlite"];
