@@ -41,7 +41,8 @@
 		07DEFD501B4DE09400CA6429 /* Weight.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DEFD4A1B4DE09400CA6429 /* Weight.m */; };
 		07DEFD561B4DE2F400CA6429 /* MainMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DEFD531B4DE2F400CA6429 /* MainMenuCell.m */; };
 		07DEFD571B4DE2F400CA6429 /* MainCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DEFD551B4DE2F400CA6429 /* MainCollectionCell.m */; };
-		9485F9603D8B898238629C34 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A4DEBE8BBC5113765EB9657 /* libPods.a */; };
+		920B06AB77A66BA8D0F93ABD /* libPods-Yorkie.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A93231B54BAD0ECF362D8B7 /* libPods-Yorkie.a */; };
+		B886F50CC9D944AE0940727E /* libPods-YorkieTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 85825EA5DC04D6B56580E0E8 /* libPods-YorkieTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,9 +123,12 @@
 		07DEFD531B4DE2F400CA6429 /* MainMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuCell.m; sourceTree = "<group>"; };
 		07DEFD541B4DE2F400CA6429 /* MainCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainCollectionCell.h; sourceTree = "<group>"; };
 		07DEFD551B4DE2F400CA6429 /* MainCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainCollectionCell.m; sourceTree = "<group>"; };
-		6A4DEBE8BBC5113765EB9657 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		72A58A3358A5C7FBAE0C15AC /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		AB84704AEDE864D8391BAD8D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		3A93231B54BAD0ECF362D8B7 /* libPods-Yorkie.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Yorkie.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BD9C666251231290307A1C1 /* Pods-Yorkie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yorkie.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Yorkie/Pods-Yorkie.debug.xcconfig"; sourceTree = "<group>"; };
+		85825EA5DC04D6B56580E0E8 /* libPods-YorkieTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YorkieTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		97A34AA99BD166BB3D7BFE11 /* Pods-YorkieTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YorkieTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YorkieTests/Pods-YorkieTests.debug.xcconfig"; sourceTree = "<group>"; };
+		CAD7CC2BCE7466720F70D88B /* Pods-Yorkie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yorkie.release.xcconfig"; path = "Pods/Target Support Files/Pods-Yorkie/Pods-Yorkie.release.xcconfig"; sourceTree = "<group>"; };
+		F0563307E3E47B023C2814A5 /* Pods-YorkieTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YorkieTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-YorkieTests/Pods-YorkieTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,7 +137,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0786C1F21B6279EC003CAF52 /* MessageUI.framework in Frameworks */,
-				9485F9603D8B898238629C34 /* libPods.a in Frameworks */,
+				920B06AB77A66BA8D0F93ABD /* libPods-Yorkie.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +145,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B886F50CC9D944AE0940727E /* libPods-YorkieTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,8 +158,8 @@
 				07DEFD161B4DDFE200CA6429 /* Yorkie */,
 				07DEFD301B4DDFE300CA6429 /* YorkieTests */,
 				07DEFD151B4DDFE200CA6429 /* Products */,
-				E1BB167AD66C6080B2605840 /* Pods */,
 				4D4D76988669955B8500B97E /* Frameworks */,
+				29595E013F1C655EF050511C /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -290,22 +295,25 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
+		29595E013F1C655EF050511C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3BD9C666251231290307A1C1 /* Pods-Yorkie.debug.xcconfig */,
+				CAD7CC2BCE7466720F70D88B /* Pods-Yorkie.release.xcconfig */,
+				97A34AA99BD166BB3D7BFE11 /* Pods-YorkieTests.debug.xcconfig */,
+				F0563307E3E47B023C2814A5 /* Pods-YorkieTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		4D4D76988669955B8500B97E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				0786C1F11B6279EC003CAF52 /* MessageUI.framework */,
-				6A4DEBE8BBC5113765EB9657 /* libPods.a */,
+				3A93231B54BAD0ECF362D8B7 /* libPods-Yorkie.a */,
+				85825EA5DC04D6B56580E0E8 /* libPods-YorkieTests.a */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		E1BB167AD66C6080B2605840 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				AB84704AEDE864D8391BAD8D /* Pods.debug.xcconfig */,
-				72A58A3358A5C7FBAE0C15AC /* Pods.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -315,11 +323,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 07DEFD371B4DDFE300CA6429 /* Build configuration list for PBXNativeTarget "Yorkie" */;
 			buildPhases = (
-				994BBDF465E3D6D5C0625BD9 /* Check Pods Manifest.lock */,
+				BA17D81DE581A455027CD8C4 /* [CP] Check Pods Manifest.lock */,
 				07DEFD101B4DDFE200CA6429 /* Sources */,
 				07DEFD111B4DDFE200CA6429 /* Frameworks */,
 				07DEFD121B4DDFE200CA6429 /* Resources */,
-				88574273E33A19315CFBCA76 /* Copy Pods Resources */,
+				13008B3A85F58F0C2D5A9BFB /* [CP] Embed Pods Frameworks */,
+				34F6EFBD6032E636F3E46903 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -334,9 +343,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 07DEFD3A1B4DDFE300CA6429 /* Build configuration list for PBXNativeTarget "YorkieTests" */;
 			buildPhases = (
+				41443C81C9628B3F1E641118 /* [CP] Check Pods Manifest.lock */,
 				07DEFD291B4DDFE300CA6429 /* Sources */,
 				07DEFD2A1B4DDFE300CA6429 /* Frameworks */,
 				07DEFD2B1B4DDFE300CA6429 /* Resources */,
+				80AD93FE1440D7A7C782318E /* [CP] Embed Pods Frameworks */,
+				ED69EA19A393F0693808BFF8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -354,7 +366,7 @@
 		07DEFD0C1B4DDFE200CA6429 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Carlos Butron";
 				TargetAttributes = {
 					07DEFD131B4DDFE200CA6429 = {
@@ -410,34 +422,94 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		88574273E33A19315CFBCA76 /* Copy Pods Resources */ = {
+		13008B3A85F58F0C2D5A9BFB /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Yorkie/Pods-Yorkie-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		994BBDF465E3D6D5C0625BD9 /* Check Pods Manifest.lock */ = {
+		34F6EFBD6032E636F3E46903 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Yorkie/Pods-Yorkie-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		41443C81C9628B3F1E641118 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		80AD93FE1440D7A7C782318E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YorkieTests/Pods-YorkieTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BA17D81DE581A455027CD8C4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		ED69EA19A393F0693808BFF8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YorkieTests/Pods-YorkieTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -547,6 +619,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -562,7 +635,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -599,7 +672,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -608,7 +681,7 @@
 		};
 		07DEFD381B4DDFE300CA6429 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AB84704AEDE864D8391BAD8D /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 3BD9C666251231290307A1C1 /* Pods-Yorkie.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -616,6 +689,7 @@
 				INFOPLIST_FILE = Yorkie/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "es.carlosbutron.$(PRODUCT_NAME:rfc1034identifier)s";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -624,7 +698,7 @@
 		};
 		07DEFD391B4DDFE300CA6429 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 72A58A3358A5C7FBAE0C15AC /* Pods.release.xcconfig */;
+			baseConfigurationReference = CAD7CC2BCE7466720F70D88B /* Pods-Yorkie.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -632,6 +706,7 @@
 				INFOPLIST_FILE = Yorkie/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "es.carlosbutron.$(PRODUCT_NAME:rfc1034identifier)s";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -640,6 +715,7 @@
 		};
 		07DEFD3B1B4DDFE300CA6429 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 97A34AA99BD166BB3D7BFE11 /* Pods-YorkieTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -652,6 +728,7 @@
 				);
 				INFOPLIST_FILE = YorkieTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "es.carlosbutron.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Yorkie.app/Yorkie";
 			};
@@ -659,6 +736,7 @@
 		};
 		07DEFD3C1B4DDFE300CA6429 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F0563307E3E47B023C2814A5 /* Pods-YorkieTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -667,6 +745,7 @@
 				);
 				INFOPLIST_FILE = YorkieTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "es.carlosbutron.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Yorkie.app/Yorkie";
 			};

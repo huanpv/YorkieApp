@@ -7,330 +7,224 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		04B039493C63D1F31FAED62A /* Pods-FMDB-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C9CF7BD5781E4758CD87786 /* Pods-FMDB-dummy.m */; };
-		1228F18DC08A37FFB4C44FB8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CE087364D26A2B4C47DBE24 /* Foundation.framework */; };
-		1A010FB2347FF286A36B6005 /* Pods-YorkieTests-FMDB-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FB255A39DF6703048F435A /* Pods-YorkieTests-FMDB-dummy.m */; };
-		2055B5DBCDEE721EA8B994EF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CE087364D26A2B4C47DBE24 /* Foundation.framework */; };
-		2262354B6DBFC289E8B76BE2 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = AFA0ECC0BA88ED8D5DB40BA1 /* FMResultSet.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		2814EB997F0E316685CD4C02 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F06AD7FB61FCFAB252271F4 /* FMDatabase.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		3273AAA15F66BF8914C2CA9D /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = AFA0ECC0BA88ED8D5DB40BA1 /* FMResultSet.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		3F723BC734F1E4C2348C021F /* FMDatabaseQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B45E046B723C003E3280392 /* FMDatabaseQueue.h */; };
-		4CDDD9EDD66B41C77C1A1C43 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CE087364D26A2B4C47DBE24 /* Foundation.framework */; };
-		51736F02008B16243C2DDACA /* FMDatabase.h in Headers */ = {isa = PBXBuildFile; fileRef = F10C22AE5E3296D3F4E0794C /* FMDatabase.h */; };
-		5B8E6878FD3E9BFC46123069 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDEC7FE88442190A4CF74D2 /* FMDatabaseAdditions.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		67D4AF131F83FCA038DF24C6 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 02EBCE9DAEDD9FAF8D4A6685 /* FMDatabasePool.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		69F808B8403818306B2B5039 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDEC7FE88442190A4CF74D2 /* FMDatabaseAdditions.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		6EFB05682371D86BA1DF9668 /* FMDatabaseAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 7CBE0691A2F4936E8332CA5F /* FMDatabaseAdditions.h */; };
-		71ED3C0ACFB8B553C085AD8E /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A2EF98EEB645764C84CA4A73 /* Pods-dummy.m */; };
-		7EE6BAE86477E5A9750396F9 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 02EBCE9DAEDD9FAF8D4A6685 /* FMDatabasePool.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		8525DEC2E3E77363420826AD /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F06AD7FB61FCFAB252271F4 /* FMDatabase.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		8581024AF9FBE99B550729A1 /* FMResultSet.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FB18F2AACF61466D5EB2372 /* FMResultSet.h */; };
-		8639F329D9E4506E80B887DA /* FMDatabaseQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B45E046B723C003E3280392 /* FMDatabaseQueue.h */; };
-		883BCE38AB60911D54E386E0 /* FMDatabase.h in Headers */ = {isa = PBXBuildFile; fileRef = F10C22AE5E3296D3F4E0794C /* FMDatabase.h */; };
-		88B7DC4652BC0A99C7CB6A23 /* FMDatabasePool.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F769D2D79DA1A59B76C0673 /* FMDatabasePool.h */; };
-		92E3AFE47AEF2CA0BC028DA6 /* Pods-YorkieTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C0F3AB9D668DBB88C07ACA9D /* Pods-YorkieTests-dummy.m */; };
-		970FDC68D49473827802893D /* Pods-Yorkie-FMDB-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BD2C0DEA333A04A7F53A100 /* Pods-Yorkie-FMDB-dummy.m */; };
-		97A975DE24FC2B0E5AEECBE2 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 02EBCE9DAEDD9FAF8D4A6685 /* FMDatabasePool.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		995B123911E235EE50370E70 /* FMDB.h in Headers */ = {isa = PBXBuildFile; fileRef = 63B61689F9E9E1D0ED14442A /* FMDB.h */; };
-		9E17C91FF34079CBEA18B15B /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F06AD7FB61FCFAB252271F4 /* FMDatabase.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		A7A9F88840B07F1E5DE8CA52 /* FMResultSet.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FB18F2AACF61466D5EB2372 /* FMResultSet.h */; };
-		A7C5CE32D011629615FBEEB9 /* FMDatabaseQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B45E046B723C003E3280392 /* FMDatabaseQueue.h */; };
-		A80ABBCC572394374CC1261C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CE087364D26A2B4C47DBE24 /* Foundation.framework */; };
-		A98505698E8D267A1ECBFF26 /* FMDatabaseAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 7CBE0691A2F4936E8332CA5F /* FMDatabaseAdditions.h */; };
-		AA9CBB0F5445FA63D9E3DC77 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CE087364D26A2B4C47DBE24 /* Foundation.framework */; };
-		AC740E8C18A1EC655D8905DF /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = A4EA6406CEB88F2F73A1E5CA /* FMDatabaseQueue.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		ACFE675590AAE238F438EA95 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = A4EA6406CEB88F2F73A1E5CA /* FMDatabaseQueue.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		B216BF4CB904A4BEE9908714 /* FMDatabasePool.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F769D2D79DA1A59B76C0673 /* FMDatabasePool.h */; };
-		C1C5DA5587CFB4EFFEACD77B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CE087364D26A2B4C47DBE24 /* Foundation.framework */; };
-		C2C67BD3B469F71D62341E81 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDEC7FE88442190A4CF74D2 /* FMDatabaseAdditions.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		C33F8C7E77658B103340B87A /* FMDB.h in Headers */ = {isa = PBXBuildFile; fileRef = 63B61689F9E9E1D0ED14442A /* FMDB.h */; };
-		C7FB67550CDF39807FC18941 /* FMDatabase.h in Headers */ = {isa = PBXBuildFile; fileRef = F10C22AE5E3296D3F4E0794C /* FMDatabase.h */; };
-		C973A104F4A6DFA196E4275E /* FMResultSet.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FB18F2AACF61466D5EB2372 /* FMResultSet.h */; };
-		D5233B3E38D2F294803DBCCF /* Pods-Yorkie-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1594D0E09260946D0BFD0F47 /* Pods-Yorkie-dummy.m */; };
-		D6E31C67DB04BD63F22E7EEE /* FMDatabasePool.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F769D2D79DA1A59B76C0673 /* FMDatabasePool.h */; };
-		E3CB09E7B5A6ED20984B6EE9 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = A4EA6406CEB88F2F73A1E5CA /* FMDatabaseQueue.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		EC60871EBB4E414448EBDBBF /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = AFA0ECC0BA88ED8D5DB40BA1 /* FMResultSet.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		F860673FD530A48D5DA43297 /* FMDatabaseAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 7CBE0691A2F4936E8332CA5F /* FMDatabaseAdditions.h */; };
-		F986F530467D66F683410D47 /* FMDB.h in Headers */ = {isa = PBXBuildFile; fileRef = 63B61689F9E9E1D0ED14442A /* FMDB.h */; };
+		0EF8E9AA652DBE2745A7D5C8CD2E3BDE /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 475630B9EDA128A2FEA091C9D63AED3F /* FMDatabasePool.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		0F8A8E0D6FAEBF758E0B4D620335F094 /* FMDatabasePool.h in Headers */ = {isa = PBXBuildFile; fileRef = 5696C1F124500924CE065F8CEA33F978 /* FMDatabasePool.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		282081E035E7A843068E8BCC2E07C217 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = B42D69CD99479A04B6A708D9A1817E54 /* FMDatabaseQueue.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		313531CEDA0294311D87B4F4C3F073F4 /* FMDB.h in Headers */ = {isa = PBXBuildFile; fileRef = CC2AA98E70EF15C6F8A88750F2680320 /* FMDB.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3D0F69C4CA35EB6A1F686BA88B19B4F6 /* FMDB-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6258E712F1089BFF63A6B28B87669F03 /* FMDB-dummy.m */; };
+		A251DAC831699F21183191534F650A75 /* Pods-YorkieTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F74E8AD9DAA67887945E7F88231339 /* Pods-YorkieTests-dummy.m */; };
+		A350C5704A1F233DAD830E081E00F8C1 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F71FF0833DB53F536450483211F7CD /* FMDatabaseAdditions.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		A561A67BF274ABC8C70A4FFA23D56C59 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		B418C9BDCF8C6BAC2E3942F157BB6D4C /* FMDatabaseAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = B007C91029361327653F7DCE2E7599C0 /* FMDatabaseAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C229965EE789C63B139106C75BF1F295 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		CA027706DD6805766F1F4EC548E72440 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B2DE6BA720930EA5A25DEAD9804D47 /* FMDatabase.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		D0C5FF5485EAA2CDA03E9796B407697A /* FMDatabaseQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = AD57EB2E148CBB0484960AFCFB4C7588 /* FMDatabaseQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D0D5FFE53407F16C9CD3D0ECF43ACE93 /* FMDatabase.h in Headers */ = {isa = PBXBuildFile; fileRef = 990191AC5970F54BD454007D4FC0B2C3 /* FMDatabase.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D2531DF68D750E1D8D598C911FDE1834 /* Pods-Yorkie-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 776D17C7A7B48DBF6C707FE28E976906 /* Pods-Yorkie-dummy.m */; };
+		DEFA3504695E9DFDE1177DAB22884470 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = B00FE45DA7886136FAD44633735B4DE3 /* FMResultSet.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		F977B243321331B58666E9284634101A /* FMResultSet.h in Headers */ = {isa = PBXBuildFile; fileRef = FA296DC0E25687826F8CB594F359BD14 /* FMResultSet.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FEDF8A7638F0DF6E87C0C1892EC9E341 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		098C89C8DEB905FEF3A89919 /* PBXContainerItemProxy */ = {
+		5EA8272DE9123CA6EF80C7807F064FB8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 89F3EE6B4021A6C18FF02DDC /* Project object */;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = BB5E5A67EAE9DA874BA03844;
-			remoteInfo = "Pods-FMDB";
+			remoteGlobalIDString = 9F12FB4A63E20F601CFB2E64A65B57C1;
+			remoteInfo = FMDB;
 		};
-		5182D3796EF1F8E37E438993 /* PBXContainerItemProxy */ = {
+		794F9BCE87B99644CCB8C892DC742E50 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 89F3EE6B4021A6C18FF02DDC /* Project object */;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 227F6FABD05AB2BFA99DD20C;
-			remoteInfo = "Pods-YorkieTests-FMDB";
-		};
-		8BC4B0FA806945D1B6305173 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 89F3EE6B4021A6C18FF02DDC /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 24998A981C043A2A752FB643;
-			remoteInfo = "Pods-Yorkie-FMDB";
+			remoteGlobalIDString = 9F12FB4A63E20F601CFB2E64A65B57C1;
+			remoteInfo = FMDB;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00A3EC5899A527691BFF8366 /* Pods-FMDB-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FMDB-Private.xcconfig"; sourceTree = "<group>"; };
-		02EBCE9DAEDD9FAF8D4A6685 /* FMDatabasePool.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FMDatabasePool.m; path = src/fmdb/FMDatabasePool.m; sourceTree = "<group>"; };
-		0F877350EEAEC41BC75BC5C3 /* Pods-YorkieTests-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-YorkieTests-environment.h"; sourceTree = "<group>"; };
-		10BF55EDF2FACBFE3D6747DF /* Pods-YorkieTests-FMDB-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Pods-YorkieTests-FMDB-prefix.pch"; path = "../Pods-YorkieTests-FMDB/Pods-YorkieTests-FMDB-prefix.pch"; sourceTree = "<group>"; };
-		1594D0E09260946D0BFD0F47 /* Pods-Yorkie-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Yorkie-dummy.m"; sourceTree = "<group>"; };
-		16070BA83C5809D681E6EB83 /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
-		1AA3BEF0D8FCBDEBC917415C /* Pods-Yorkie-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Yorkie-environment.h"; sourceTree = "<group>"; };
-		22FB255A39DF6703048F435A /* Pods-YorkieTests-FMDB-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "Pods-YorkieTests-FMDB-dummy.m"; path = "../Pods-YorkieTests-FMDB/Pods-YorkieTests-FMDB-dummy.m"; sourceTree = "<group>"; };
-		35C99A84AE6E87D5ACAB90F8 /* Pods-YorkieTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-YorkieTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		37E6F983A9255166488CC756 /* Pods-YorkieTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-YorkieTests-resources.sh"; sourceTree = "<group>"; };
-		3B45E046B723C003E3280392 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMDatabaseQueue.h; path = src/fmdb/FMDatabaseQueue.h; sourceTree = "<group>"; };
-		41EBDD5DAA0E80D0BE29C8DD /* Pods-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-environment.h"; sourceTree = "<group>"; };
-		4F490AC28F34EEEF53584318 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		4FB18F2AACF61466D5EB2372 /* FMResultSet.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMResultSet.h; path = src/fmdb/FMResultSet.h; sourceTree = "<group>"; };
-		5192AD89221064F30098E4C2 /* Pods-YorkieTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YorkieTests.release.xcconfig"; sourceTree = "<group>"; };
-		5F769D2D79DA1A59B76C0673 /* FMDatabasePool.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMDatabasePool.h; path = src/fmdb/FMDatabasePool.h; sourceTree = "<group>"; };
-		604A431B34C1E630B0E64549 /* libPods-FMDB.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FMDB.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		612EBCD4185F115D2B3846E7 /* Pods-Yorkie-FMDB.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yorkie-FMDB.xcconfig"; path = "../Pods-Yorkie-FMDB/Pods-Yorkie-FMDB.xcconfig"; sourceTree = "<group>"; };
-		61DA723823D34BDE17D765EF /* Pods-Yorkie-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Yorkie-acknowledgements.markdown"; sourceTree = "<group>"; };
-		63B61689F9E9E1D0ED14442A /* FMDB.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMDB.h; path = src/fmdb/FMDB.h; sourceTree = "<group>"; };
-		6BD2C0DEA333A04A7F53A100 /* Pods-Yorkie-FMDB-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "Pods-Yorkie-FMDB-dummy.m"; path = "../Pods-Yorkie-FMDB/Pods-Yorkie-FMDB-dummy.m"; sourceTree = "<group>"; };
-		6D0FB56211479A58EC6A66CB /* Pods-YorkieTests-FMDB-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YorkieTests-FMDB-Private.xcconfig"; path = "../Pods-YorkieTests-FMDB/Pods-YorkieTests-FMDB-Private.xcconfig"; sourceTree = "<group>"; };
-		6F06AD7FB61FCFAB252271F4 /* FMDatabase.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FMDatabase.m; path = src/fmdb/FMDatabase.m; sourceTree = "<group>"; };
-		758B2E24B3BE176A0BA3C437 /* Pods-Yorkie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Yorkie.debug.xcconfig"; sourceTree = "<group>"; };
-		7C9CF7BD5781E4758CD87786 /* Pods-FMDB-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FMDB-dummy.m"; sourceTree = "<group>"; };
-		7CBE0691A2F4936E8332CA5F /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMDatabaseAdditions.h; path = src/fmdb/FMDatabaseAdditions.h; sourceTree = "<group>"; };
-		80C86F249A7F748FCB991372 /* libPods-Yorkie.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Yorkie.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8360534756ED7F245A650989 /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
-		8960BA5D3990D527AB69626B /* Pods-YorkieTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YorkieTests.debug.xcconfig"; sourceTree = "<group>"; };
-		8CE087364D26A2B4C47DBE24 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		90E563DA836923523EA7D391 /* Pods-YorkieTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-YorkieTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		A2EF98EEB645764C84CA4A73 /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
-		A4EA6406CEB88F2F73A1E5CA /* FMDatabaseQueue.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FMDatabaseQueue.m; path = src/fmdb/FMDatabaseQueue.m; sourceTree = "<group>"; };
-		A8649970D95B8D20ED85AE19 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.debug.xcconfig; sourceTree = "<group>"; };
-		ABDEC7FE88442190A4CF74D2 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FMDatabaseAdditions.m; path = src/fmdb/FMDatabaseAdditions.m; sourceTree = "<group>"; };
-		AF27BBE7B280B8A8F4663206 /* libPods-Yorkie-FMDB.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Yorkie-FMDB.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AFA0ECC0BA88ED8D5DB40BA1 /* FMResultSet.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FMResultSet.m; path = src/fmdb/FMResultSet.m; sourceTree = "<group>"; };
-		B78F2F616FC9E684736C0E4D /* Pods-Yorkie-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Yorkie-resources.sh"; sourceTree = "<group>"; };
-		C0F3AB9D668DBB88C07ACA9D /* Pods-YorkieTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-YorkieTests-dummy.m"; sourceTree = "<group>"; };
-		CF4B91431BF531635E0CC69E /* Pods-FMDB.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FMDB.xcconfig"; sourceTree = "<group>"; };
-		D1591B1044C3AA6DF0F243BB /* libPods-YorkieTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YorkieTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D3607A2FCABC80AF938EB814 /* Pods-Yorkie-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Yorkie-acknowledgements.plist"; sourceTree = "<group>"; };
-		DA48DEF6D2579E4DD879681D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.release.xcconfig; sourceTree = "<group>"; };
-		DE417F13396C29FB9D65975D /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = "<group>"; };
-		E4A13B64915A987A01231354 /* Pods-Yorkie-FMDB-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Pods-Yorkie-FMDB-prefix.pch"; path = "../Pods-Yorkie-FMDB/Pods-Yorkie-FMDB-prefix.pch"; sourceTree = "<group>"; };
-		EDC1BF9C3B74B1DD68321867 /* Pods-FMDB-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FMDB-prefix.pch"; sourceTree = "<group>"; };
-		EE422A34E85689ADC2F87C04 /* Pods-YorkieTests-FMDB.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YorkieTests-FMDB.xcconfig"; path = "../Pods-YorkieTests-FMDB/Pods-YorkieTests-FMDB.xcconfig"; sourceTree = "<group>"; };
-		F10C22AE5E3296D3F4E0794C /* FMDatabase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMDatabase.h; path = src/fmdb/FMDatabase.h; sourceTree = "<group>"; };
-		F16F2665964A212152EBE4CD /* Pods-Yorkie-FMDB-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yorkie-FMDB-Private.xcconfig"; path = "../Pods-Yorkie-FMDB/Pods-Yorkie-FMDB-Private.xcconfig"; sourceTree = "<group>"; };
-		F318814EE7006966B500D5D9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		FBA3F24814BFCFDA7217E9AA /* Pods-Yorkie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Yorkie.release.xcconfig"; sourceTree = "<group>"; };
-		FF60F05739F1F69515F693B1 /* libPods-YorkieTests-FMDB.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YorkieTests-FMDB.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		265D30665CA12A0F8AA7CB00165EA0F0 /* Pods-Yorkie-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Yorkie-frameworks.sh"; sourceTree = "<group>"; };
+		457ABC12AEBDBADAA62B42CCFE513707 /* Pods-YorkieTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-YorkieTests-frameworks.sh"; sourceTree = "<group>"; };
+		475630B9EDA128A2FEA091C9D63AED3F /* FMDatabasePool.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FMDatabasePool.m; path = src/fmdb/FMDatabasePool.m; sourceTree = "<group>"; };
+		494DAE1728A9D62AD857A2103C63A21D /* Pods-YorkieTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YorkieTests.release.xcconfig"; sourceTree = "<group>"; };
+		5696C1F124500924CE065F8CEA33F978 /* FMDatabasePool.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMDatabasePool.h; path = src/fmdb/FMDatabasePool.h; sourceTree = "<group>"; };
+		5958779F2C289DAB3161C6E72A129587 /* Pods-Yorkie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Yorkie.release.xcconfig"; sourceTree = "<group>"; };
+		5A925CA3202A942E4D00ADBF1481CFA5 /* libPods-Yorkie.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Yorkie.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6258E712F1089BFF63A6B28B87669F03 /* FMDB-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FMDB-dummy.m"; sourceTree = "<group>"; };
+		6C738DA03416EB7B86E7912BEF8E3B28 /* Pods-YorkieTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-YorkieTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		76311F01FC5C511911C8E1A1AB99D3FE /* libPods-YorkieTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YorkieTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		776D17C7A7B48DBF6C707FE28E976906 /* Pods-Yorkie-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Yorkie-dummy.m"; sourceTree = "<group>"; };
+		9067FE24E6D95F65E6CB707EFDADE75B /* Pods-YorkieTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-YorkieTests-resources.sh"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		95947A3E639C5F38133509008A283575 /* Pods-YorkieTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YorkieTests.debug.xcconfig"; sourceTree = "<group>"; };
+		990191AC5970F54BD454007D4FC0B2C3 /* FMDatabase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMDatabase.h; path = src/fmdb/FMDatabase.h; sourceTree = "<group>"; };
+		A3F74E8AD9DAA67887945E7F88231339 /* Pods-YorkieTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-YorkieTests-dummy.m"; sourceTree = "<group>"; };
+		AA55156C3855E0FA429827F2E4AB1D6F /* Pods-Yorkie-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Yorkie-acknowledgements.plist"; sourceTree = "<group>"; };
+		AD57EB2E148CBB0484960AFCFB4C7588 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMDatabaseQueue.h; path = src/fmdb/FMDatabaseQueue.h; sourceTree = "<group>"; };
+		B007C91029361327653F7DCE2E7599C0 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMDatabaseAdditions.h; path = src/fmdb/FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		B00FE45DA7886136FAD44633735B4DE3 /* FMResultSet.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FMResultSet.m; path = src/fmdb/FMResultSet.m; sourceTree = "<group>"; };
+		B3B2DE6BA720930EA5A25DEAD9804D47 /* FMDatabase.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FMDatabase.m; path = src/fmdb/FMDatabase.m; sourceTree = "<group>"; };
+		B42D69CD99479A04B6A708D9A1817E54 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FMDatabaseQueue.m; path = src/fmdb/FMDatabaseQueue.m; sourceTree = "<group>"; };
+		B6F001340A2DE875E28FB25337A25A5F /* Pods-Yorkie-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Yorkie-resources.sh"; sourceTree = "<group>"; };
+		C71A49A1419F91ACBB8EA45BE235F3F5 /* Pods-Yorkie-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Yorkie-acknowledgements.markdown"; sourceTree = "<group>"; };
+		CC2AA98E70EF15C6F8A88750F2680320 /* FMDB.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMDB.h; path = src/fmdb/FMDB.h; sourceTree = "<group>"; };
+		CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		CF9EF56BBC611B10BD860F00155FE19F /* Pods-YorkieTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-YorkieTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		D874D9C80FA1F53051632DE704321234 /* FMDB.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FMDB.xcconfig; sourceTree = "<group>"; };
+		E649B4E687395D0436EFBBDFC68877D2 /* Pods-Yorkie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Yorkie.debug.xcconfig"; sourceTree = "<group>"; };
+		EA7F4524D2AF509C459F6B158E80820C /* FMDB-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FMDB-prefix.pch"; sourceTree = "<group>"; };
+		EFA7C21DD8A48255CE17F337A92698A5 /* libFMDB.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFMDB.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0F71FF0833DB53F536450483211F7CD /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FMDatabaseAdditions.m; path = src/fmdb/FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		FA296DC0E25687826F8CB594F359BD14 /* FMResultSet.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMResultSet.h; path = src/fmdb/FMResultSet.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		226F63B05FDE94C3C13975FA /* Frameworks */ = {
+		3C52C725886BB0BF525FCF0F3D52B226 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1228F18DC08A37FFB4C44FB8 /* Foundation.framework in Frameworks */,
+				FEDF8A7638F0DF6E87C0C1892EC9E341 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		27457027C17A21F654D01E30 /* Frameworks */ = {
+		84AF63084FFE4472EFC6131BD113B13D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2055B5DBCDEE721EA8B994EF /* Foundation.framework in Frameworks */,
+				A561A67BF274ABC8C70A4FFA23D56C59 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		52F8B1C6D9552A15D75627C1 /* Frameworks */ = {
+		FAEB786A25C59C35F9FFD25D160A0F4A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA9CBB0F5445FA63D9E3DC77 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		855DFBFA89D33706ED9E7AF6 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A80ABBCC572394374CC1261C /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C69423A783E9EA3BD3B98223 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C1C5DA5587CFB4EFFEACD77B /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F65F1704FB5735B795AFADDF /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4CDDD9EDD66B41C77C1A1C43 /* Foundation.framework in Frameworks */,
+				C229965EE789C63B139106C75BF1F295 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		208CAA140D28D36D80F4D40C /* Pods */ = {
+		05DEDDA30D455CC2728CB39024359B2D /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				8360534756ED7F245A650989 /* Pods-acknowledgements.markdown */,
-				16070BA83C5809D681E6EB83 /* Pods-acknowledgements.plist */,
-				A2EF98EEB645764C84CA4A73 /* Pods-dummy.m */,
-				41EBDD5DAA0E80D0BE29C8DD /* Pods-environment.h */,
-				DE417F13396C29FB9D65975D /* Pods-resources.sh */,
-				A8649970D95B8D20ED85AE19 /* Pods.debug.xcconfig */,
-				DA48DEF6D2579E4DD879681D /* Pods.release.xcconfig */,
+				D874D9C80FA1F53051632DE704321234 /* FMDB.xcconfig */,
+				6258E712F1089BFF63A6B28B87669F03 /* FMDB-dummy.m */,
+				EA7F4524D2AF509C459F6B158E80820C /* FMDB-prefix.pch */,
 			);
-			name = Pods;
-			path = "Target Support Files/Pods";
+			name = "Support Files";
+			path = "../Target Support Files/FMDB";
 			sourceTree = "<group>";
 		};
-		3C765E63814EE0B97ED1E37C /* Targets Support Files */ = {
+		198117BFBBB28092BB7B9E419D09307E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				208CAA140D28D36D80F4D40C /* Pods */,
-				7E9177DAD2F92EE3DFB6C247 /* Pods-Yorkie */,
-				E02EC08E28FAB6C6CC357192 /* Pods-YorkieTests */,
+				EFA7C21DD8A48255CE17F337A92698A5 /* libFMDB.a */,
+				5A925CA3202A942E4D00ADBF1481CFA5 /* libPods-Yorkie.a */,
+				76311F01FC5C511911C8E1A1AB99D3FE /* libPods-YorkieTests.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		670F6893AC33208AB066EA8A4466FB30 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E8930412DFECDB41CC802E34408A45D0 /* Pods-Yorkie */,
+				EFCAB476C3FC866C9AAA114650E91636 /* Pods-YorkieTests */,
 			);
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		6969F1CB445F38AF090B63F7 /* Pods */ = {
+		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
-				FAE84D0A34EEB8AC3CB78924 /* FMDB */,
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				BFB8C92E749ED180124155E2270474D2 /* Pods */,
+				198117BFBBB28092BB7B9E419D09307E /* Products */,
+				670F6893AC33208AB066EA8A4466FB30 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		B7377036971551BCDC2E2584548A576D /* common */ = {
+			isa = PBXGroup;
+			children = (
+				990191AC5970F54BD454007D4FC0B2C3 /* FMDatabase.h */,
+				B3B2DE6BA720930EA5A25DEAD9804D47 /* FMDatabase.m */,
+				B007C91029361327653F7DCE2E7599C0 /* FMDatabaseAdditions.h */,
+				F0F71FF0833DB53F536450483211F7CD /* FMDatabaseAdditions.m */,
+				5696C1F124500924CE065F8CEA33F978 /* FMDatabasePool.h */,
+				475630B9EDA128A2FEA091C9D63AED3F /* FMDatabasePool.m */,
+				AD57EB2E148CBB0484960AFCFB4C7588 /* FMDatabaseQueue.h */,
+				B42D69CD99479A04B6A708D9A1817E54 /* FMDatabaseQueue.m */,
+				CC2AA98E70EF15C6F8A88750F2680320 /* FMDB.h */,
+				FA296DC0E25687826F8CB594F359BD14 /* FMResultSet.h */,
+				B00FE45DA7886136FAD44633735B4DE3 /* FMResultSet.m */,
+			);
+			name = common;
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BFB8C92E749ED180124155E2270474D2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FA26C3825570D0641AC85B4710D11744 /* FMDB */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		7E9177DAD2F92EE3DFB6C247 /* Pods-Yorkie */ = {
+		E8930412DFECDB41CC802E34408A45D0 /* Pods-Yorkie */ = {
 			isa = PBXGroup;
 			children = (
-				61DA723823D34BDE17D765EF /* Pods-Yorkie-acknowledgements.markdown */,
-				D3607A2FCABC80AF938EB814 /* Pods-Yorkie-acknowledgements.plist */,
-				1594D0E09260946D0BFD0F47 /* Pods-Yorkie-dummy.m */,
-				1AA3BEF0D8FCBDEBC917415C /* Pods-Yorkie-environment.h */,
-				B78F2F616FC9E684736C0E4D /* Pods-Yorkie-resources.sh */,
-				758B2E24B3BE176A0BA3C437 /* Pods-Yorkie.debug.xcconfig */,
-				FBA3F24814BFCFDA7217E9AA /* Pods-Yorkie.release.xcconfig */,
+				C71A49A1419F91ACBB8EA45BE235F3F5 /* Pods-Yorkie-acknowledgements.markdown */,
+				AA55156C3855E0FA429827F2E4AB1D6F /* Pods-Yorkie-acknowledgements.plist */,
+				776D17C7A7B48DBF6C707FE28E976906 /* Pods-Yorkie-dummy.m */,
+				265D30665CA12A0F8AA7CB00165EA0F0 /* Pods-Yorkie-frameworks.sh */,
+				B6F001340A2DE875E28FB25337A25A5F /* Pods-Yorkie-resources.sh */,
+				E649B4E687395D0436EFBBDFC68877D2 /* Pods-Yorkie.debug.xcconfig */,
+				5958779F2C289DAB3161C6E72A129587 /* Pods-Yorkie.release.xcconfig */,
 			);
 			name = "Pods-Yorkie";
 			path = "Target Support Files/Pods-Yorkie";
 			sourceTree = "<group>";
 		};
-		BE57B20EA8DC54E29AB2B5C6 /* Support Files */ = {
+		EFCAB476C3FC866C9AAA114650E91636 /* Pods-YorkieTests */ = {
 			isa = PBXGroup;
 			children = (
-				CF4B91431BF531635E0CC69E /* Pods-FMDB.xcconfig */,
-				00A3EC5899A527691BFF8366 /* Pods-FMDB-Private.xcconfig */,
-				7C9CF7BD5781E4758CD87786 /* Pods-FMDB-dummy.m */,
-				EDC1BF9C3B74B1DD68321867 /* Pods-FMDB-prefix.pch */,
-				612EBCD4185F115D2B3846E7 /* Pods-Yorkie-FMDB.xcconfig */,
-				F16F2665964A212152EBE4CD /* Pods-Yorkie-FMDB-Private.xcconfig */,
-				6BD2C0DEA333A04A7F53A100 /* Pods-Yorkie-FMDB-dummy.m */,
-				E4A13B64915A987A01231354 /* Pods-Yorkie-FMDB-prefix.pch */,
-				EE422A34E85689ADC2F87C04 /* Pods-YorkieTests-FMDB.xcconfig */,
-				6D0FB56211479A58EC6A66CB /* Pods-YorkieTests-FMDB-Private.xcconfig */,
-				22FB255A39DF6703048F435A /* Pods-YorkieTests-FMDB-dummy.m */,
-				10BF55EDF2FACBFE3D6747DF /* Pods-YorkieTests-FMDB-prefix.pch */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/Pods-FMDB";
-			sourceTree = "<group>";
-		};
-		C7FFC154F90E0A1E20F077FA /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				8CE087364D26A2B4C47DBE24 /* Foundation.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		DA48139E0470827C148E704F /* common */ = {
-			isa = PBXGroup;
-			children = (
-				63B61689F9E9E1D0ED14442A /* FMDB.h */,
-				F10C22AE5E3296D3F4E0794C /* FMDatabase.h */,
-				6F06AD7FB61FCFAB252271F4 /* FMDatabase.m */,
-				7CBE0691A2F4936E8332CA5F /* FMDatabaseAdditions.h */,
-				ABDEC7FE88442190A4CF74D2 /* FMDatabaseAdditions.m */,
-				5F769D2D79DA1A59B76C0673 /* FMDatabasePool.h */,
-				02EBCE9DAEDD9FAF8D4A6685 /* FMDatabasePool.m */,
-				3B45E046B723C003E3280392 /* FMDatabaseQueue.h */,
-				A4EA6406CEB88F2F73A1E5CA /* FMDatabaseQueue.m */,
-				4FB18F2AACF61466D5EB2372 /* FMResultSet.h */,
-				AFA0ECC0BA88ED8D5DB40BA1 /* FMResultSet.m */,
-			);
-			name = common;
-			sourceTree = "<group>";
-		};
-		E02EC08E28FAB6C6CC357192 /* Pods-YorkieTests */ = {
-			isa = PBXGroup;
-			children = (
-				35C99A84AE6E87D5ACAB90F8 /* Pods-YorkieTests-acknowledgements.markdown */,
-				90E563DA836923523EA7D391 /* Pods-YorkieTests-acknowledgements.plist */,
-				C0F3AB9D668DBB88C07ACA9D /* Pods-YorkieTests-dummy.m */,
-				0F877350EEAEC41BC75BC5C3 /* Pods-YorkieTests-environment.h */,
-				37E6F983A9255166488CC756 /* Pods-YorkieTests-resources.sh */,
-				8960BA5D3990D527AB69626B /* Pods-YorkieTests.debug.xcconfig */,
-				5192AD89221064F30098E4C2 /* Pods-YorkieTests.release.xcconfig */,
+				6C738DA03416EB7B86E7912BEF8E3B28 /* Pods-YorkieTests-acknowledgements.markdown */,
+				CF9EF56BBC611B10BD860F00155FE19F /* Pods-YorkieTests-acknowledgements.plist */,
+				A3F74E8AD9DAA67887945E7F88231339 /* Pods-YorkieTests-dummy.m */,
+				457ABC12AEBDBADAA62B42CCFE513707 /* Pods-YorkieTests-frameworks.sh */,
+				9067FE24E6D95F65E6CB707EFDADE75B /* Pods-YorkieTests-resources.sh */,
+				95947A3E639C5F38133509008A283575 /* Pods-YorkieTests.debug.xcconfig */,
+				494DAE1728A9D62AD857A2103C63A21D /* Pods-YorkieTests.release.xcconfig */,
 			);
 			name = "Pods-YorkieTests";
 			path = "Target Support Files/Pods-YorkieTests";
 			sourceTree = "<group>";
 		};
-		E77E42ECDA173626D1E79093 = {
+		FA26C3825570D0641AC85B4710D11744 /* FMDB */ = {
 			isa = PBXGroup;
 			children = (
-				4F490AC28F34EEEF53584318 /* Podfile */,
-				F81AACD6C42288FD6538CBFC /* Frameworks */,
-				6969F1CB445F38AF090B63F7 /* Pods */,
-				E9AE40915328BA5733759B2C /* Products */,
-				3C765E63814EE0B97ED1E37C /* Targets Support Files */,
-			);
-			sourceTree = "<group>";
-		};
-		E9AE40915328BA5733759B2C /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				F318814EE7006966B500D5D9 /* libPods.a */,
-				604A431B34C1E630B0E64549 /* libPods-FMDB.a */,
-				80C86F249A7F748FCB991372 /* libPods-Yorkie.a */,
-				AF27BBE7B280B8A8F4663206 /* libPods-Yorkie-FMDB.a */,
-				D1591B1044C3AA6DF0F243BB /* libPods-YorkieTests.a */,
-				FF60F05739F1F69515F693B1 /* libPods-YorkieTests-FMDB.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		F81AACD6C42288FD6538CBFC /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				C7FFC154F90E0A1E20F077FA /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		FAE84D0A34EEB8AC3CB78924 /* FMDB */ = {
-			isa = PBXGroup;
-			children = (
-				BE57B20EA8DC54E29AB2B5C6 /* Support Files */,
-				DA48139E0470827C148E704F /* common */,
+				B7377036971551BCDC2E2584548A576D /* common */,
+				05DEDDA30D455CC2728CB39024359B2D /* Support Files */,
 			);
 			path = FMDB;
 			sourceTree = "<group>";
@@ -338,272 +232,217 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		48D2A8215B23E215345CBD63 /* Headers */ = {
+		8B2D82357BE4C2A10AB2CD4724B8E654 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F986F530467D66F683410D47 /* FMDB.h in Headers */,
-				51736F02008B16243C2DDACA /* FMDatabase.h in Headers */,
-				F860673FD530A48D5DA43297 /* FMDatabaseAdditions.h in Headers */,
-				88B7DC4652BC0A99C7CB6A23 /* FMDatabasePool.h in Headers */,
-				3F723BC734F1E4C2348C021F /* FMDatabaseQueue.h in Headers */,
-				8581024AF9FBE99B550729A1 /* FMResultSet.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7D237B1CD8CB561792AD5465 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				995B123911E235EE50370E70 /* FMDB.h in Headers */,
-				C7FB67550CDF39807FC18941 /* FMDatabase.h in Headers */,
-				A98505698E8D267A1ECBFF26 /* FMDatabaseAdditions.h in Headers */,
-				D6E31C67DB04BD63F22E7EEE /* FMDatabasePool.h in Headers */,
-				8639F329D9E4506E80B887DA /* FMDatabaseQueue.h in Headers */,
-				A7A9F88840B07F1E5DE8CA52 /* FMResultSet.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		86FF763121DD410BC05F9891 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C33F8C7E77658B103340B87A /* FMDB.h in Headers */,
-				883BCE38AB60911D54E386E0 /* FMDatabase.h in Headers */,
-				6EFB05682371D86BA1DF9668 /* FMDatabaseAdditions.h in Headers */,
-				B216BF4CB904A4BEE9908714 /* FMDatabasePool.h in Headers */,
-				A7C5CE32D011629615FBEEB9 /* FMDatabaseQueue.h in Headers */,
-				C973A104F4A6DFA196E4275E /* FMResultSet.h in Headers */,
+				D0D5FFE53407F16C9CD3D0ECF43ACE93 /* FMDatabase.h in Headers */,
+				B418C9BDCF8C6BAC2E3942F157BB6D4C /* FMDatabaseAdditions.h in Headers */,
+				0F8A8E0D6FAEBF758E0B4D620335F094 /* FMDatabasePool.h in Headers */,
+				D0C5FF5485EAA2CDA03E9796B407697A /* FMDatabaseQueue.h in Headers */,
+				313531CEDA0294311D87B4F4C3F073F4 /* FMDB.h in Headers */,
+				F977B243321331B58666E9284634101A /* FMResultSet.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		151F0FE8A9CEC7DF51655426 /* Pods-Yorkie */ = {
+		95FB9C2DEC4C19FF24220EBEBE65B475 /* Pods-Yorkie */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 92A7A6606443907D1CFF269C /* Build configuration list for PBXNativeTarget "Pods-Yorkie" */;
+			buildConfigurationList = C9F97C6D1CFB4D91E5910297BCAF742E /* Build configuration list for PBXNativeTarget "Pods-Yorkie" */;
 			buildPhases = (
-				F0BE21E57EFBF71C68448E1A /* Sources */,
-				226F63B05FDE94C3C13975FA /* Frameworks */,
+				2264E3767A6E9FDA73C196B79B67894A /* Sources */,
+				3C52C725886BB0BF525FCF0F3D52B226 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				DC71B7B803D85DDB453E9C8C /* PBXTargetDependency */,
+				7B4940E7FC3D87A6AF7507363732A72D /* PBXTargetDependency */,
 			);
 			name = "Pods-Yorkie";
 			productName = "Pods-Yorkie";
-			productReference = 80C86F249A7F748FCB991372 /* libPods-Yorkie.a */;
+			productReference = 5A925CA3202A942E4D00ADBF1481CFA5 /* libPods-Yorkie.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		227F6FABD05AB2BFA99DD20C /* Pods-YorkieTests-FMDB */ = {
+		9F12FB4A63E20F601CFB2E64A65B57C1 /* FMDB */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5E1578C3A2235508C975CC82 /* Build configuration list for PBXNativeTarget "Pods-YorkieTests-FMDB" */;
+			buildConfigurationList = 3AC899FD215914230EB9D8B57AD910D0 /* Build configuration list for PBXNativeTarget "FMDB" */;
 			buildPhases = (
-				7B71B0FD859DFD60D831C500 /* Sources */,
-				27457027C17A21F654D01E30 /* Frameworks */,
-				7D237B1CD8CB561792AD5465 /* Headers */,
+				050B66E154969A68944942A22BD9B314 /* Sources */,
+				84AF63084FFE4472EFC6131BD113B13D /* Frameworks */,
+				8B2D82357BE4C2A10AB2CD4724B8E654 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Pods-YorkieTests-FMDB";
-			productName = "Pods-YorkieTests-FMDB";
-			productReference = FF60F05739F1F69515F693B1 /* libPods-YorkieTests-FMDB.a */;
+			name = FMDB;
+			productName = FMDB;
+			productReference = EFA7C21DD8A48255CE17F337A92698A5 /* libFMDB.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		24998A981C043A2A752FB643 /* Pods-Yorkie-FMDB */ = {
+		EE86218BCE36DE153F2CDDB3A6381F96 /* Pods-YorkieTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1500A94C0FFBFE863B8B3BE0 /* Build configuration list for PBXNativeTarget "Pods-Yorkie-FMDB" */;
+			buildConfigurationList = 44B500CFD33FAD557CD110A99EADB4D7 /* Build configuration list for PBXNativeTarget "Pods-YorkieTests" */;
 			buildPhases = (
-				55422C93CACD78CC6FF0B336 /* Sources */,
-				C69423A783E9EA3BD3B98223 /* Frameworks */,
-				48D2A8215B23E215345CBD63 /* Headers */,
+				02501F0C4610034B739B9F22F187AE44 /* Sources */,
+				FAEB786A25C59C35F9FFD25D160A0F4A /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-			);
-			name = "Pods-Yorkie-FMDB";
-			productName = "Pods-Yorkie-FMDB";
-			productReference = AF27BBE7B280B8A8F4663206 /* libPods-Yorkie-FMDB.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		5A1A7593918B54B1D44CF22C /* Pods-YorkieTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 01E26F281544AB1124D72347 /* Build configuration list for PBXNativeTarget "Pods-YorkieTests" */;
-			buildPhases = (
-				2DBDA7833E7F8A1B272B8F70 /* Sources */,
-				52F8B1C6D9552A15D75627C1 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				2FD6049E7AF70868B93C29B7 /* PBXTargetDependency */,
+				8F43E1F511EA84F7A2B7023D8A188F88 /* PBXTargetDependency */,
 			);
 			name = "Pods-YorkieTests";
 			productName = "Pods-YorkieTests";
-			productReference = D1591B1044C3AA6DF0F243BB /* libPods-YorkieTests.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		9DE603CAF42BB18708A01A05 /* Pods */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A6975E1F52F5B9BAB15522E5 /* Build configuration list for PBXNativeTarget "Pods" */;
-			buildPhases = (
-				53DA875C22460CA04C71F6B7 /* Sources */,
-				855DFBFA89D33706ED9E7AF6 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				5861459FEFE523633AB6B8EF /* PBXTargetDependency */,
-			);
-			name = Pods;
-			productName = Pods;
-			productReference = F318814EE7006966B500D5D9 /* libPods.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		BB5E5A67EAE9DA874BA03844 /* Pods-FMDB */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 58934B96D84872265C1DB657 /* Build configuration list for PBXNativeTarget "Pods-FMDB" */;
-			buildPhases = (
-				6A6B12457D5FE792F0AA7B61 /* Sources */,
-				F65F1704FB5735B795AFADDF /* Frameworks */,
-				86FF763121DD410BC05F9891 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Pods-FMDB";
-			productName = "Pods-FMDB";
-			productReference = 604A431B34C1E630B0E64549 /* libPods-FMDB.a */;
+			productReference = 76311F01FC5C511911C8E1A1AB99D3FE /* libPods-YorkieTests.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		89F3EE6B4021A6C18FF02DDC /* Project object */ = {
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
 			};
-			buildConfigurationList = 867BF277C94D6B9E648125A7 /* Build configuration list for PBXProject "Pods" */;
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = E77E42ECDA173626D1E79093;
-			productRefGroup = E9AE40915328BA5733759B2C /* Products */;
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 198117BFBBB28092BB7B9E419D09307E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9DE603CAF42BB18708A01A05 /* Pods */,
-				BB5E5A67EAE9DA874BA03844 /* Pods-FMDB */,
-				151F0FE8A9CEC7DF51655426 /* Pods-Yorkie */,
-				24998A981C043A2A752FB643 /* Pods-Yorkie-FMDB */,
-				5A1A7593918B54B1D44CF22C /* Pods-YorkieTests */,
-				227F6FABD05AB2BFA99DD20C /* Pods-YorkieTests-FMDB */,
+				9F12FB4A63E20F601CFB2E64A65B57C1 /* FMDB */,
+				95FB9C2DEC4C19FF24220EBEBE65B475 /* Pods-Yorkie */,
+				EE86218BCE36DE153F2CDDB3A6381F96 /* Pods-YorkieTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		2DBDA7833E7F8A1B272B8F70 /* Sources */ = {
+		02501F0C4610034B739B9F22F187AE44 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92E3AFE47AEF2CA0BC028DA6 /* Pods-YorkieTests-dummy.m in Sources */,
+				A251DAC831699F21183191534F650A75 /* Pods-YorkieTests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		53DA875C22460CA04C71F6B7 /* Sources */ = {
+		050B66E154969A68944942A22BD9B314 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				71ED3C0ACFB8B553C085AD8E /* Pods-dummy.m in Sources */,
+				CA027706DD6805766F1F4EC548E72440 /* FMDatabase.m in Sources */,
+				A350C5704A1F233DAD830E081E00F8C1 /* FMDatabaseAdditions.m in Sources */,
+				0EF8E9AA652DBE2745A7D5C8CD2E3BDE /* FMDatabasePool.m in Sources */,
+				282081E035E7A843068E8BCC2E07C217 /* FMDatabaseQueue.m in Sources */,
+				3D0F69C4CA35EB6A1F686BA88B19B4F6 /* FMDB-dummy.m in Sources */,
+				DEFA3504695E9DFDE1177DAB22884470 /* FMResultSet.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		55422C93CACD78CC6FF0B336 /* Sources */ = {
+		2264E3767A6E9FDA73C196B79B67894A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2814EB997F0E316685CD4C02 /* FMDatabase.m in Sources */,
-				C2C67BD3B469F71D62341E81 /* FMDatabaseAdditions.m in Sources */,
-				67D4AF131F83FCA038DF24C6 /* FMDatabasePool.m in Sources */,
-				E3CB09E7B5A6ED20984B6EE9 /* FMDatabaseQueue.m in Sources */,
-				2262354B6DBFC289E8B76BE2 /* FMResultSet.m in Sources */,
-				970FDC68D49473827802893D /* Pods-Yorkie-FMDB-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6A6B12457D5FE792F0AA7B61 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8525DEC2E3E77363420826AD /* FMDatabase.m in Sources */,
-				69F808B8403818306B2B5039 /* FMDatabaseAdditions.m in Sources */,
-				97A975DE24FC2B0E5AEECBE2 /* FMDatabasePool.m in Sources */,
-				AC740E8C18A1EC655D8905DF /* FMDatabaseQueue.m in Sources */,
-				3273AAA15F66BF8914C2CA9D /* FMResultSet.m in Sources */,
-				04B039493C63D1F31FAED62A /* Pods-FMDB-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7B71B0FD859DFD60D831C500 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9E17C91FF34079CBEA18B15B /* FMDatabase.m in Sources */,
-				5B8E6878FD3E9BFC46123069 /* FMDatabaseAdditions.m in Sources */,
-				7EE6BAE86477E5A9750396F9 /* FMDatabasePool.m in Sources */,
-				ACFE675590AAE238F438EA95 /* FMDatabaseQueue.m in Sources */,
-				EC60871EBB4E414448EBDBBF /* FMResultSet.m in Sources */,
-				1A010FB2347FF286A36B6005 /* Pods-YorkieTests-FMDB-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F0BE21E57EFBF71C68448E1A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D5233B3E38D2F294803DBCCF /* Pods-Yorkie-dummy.m in Sources */,
+				D2531DF68D750E1D8D598C911FDE1834 /* Pods-Yorkie-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		2FD6049E7AF70868B93C29B7 /* PBXTargetDependency */ = {
+		7B4940E7FC3D87A6AF7507363732A72D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = "Pods-YorkieTests-FMDB";
-			target = 227F6FABD05AB2BFA99DD20C /* Pods-YorkieTests-FMDB */;
-			targetProxy = 5182D3796EF1F8E37E438993 /* PBXContainerItemProxy */;
+			name = FMDB;
+			target = 9F12FB4A63E20F601CFB2E64A65B57C1 /* FMDB */;
+			targetProxy = 794F9BCE87B99644CCB8C892DC742E50 /* PBXContainerItemProxy */;
 		};
-		5861459FEFE523633AB6B8EF /* PBXTargetDependency */ = {
+		8F43E1F511EA84F7A2B7023D8A188F88 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = "Pods-FMDB";
-			target = BB5E5A67EAE9DA874BA03844 /* Pods-FMDB */;
-			targetProxy = 098C89C8DEB905FEF3A89919 /* PBXContainerItemProxy */;
-		};
-		DC71B7B803D85DDB453E9C8C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-Yorkie-FMDB";
-			target = 24998A981C043A2A752FB643 /* Pods-Yorkie-FMDB */;
-			targetProxy = 8BC4B0FA806945D1B6305173 /* PBXContainerItemProxy */;
+			name = FMDB;
+			target = 9F12FB4A63E20F601CFB2E64A65B57C1 /* FMDB */;
+			targetProxy = 5EA8272DE9123CA6EF80C7807F064FB8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		30A942B4AE512C41709153C6 /* Release */ = {
+		0BC8ACAA1BBCD83153EF57E2B89FB594 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D874D9C80FA1F53051632DE704321234 /* FMDB.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/FMDB/FMDB-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		1DFEE839A8C27B888AA2615E023DF079 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5958779F2C289DAB3161C6E72A129587 /* Pods-Yorkie.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		603E6B041CE6A57B7393AF9AF09F5689 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E649B4E687395D0436EFBBDFC68877D2 /* Pods-Yorkie.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		6FD823741523B6BBA156FD2A31130E50 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -620,7 +459,10 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -634,170 +476,53 @@
 			};
 			name = Release;
 		};
-		407475C5D2D92206B43AD10C /* Release */ = {
+		C35EBE9D8E844B11EA2AAA7595E916E3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5192AD89221064F30098E4C2 /* Pods-YorkieTests.release.xcconfig */;
+			baseConfigurationReference = 494DAE1728A9D62AD857A2103C63A21D /* Pods-YorkieTests.release.xcconfig */;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MACH_O_TYPE = staticlib;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
-		45A5650B47238ED5C91BAB77 /* Release */ = {
+		C7BA904A87CCDF175A63DBF60D6810A9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DA48DEF6D2579E4DD879681D /* Pods.release.xcconfig */;
+			baseConfigurationReference = D874D9C80FA1F53051632DE704321234 /* FMDB.xcconfig */;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/FMDB/FMDB-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
-		58D12D8FE56F229A0F4759FD /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 00A3EC5899A527691BFF8366 /* Pods-FMDB-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-FMDB/Pods-FMDB-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		68607ABE7D872C74B18F3F4A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6D0FB56211479A58EC6A66CB /* Pods-YorkieTests-FMDB-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-YorkieTests-FMDB/Pods-YorkieTests-FMDB-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		763A014269A082212DEBA9AC /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F16F2665964A212152EBE4CD /* Pods-Yorkie-FMDB-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-Yorkie-FMDB/Pods-Yorkie-FMDB-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		98931078EE8A536ADB10C4DC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 00A3EC5899A527691BFF8366 /* Pods-FMDB-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-FMDB/Pods-FMDB-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		9FCCAEC53138A140C3B1A008 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6D0FB56211479A58EC6A66CB /* Pods-YorkieTests-FMDB-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-YorkieTests-FMDB/Pods-YorkieTests-FMDB-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		B964F43464C9809EEB65B636 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F16F2665964A212152EBE4CD /* Pods-Yorkie-FMDB-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-Yorkie-FMDB/Pods-Yorkie-FMDB-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		D91CA77730F09D1CD79C2AB4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 758B2E24B3BE176A0BA3C437 /* Pods-Yorkie.debug.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		DA33FA73A2A6A0236C4D7191 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A8649970D95B8D20ED85AE19 /* Pods.debug.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		DCBA0D5F0A7A42B5A8EEED13 /* Debug */ = {
+		EE3433E81723238FDF523A9838FEC7BD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -812,10 +537,12 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
 					"DEBUG=1",
 					"$(inherited)",
 				);
@@ -833,105 +560,67 @@
 			};
 			name = Debug;
 		};
-		EB1C4410F0340E6DA2E7A3B4 /* Debug */ = {
+		F67FCC807EEA8F6D99A2C284B8AF9CC5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8960BA5D3990D527AB69626B /* Pods-YorkieTests.debug.xcconfig */;
+			baseConfigurationReference = 95947A3E639C5F38133509008A283575 /* Pods-YorkieTests.debug.xcconfig */;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MACH_O_TYPE = staticlib;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
-		FD263B4C685E5F43DE7D5868 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = FBA3F24814BFCFDA7217E9AA /* Pods-Yorkie.release.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		01E26F281544AB1124D72347 /* Build configuration list for PBXNativeTarget "Pods-YorkieTests" */ = {
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EB1C4410F0340E6DA2E7A3B4 /* Debug */,
-				407475C5D2D92206B43AD10C /* Release */,
+				EE3433E81723238FDF523A9838FEC7BD /* Debug */,
+				6FD823741523B6BBA156FD2A31130E50 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1500A94C0FFBFE863B8B3BE0 /* Build configuration list for PBXNativeTarget "Pods-Yorkie-FMDB" */ = {
+		3AC899FD215914230EB9D8B57AD910D0 /* Build configuration list for PBXNativeTarget "FMDB" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B964F43464C9809EEB65B636 /* Debug */,
-				763A014269A082212DEBA9AC /* Release */,
+				0BC8ACAA1BBCD83153EF57E2B89FB594 /* Debug */,
+				C7BA904A87CCDF175A63DBF60D6810A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		58934B96D84872265C1DB657 /* Build configuration list for PBXNativeTarget "Pods-FMDB" */ = {
+		44B500CFD33FAD557CD110A99EADB4D7 /* Build configuration list for PBXNativeTarget "Pods-YorkieTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				98931078EE8A536ADB10C4DC /* Debug */,
-				58D12D8FE56F229A0F4759FD /* Release */,
+				F67FCC807EEA8F6D99A2C284B8AF9CC5 /* Debug */,
+				C35EBE9D8E844B11EA2AAA7595E916E3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5E1578C3A2235508C975CC82 /* Build configuration list for PBXNativeTarget "Pods-YorkieTests-FMDB" */ = {
+		C9F97C6D1CFB4D91E5910297BCAF742E /* Build configuration list for PBXNativeTarget "Pods-Yorkie" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				68607ABE7D872C74B18F3F4A /* Debug */,
-				9FCCAEC53138A140C3B1A008 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		867BF277C94D6B9E648125A7 /* Build configuration list for PBXProject "Pods" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DCBA0D5F0A7A42B5A8EEED13 /* Debug */,
-				30A942B4AE512C41709153C6 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		92A7A6606443907D1CFF269C /* Build configuration list for PBXNativeTarget "Pods-Yorkie" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D91CA77730F09D1CD79C2AB4 /* Debug */,
-				FD263B4C685E5F43DE7D5868 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A6975E1F52F5B9BAB15522E5 /* Build configuration list for PBXNativeTarget "Pods" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DA33FA73A2A6A0236C4D7191 /* Debug */,
-				45A5650B47238ED5C91BAB77 /* Release */,
+				603E6B041CE6A57B7393AF9AF09F5689 /* Debug */,
+				1DFEE839A8C27B888AA2615E023DF079 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 89F3EE6B4021A6C18FF02DDC /* Project object */;
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 }

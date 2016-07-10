@@ -12,7 +12,7 @@
 
 + (UIImage*)loadImage: (NSString*)imageString 
 {
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,vNSUserDomainMask, YES);
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
     NSString* path = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithString: imageString]];
     UIImage* image = [UIImage imageWithContentsOfFile:path];

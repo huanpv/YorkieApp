@@ -604,7 +604,7 @@ bool isCamera;
             //
         
             if ([self.region isEqualToString:@"US"]) {
-                if (!self.dateOfBirthYorkieLabel.text.length==0) {
+                if (!(self.dateOfBirthYorkieLabel.text.length==0)) {
                     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
                     NSString *str = self.dateOfBirthYorkieLabel.text; /// here this is your date with format dd-MM-yyy
             
