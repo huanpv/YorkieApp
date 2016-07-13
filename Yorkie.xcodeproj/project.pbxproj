@@ -371,7 +371,7 @@
 				TargetAttributes = {
 					07DEFD131B4DDFE200CA6429 = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = NJ8E6B2HFA;
+						DevelopmentTeam = T5NUKP4RW6;
 					};
 					07DEFD2C1B4DDFE300CA6429 = {
 						CreatedOnToolsVersion = 6.4;
@@ -687,7 +687,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Yorkie/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "es.carlosbutron.$(PRODUCT_NAME:rfc1034identifier)s";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -704,7 +704,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Yorkie/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "es.carlosbutron.$(PRODUCT_NAME:rfc1034identifier)s";
 				PRODUCT_NAME = "$(TARGET_NAME)";
