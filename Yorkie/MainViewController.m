@@ -17,6 +17,7 @@
 #import "LoadImageFromBundle.h"
 #import "ZFModalTransitionAnimator.h"
 #import "DateofNextEvent.h"
+#import <Crashlytics/Crashlytics.h>
 
 @interface MainViewController ()
 
@@ -392,6 +393,7 @@ BOOL firstTime=YES; //if is the first init set the number of pages before compar
 //tap photo yorkie or label name
 - (void)cellTap:(UISwipeGestureRecognizer *)gesture 
 {
+    [[Crashlytics sharedInstance] crash];
     MainDetailViewController *dVC = [self.storyboard instantiateViewControllerWithIdentifier:@"YorkieDetail"];
     dVC.modalPresentationStyle = UIModalPresentationFullScreen;
     

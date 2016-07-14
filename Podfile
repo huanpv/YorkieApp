@@ -2,6 +2,8 @@
 platform :ios, '9.3'
 
 pod 'FMDB'
+pod 'Fabric'
+pod 'Crashlytics'
 
 target 'Yorkie' do
 

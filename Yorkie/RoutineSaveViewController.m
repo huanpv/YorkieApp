@@ -423,75 +423,73 @@
     [self.view endEditing:YES];
 }
 
+//alertview to confirm delete routine action
 - (IBAction)actionDeleteButton:(id)sender 
 {
-    UIAlertView *alert = [[UIAlertView alloc]
-                          initWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Confirm deleted", nil)]
-                          message:[NSString stringWithFormat:NSLocalizedString(@"Are you sure you want to delete this routine?", nil)]
-                          delegate:self
-                          cancelButtonTitle:[NSString stringWithFormat:NSLocalizedString(@"Cancel", nil)]
-                          otherButtonTitles:[NSString stringWithFormat:NSLocalizedString(@"Delete", nil)],nil];
-    [alert show];
-}
-
-//alertview to confirm delete Yorkie action
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex 
-{
-    switch (buttonIndex) {
-        case 0:
-        {
-            [alertView dismissWithClickedButtonIndex:0 animated:NO];
-            //this is the "Cancel"-Button
-            //do something
-        }
-            break;
-        case 1:
-        {
-            //open database
-            NSArray *docPaths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
-            NSString *documentsDir = [docPaths objectAtIndex:0];
-            NSString *dbPath = [documentsDir stringByAppendingPathComponent:@"yorkie.sqlite"];
-            
-            FMDatabase *database = [FMDatabase databaseWithPath:dbPath];
-            [database open];
-            
-            //edit Yorkie Row
-            BOOL successYorkie = [database executeUpdate:@"UPDATE routine SET startDate = '', lastDate = '' , frequency = '', comment = '' WHERE idRoutine = ?", [NSString stringWithFormat:@"%ld", (long)self.idRoutine], nil];
-            
-            if (!successYorkie) {
-                NSLog(@"%s: insert error: %@", __FUNCTION__, [database lastErrorMessage]);
-                // do whatever you need to upon error
-            }
-            
-            [database close];
-
-            [NotificationDelete notificationDelete:self.idRoutine];
-
-            MainViewController *mVC = [self.storyboard instantiateViewControllerWithIdentifier:@"home"];
-            UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:mVC];
-            [self presentViewController:navController animated:YES completion:nil];
-        }
-            break;
-        default:
-            break;
-    }
+    UIAlertController *alertController = [UIAlertController
+                                          alertControllerWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Confirm deleted", nil)]
+                                          message:[NSString stringWithFormat:NSLocalizedString(@"Are you sure you want to delete this routine?", nil)]
+                                          preferredStyle:UIAlertControllerStyleAlert];
     
+    UIAlertAction *cancelAction = [UIAlertAction
+                                   actionWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Cancel", nil)]
+                                   style:UIAlertActionStyleCancel
+                                   handler:^(UIAlertAction *action)
+                                   {
+                                       [alertController dismissViewControllerAnimated:YES completion:nil];
+                                   }];
+    
+    UIAlertAction *deleteAction = [UIAlertAction
+                                   actionWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Delete", nil)]
+                                   style:UIAlertActionStyleDefault
+                                   handler:^(UIAlertAction *action)
+                                   {
+                                       //open database
+                                       NSArray *docPaths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
+                                       NSString *documentsDir = [docPaths objectAtIndex:0];
+                                       NSString *dbPath = [documentsDir stringByAppendingPathComponent:@"yorkie.sqlite"];
+                                       
+                                       FMDatabase *database = [FMDatabase databaseWithPath:dbPath];
+                                       [database open];
+                                       
+                                       //edit Yorkie Row
+                                       BOOL successYorkie = [database executeUpdate:@"UPDATE routine SET startDate = '', lastDate = '' , frequency = '', comment = '' WHERE idRoutine = ?", [NSString stringWithFormat:@"%ld", (long)self.idRoutine], nil];
+                                       
+                                       if (!successYorkie) {
+                                           NSLog(@"%s: insert error: %@", __FUNCTION__, [database lastErrorMessage]);
+                                           // do whatever you need to upon error
+                                       }
+                                       
+                                       [database close];
+                                       
+                                       [NotificationDelete notificationDelete:self.idRoutine];
+                                       
+                                       MainViewController *mVC = [self.storyboard instantiateViewControllerWithIdentifier:@"home"];
+                                       UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:mVC];
+                                       [self presentViewController:navController animated:YES completion:nil];
+                                   }];
+    
+    [alertController addAction:cancelAction];
+    [alertController addAction:deleteAction];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 - (IBAction)actionSaveButton:(id)sender 
 {
     if ([self.startDateTextField.text isEqualToString:@""]) { //filter to check start date not empty
         
-            NSAttributedString *startDateLabel = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:NSLocalizedString(@"Start date", nil)] attributes:@{ NSForegroundColorAttributeName : [UIColor redColor] }];
-            self.startDateTextField.attributedPlaceholder = startDateLabel;
-            self.startDateTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
-            
-            UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Alert", nil)]
-                                                                  message:[NSString stringWithFormat:NSLocalizedString(@"Fill start date field before save", nil)]
-                                                                 delegate:nil
-                                                        cancelButtonTitle:[NSString stringWithFormat:NSLocalizedString(@"OK", nil)]
-                                                        otherButtonTitles: nil];
-            [myAlertView show];
+        NSAttributedString *startDateLabel = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:NSLocalizedString(@"Start date", nil)] attributes:@{ NSForegroundColorAttributeName : [UIColor redColor] }];
+        self.startDateTextField.attributedPlaceholder = startDateLabel;
+        self.startDateTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
+        
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Alert", nil)] message:[NSString stringWithFormat:NSLocalizedString(@"Fill start date field before save", nil)] preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction* ok = [UIAlertAction actionWithTitle:[NSString stringWithFormat:NSLocalizedString(@"OK", nil)] style:UIAlertActionStyleDefault handler:nil];
+        [alertController addAction:ok];
+        
+        [self presentViewController:alertController animated:YES completion:nil];
+
     } else {  //if startDate not empty
         //to save format date with multilingual support
         // "es" - "en" and others

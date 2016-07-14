@@ -227,13 +227,14 @@ bool isCamera;
     //if you dont have camera send an error message
     if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
         
-        UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Error", nil)]
-                                                              message:[NSString stringWithFormat:NSLocalizedString(@"Device has no camera", nil)]
-                                                             delegate:nil
-                                                    cancelButtonTitle:[NSString stringWithFormat:NSLocalizedString(@"OK", nil)]
-                                                    otherButtonTitles: nil];
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Error", nil)] message:[NSString stringWithFormat:NSLocalizedString(@"Device has no camera", nil)] preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction* ok = [UIAlertAction actionWithTitle:[NSString stringWithFormat:NSLocalizedString(@"OK", nil)] style:UIAlertActionStyleDefault handler:nil];
+        [alertController addAction:ok];
+        
+        [self presentViewController:alertController animated:YES completion:nil];
+
     isCamera = NO;
-    [myAlertView show];
     } else {
         isCamera = YES;
     }
@@ -432,13 +433,14 @@ bool isCamera;
         self.nameYorkieLabel.attributedPlaceholder = nameYorkieLabel;
         self.nameYorkieLabel.clearButtonMode = UITextFieldViewModeWhileEditing;
 
-        UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Alert", nil)]
-                                                              message:[NSString stringWithFormat:NSLocalizedString(@"Fill name field before save", nil)]
-                                                             delegate:nil
-                                                    cancelButtonTitle:[NSString stringWithFormat:NSLocalizedString(@"OK", nil)]
-                                                    otherButtonTitles: nil];
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Alert", nil)] message:[NSString stringWithFormat:NSLocalizedString(@"Fill name field before save", nil)] preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction* ok = [UIAlertAction actionWithTitle:[NSString stringWithFormat:NSLocalizedString(@"OK", nil)] style:UIAlertActionStyleDefault handler:nil];
+        [alertController addAction:ok];
+        
+        [self presentViewController:alertController animated:YES completion:nil];
+
         [database close];
-        [myAlertView show];
         isNameCheck = TRUE;
     }
     
@@ -453,13 +455,15 @@ bool isCamera;
         NSUInteger count = [database intForQuery:@"SELECT COUNT(name) from yorkie where upper(name)= ? ", [self.nameYorkieLabel.text uppercaseString], nil];
         
         if (count > 0) {
-            UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Alert", nil)]
-                                                                  message:[NSString stringWithFormat:NSLocalizedString(@"Name exists", nil)]
-                                                                 delegate:nil
-                                                        cancelButtonTitle:[NSString stringWithFormat:NSLocalizedString(@"OK", nil)]
-                                                        otherButtonTitles: nil];
+            
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Alert", nil)] message:[NSString stringWithFormat:NSLocalizedString(@"Name exists", nil)] preferredStyle:UIAlertControllerStyleAlert];
+            
+            UIAlertAction* ok = [UIAlertAction actionWithTitle:[NSString stringWithFormat:NSLocalizedString(@"OK", nil)] style:UIAlertActionStyleDefault handler:nil];
+            [alertController addAction:ok];
+            
+            [self presentViewController:alertController animated:YES completion:nil];
+            
             [database close];
-            [myAlertView show];
             isNameCheck = TRUE;
         }
     }
@@ -656,48 +660,45 @@ bool isCamera;
 //action delete Yorkie
 - (IBAction)actionDelete:(id)sender 
 {
-    UIAlertView *alert = [[UIAlertView alloc]
-                          initWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Confirm deleted", nil)]
-                          message:[NSString stringWithFormat:NSLocalizedString(@"Are you sure you want to delete this Yorkie?", nil)]
-                          delegate:self
-                          cancelButtonTitle:[NSString stringWithFormat:NSLocalizedString(@"Cancel", nil)]
-                          otherButtonTitles:[NSString stringWithFormat:NSLocalizedString(@"Delete", nil)],nil];
-    [alert show];
-}
-
-//alertview to confirm delete Yorkie action
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    switch (buttonIndex) {
-        case 0:
-        {
-            [alertView dismissWithClickedButtonIndex:0 animated:NO];
-            //this is the "Cancel"-Button
-            //do something
-        }
-            break;
-        case 1:
-        {
-            //delete yorkie
-            [YorkieDelete yorkieDelete:self.idYorkie];
-            //delete all the routines of yorkie
-            //routine 1 = Hair Salon
-            //routine 2 = Bath
-            //routine 3 = Antiparasitic
-            //routine 4 = Dental Care
-            //routine 5 = Vaccines
-            //routine 6 = Pills
-            //routine 7 = Medicine
-            for (int i=1; i<8; i++) {
-                [RoutineDelete routineDelete:self.idYorkie withRoutineNumber:i];
-            }
-
-            [self.presentingViewController.presentingViewController dismissViewControllerAnimated:YES completion:nil];
-        }
-            break;
-        default:
-            break;
-    }
+    UIAlertController *alertController = [UIAlertController
+                                          alertControllerWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Confirm deleted", nil)]
+                                          message:[NSString stringWithFormat:NSLocalizedString(@"Are you sure you want to delete this Yorkie?", nil)]
+                                          preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *cancelAction = [UIAlertAction
+                                   actionWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Cancel", nil)]
+                                   style:UIAlertActionStyleCancel
+                                   handler:^(UIAlertAction *action)
+                                   {
+                                       [alertController dismissViewControllerAnimated:YES completion:nil];
+                                   }];
+    
+    UIAlertAction *deleteAction = [UIAlertAction
+                                   actionWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Delete", nil)]
+                                   style:UIAlertActionStyleDefault
+                                   handler:^(UIAlertAction *action)
+                               {
+                                   //delete yorkie
+                                   [YorkieDelete yorkieDelete:self.idYorkie];
+                                   //delete all the routines of yorkie
+                                   //routine 1 = Hair Salon
+                                   //routine 2 = Bath
+                                   //routine 3 = Antiparasitic
+                                   //routine 4 = Dental Care
+                                   //routine 5 = Vaccines
+                                   //routine 6 = Pills
+                                   //routine 7 = Medicine
+                                   for (int i=1; i<8; i++) {
+                                       [RoutineDelete routineDelete:self.idYorkie withRoutineNumber:i];
+                                   }
+                                   
+                                   [self.presentingViewController.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+                               }];
+    
+    [alertController addAction:cancelAction];
+    [alertController addAction:deleteAction];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 #pragma -mark hide keyboard Methods
@@ -727,6 +728,39 @@ bool isCamera;
 - (void)singleTapping:(UIGestureRecognizer *)recognizer
 {
     if (isCamera) { //if the iphone have a camera
+        UIAlertController *view = [UIAlertController alertControllerWithTitle:@"Action Sheet"
+                                                                      message:@"Select the operation to proceed?"
+                                                               preferredStyle:UIAlertControllerStyleActionSheet];
+        
+        UIAlertAction *takePhoto = [UIAlertAction actionWithTitle:@"Take Photo"
+                                                            style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action) {
+                                                              //Do some thing here
+                                                              NSLog(@"Take Photo Button Clicked");
+                                                              [view dismissViewControllerAnimated:YES completion:nil];
+                                                              
+                                                          }];
+        UIAlertAction *selectPhoto = [UIAlertAction actionWithTitle:@"Select Photo"
+                                                              style:UIAlertActionStyleDefault
+                                                            handler:^(UIAlertAction * action) {
+                                                                //Do some thing here
+                                                                NSLog(@"Select Photo Button Clicked");
+                                                                [view dismissViewControllerAnimated:YES completion:nil];
+                                                                
+                                                            }];
+        UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel"
+                                                         style:UIAlertActionStyleDefault
+                                                       handler:^(UIAlertAction * action) {
+                                                           NSLog(@"Cancel");
+                                                           [view dismissViewControllerAnimated:YES completion:nil];
+                                                           
+                                                       }];
+        
+        [view addAction:takePhoto];
+        [view addAction:selectPhoto];
+        [view addAction:cancel];
+        [self presentViewController:view animated:YES completion:nil];
+        
     UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Select the operation to proceed", nil)]
                                                              delegate:self
                                                     cancelButtonTitle:[NSString stringWithFormat:NSLocalizedString(@"Cancel", nil)]

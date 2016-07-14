@@ -129,7 +129,7 @@
         MFMailComposeViewController *mailCont = [[MFMailComposeViewController alloc] init];
         mailCont.mailComposeDelegate = self;        // Required to invoke mailComposeController when send
         [mailCont setSubject:@"Yorkie Feedback"];
-        [mailCont setToRecipients:[NSArray arrayWithObject:@"yorkieapp@yahoo.com"]];
+        [mailCont setToRecipients:[NSArray arrayWithObject:@"carlbutron@icloud.com"]];
         [mailCont setMessageBody:self.emailTextView.text isHTML:NO];
         
         [self presentViewController:mailCont animated:YES completion:nil];

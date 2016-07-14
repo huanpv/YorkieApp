@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "MainViewController.h"
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
 
 @interface AppDelegate ()
 
@@ -24,6 +26,8 @@
     
     //Set icon badge number to zero
     application.applicationIconBadgeNumber = 0;
+    
+    [Fabric with:@[[Crashlytics class]]];
     
     return YES;
 }
@@ -68,11 +72,12 @@
 {
     UIApplicationState state = [application applicationState];
     if (state == UIApplicationStateActive) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Reminder", nil)
-                                                        message:notification.alertBody
-                                                       delegate:self cancelButtonTitle:NSLocalizedString(@"OK", nil)
-                                              otherButtonTitles:nil];
-        [alert show];
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Reminder", nil) message:notification.alertBody preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction* ok = [UIAlertAction actionWithTitle:NSLocalizedString(@"OK", nil) style:UIAlertActionStyleDefault handler:nil];
+        [alertController addAction:ok];
+        
+        [self.window.rootViewController presentViewController:alertController animated:YES completion:nil];
     }
 }
 
