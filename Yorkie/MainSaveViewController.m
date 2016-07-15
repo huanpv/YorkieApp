@@ -727,77 +727,47 @@ bool isCamera;
 //SingleTap in imageView
 - (void)singleTapping:(UIGestureRecognizer *)recognizer
 {
-    if (isCamera) { //if the iphone have a camera
-        UIAlertController *view = [UIAlertController alertControllerWithTitle:@"Action Sheet"
-                                                                      message:@"Select the operation to proceed?"
+    
+    
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Select the operation to proceed", nil)]
+                                                                      message:@""
                                                                preferredStyle:UIAlertControllerStyleActionSheet];
-        
-        UIAlertAction *takePhoto = [UIAlertAction actionWithTitle:@"Take Photo"
+    
+        if (isCamera) { //if the iphone have a camera
+            UIAlertAction *takePhoto = [UIAlertAction actionWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Take Photo", nil)]
                                                             style:UIAlertActionStyleDefault
                                                           handler:^(UIAlertAction * action) {
                                                               //Do some thing here
-                                                              NSLog(@"Take Photo Button Clicked");
-                                                              [view dismissViewControllerAnimated:YES completion:nil];
-                                                              
+                                                              UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+                                                              picker.delegate = self;
+                                                              picker.allowsEditing = YES;
+                                                              picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+                                                              [self presentViewController:picker animated:YES completion:NULL];
                                                           }];
-        UIAlertAction *selectPhoto = [UIAlertAction actionWithTitle:@"Select Photo"
+            [alertController addAction:takePhoto];
+        }
+    
+        UIAlertAction *selectPhoto = [UIAlertAction actionWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Select Photo", nil)]
                                                               style:UIAlertActionStyleDefault
                                                             handler:^(UIAlertAction * action) {
                                                                 //Do some thing here
-                                                                NSLog(@"Select Photo Button Clicked");
-                                                                [view dismissViewControllerAnimated:YES completion:nil];
-                                                                
+                                                                UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+                                                                picker.delegate = self;
+                                                                picker.allowsEditing = YES;
+                                                                picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+                                                                [self presentViewController:picker animated:YES completion:NULL];
                                                             }];
-        UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel"
+        
+    
+        UIAlertAction *cancel = [UIAlertAction actionWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Cancel", nil)]
                                                          style:UIAlertActionStyleDefault
                                                        handler:^(UIAlertAction * action) {
-                                                           NSLog(@"Cancel");
-                                                           [view dismissViewControllerAnimated:YES completion:nil];
-                                                           
+                                                           [alertController dismissViewControllerAnimated:YES completion:nil];
                                                        }];
-        
-        [view addAction:takePhoto];
-        [view addAction:selectPhoto];
-        [view addAction:cancel];
-        [self presentViewController:view animated:YES completion:nil];
-        
-    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Select the operation to proceed", nil)]
-                                                             delegate:self
-                                                    cancelButtonTitle:[NSString stringWithFormat:NSLocalizedString(@"Cancel", nil)]
-                                               destructiveButtonTitle:nil
-                                                    otherButtonTitles:[NSString stringWithFormat:NSLocalizedString(@"Select Photo", nil)], [NSString stringWithFormat:NSLocalizedString(@"Take Photo", nil)], nil];
-    [actionSheet showInView:self.view];
-    }
-    else { //if the iphone dont have a camera or is broken
-    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Select the operation to proceed", nil)]
-                                                             delegate:self
-                                                    cancelButtonTitle:[NSString stringWithFormat:NSLocalizedString(@"Cancel", nil)]
-                                               destructiveButtonTitle:nil
-                                                    otherButtonTitles:[NSString stringWithFormat:NSLocalizedString(@"Select Photo", nil)], nil];
-    [actionSheet showInView:self.view];
-    }
-}
-
-//actionSheet to select imageAction
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    //action cancel
-    if (buttonIndex == actionSheet.cancelButtonIndex)
-    {
-        [actionSheet dismissWithClickedButtonIndex:0 animated:YES];
-        // Handle cancel action
-    } else { //if not cancel select photo origin
-        UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-        picker.delegate = self;
-        picker.allowsEditing = YES;
-        if(buttonIndex == 0) { //button Select Photo
-            picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-        } else if(buttonIndex == 1) { //button Take Photo
-            picker.sourceType = UIImagePickerControllerSourceTypeCamera;
-        }
-        
-        [self presentViewController:picker animated:YES completion:NULL];
-    }
+    
+        [alertController addAction:selectPhoto];
+        [alertController addAction:cancel];
+        [self presentViewController:alertController animated:YES completion:nil];
 }
 
 //get the image

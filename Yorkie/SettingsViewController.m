@@ -43,7 +43,8 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView 
 {
-    return 2;
+    //return 2;  //FIXME: to add new advanced settings
+    return 1;
 }
 
 
@@ -59,11 +60,11 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section 
 {
-    if (section ==0) {
-        return @"Settings";
-    } else {
+    //if (section ==0) {  //FIXME: to add new advanced settings
+        //return @"Settings";
+    //} else {
         return @"Feedback";
-    }
+    //}
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath 
@@ -72,11 +73,12 @@
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UIViewController *viewController = nil;
     
-    if (indexPath.section == 0) {
-        viewController = [storyboard instantiateViewControllerWithIdentifier:@"DogAge"];
-    }
+    //FIXME: to add new advanced settings
+    //if (indexPath.section == 0) {
+    //    viewController = [storyboard instantiateViewControllerWithIdentifier:@"DogAge"];
+    //}
     
-    if (indexPath.section == 1) {
+    //if (indexPath.section == 1) {
         switch (indexPath.row) {
             case 0:
                 viewController = [storyboard instantiateViewControllerWithIdentifier:@"SettingsEmail"];
@@ -91,7 +93,7 @@
                 viewController = [storyboard instantiateViewControllerWithIdentifier:@"SettingsEmail"];
                 break;
         }
-    }
+    //}
     [[self navigationController] pushViewController:viewController animated:YES];
 }
 
@@ -117,17 +119,18 @@
 {
     SettingsTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"feedbackCell"];
 
-    if (indexPath.section == 0) {
-        cell.labelFeedback.text = self.labelSettingsArray[indexPath.row];
-        UIImage *image = [UIImage imageNamed:self.imageSettingsArray[indexPath.row]];
-        [cell.imageFeedback setImage:image];
-        //color of selected cell
-        UIView *bgColorView = [[UIView alloc] init];
-        bgColorView.backgroundColor = [UIColor colorWithRed:218.0/255.0 green:218.0/255.0 blue:218.0/255.0 alpha:0.35];
-        [cell setSelectedBackgroundView:bgColorView];
-    }
+    //FIXME: to add new advanced settings
+//    if (indexPath.section == 0) {
+//        cell.labelFeedback.text = self.labelSettingsArray[indexPath.row];
+//        UIImage *image = [UIImage imageNamed:self.imageSettingsArray[indexPath.row]];
+//        [cell.imageFeedback setImage:image];
+//        //color of selected cell
+//        UIView *bgColorView = [[UIView alloc] init];
+//        bgColorView.backgroundColor = [UIColor colorWithRed:218.0/255.0 green:218.0/255.0 blue:218.0/255.0 alpha:0.35];
+//        [cell setSelectedBackgroundView:bgColorView];
+//    }
     
-    if (indexPath.section == 1) {
+    //if (indexPath.section == 1) {
         cell.labelFeedback.text = self.labelFeedbackArray[indexPath.row];
         UIImage *image = [UIImage imageNamed:self.imageFeedbackArray[indexPath.row]];
         [cell.imageFeedback setImage:image];
@@ -135,7 +138,7 @@
         UIView *bgColorView = [[UIView alloc] init];
         bgColorView.backgroundColor = [UIColor colorWithRed:218.0/255.0 green:218.0/255.0 blue:218.0/255.0 alpha:0.35];
         [cell setSelectedBackgroundView:bgColorView];
-    }
+    //}
     return cell;
 }
 
