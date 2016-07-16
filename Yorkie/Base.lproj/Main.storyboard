@@ -1100,7 +1100,7 @@
                                                 </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yorkie App 1.1.5" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D4a-gI-60U">
-                                                <rect key="frame" x="109.5" y="14" width="136" height="24"/>
+                                                <rect key="frame" x="106" y="14" width="136" height="24"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="136" id="sg5-xk-uTB"/>
                                                     <constraint firstAttribute="width" secondItem="D4a-gI-60U" secondAttribute="height" multiplier="151:24" id="w0w-zC-r5b"/>
@@ -1120,7 +1120,7 @@
                                             <constraint firstItem="7EP-SC-sOe" firstAttribute="leading" secondItem="Qp6-6f-nsO" secondAttribute="leading" constant="18" id="5Qh-p3-N36"/>
                                             <constraint firstAttribute="bottom" secondItem="D4a-gI-60U" secondAttribute="bottom" constant="14" id="Gwa-I7-43d"/>
                                             <constraint firstItem="7EP-SC-sOe" firstAttribute="leading" secondItem="Qp6-6f-nsO" secondAttribute="leading" constant="18" id="Iqb-Ar-c3A"/>
-                                            <constraint firstItem="D4a-gI-60U" firstAttribute="leading" secondItem="7EP-SC-sOe" secondAttribute="trailing" constant="18" id="KUm-n2-UjW"/>
+                                            <constraint firstItem="D4a-gI-60U" firstAttribute="leading" secondItem="7EP-SC-sOe" secondAttribute="trailing" constant="15" id="KUm-n2-UjW"/>
                                             <constraint firstItem="D4a-gI-60U" firstAttribute="top" secondItem="Qp6-6f-nsO" secondAttribute="top" constant="14" id="LAK-cg-eMt"/>
                                             <constraint firstAttribute="bottom" secondItem="7EP-SC-sOe" secondAttribute="bottom" constant="14" id="R2X-PV-64U"/>
                                             <constraint firstItem="D4a-gI-60U" firstAttribute="leading" secondItem="7EP-SC-sOe" secondAttribute="trailing" constant="3" id="acP-D0-ZMo"/>
@@ -1147,7 +1147,7 @@
                                         </variation>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kd8-3h-33e">
-                                        <rect key="frame" x="15" y="83" width="257" height="192"/>
+                                        <rect key="frame" x="15" y="83" width="257" height="174.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Development" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xvi-wU-6PE">
                                                 <rect key="frame" x="18" y="13" width="166" height="28"/>
@@ -1156,19 +1156,19 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Content Manager" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j7s-72-ON8">
-                                                <rect key="frame" x="18" y="103" width="183" height="29"/>
+                                                <rect key="frame" x="18" y="93" width="183" height="29"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                 <color key="textColor" red="0.48760802939999998" green="0.4846491376" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Carlos Butrón" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kK8-NE-Tw1">
-                                                <rect key="frame" x="18" y="61" width="119" height="24"/>
+                                                <rect key="frame" x="18" y="51" width="119" height="24"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
                                                 <color key="textColor" red="0.56470588239999997" green="0.56078431370000004" blue="0.58039215690000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Esther Velasco" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uOc-XY-dNE">
-                                                <rect key="frame" x="18" y="150" width="127" height="24"/>
+                                                <rect key="frame" x="18" y="130" width="127" height="24"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
                                                 <color key="textColor" red="0.56470588239999997" green="0.56078431370000004" blue="0.58039215690000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -1176,11 +1176,11 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="0.65000000000000002" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="kd8-3h-33e" secondAttribute="height" multiplier="257:113" constant="-179.67256637168146" id="cOV-yB-Rxq"/>
+                                            <constraint firstAttribute="width" secondItem="kd8-3h-33e" secondAttribute="height" multiplier="257:113" constant="-140" id="cOV-yB-Rxq"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kDn-4O-rRZ">
-                                        <rect key="frame" x="15" y="289" width="257" height="110"/>
+                                        <rect key="frame" x="15" y="271" width="257" height="144"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Thanks to" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jcq-Xf-Yng">
                                                 <rect key="frame" x="18" y="9" width="138" height="30"/>
@@ -1194,8 +1194,14 @@
                                                 <color key="textColor" red="0.56470588239999997" green="0.56078431370000004" blue="0.58039215690000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Iker Undersound" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F0S-bI-3vd">
-                                                <rect key="frame" x="18" y="69" width="139" height="25"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Marin Todorov" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F0S-bI-3vd">
+                                                <rect key="frame" x="18" y="74" width="139" height="25"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
+                                                <color key="textColor" red="0.56470588239999997" green="0.56078431370000004" blue="0.58039215690000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Iker Undersound" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="am9-mC-QIh">
+                                                <rect key="frame" x="18" y="104" width="139" height="25"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
                                                 <color key="textColor" red="0.56470588239999997" green="0.56078431370000004" blue="0.58039215690000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -1204,7 +1210,7 @@
                                         <color key="backgroundColor" white="1" alpha="0.65000000000000002" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="kDn-4O-rRZ" secondAttribute="height" multiplier="257:143" id="6JF-j6-RK1"/>
-                                            <constraint firstAttribute="width" secondItem="kDn-4O-rRZ" secondAttribute="height" multiplier="257:143" constant="59.307692307692292" id="qqF-dW-3dT"/>
+                                            <constraint firstAttribute="width" secondItem="kDn-4O-rRZ" secondAttribute="height" multiplier="257:143" constant="-1" id="qqF-dW-3dT"/>
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
