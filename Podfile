@@ -4,6 +4,7 @@ platform :ios, '9.3'
 pod 'FMDB'
 pod 'Fabric'
 pod 'Crashlytics'
+pod 'Reveal-iOS-SDK', :configurations => ['Debug']
 
 target 'Yorkie' do
 

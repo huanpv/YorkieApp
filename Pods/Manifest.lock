@@ -2,22 +2,23 @@ PODS:
   - Crashlytics (3.7.2):
     - Fabric (~> 1.6.3)
   - Fabric (1.6.7)
-  - FMDB (2.5):
-    - FMDB/standard (= 2.5)
-  - FMDB/common (2.5)
-  - FMDB/standard (2.5):
-    - FMDB/common
+  - FMDB (2.6.2):
+    - FMDB/standard (= 2.6.2)
+  - FMDB/standard (2.6.2)
+  - Reveal-iOS-SDK (1.6.2)
 
 DEPENDENCIES:
   - Crashlytics
   - Fabric
   - FMDB
+  - Reveal-iOS-SDK
 
 SPEC CHECKSUMS:
   Crashlytics: 130ab943f8c78cda7a814b434f270b2e2c8a3cba
   Fabric: caf7580c725e64db144f610ac65cd60956911dc7
-  FMDB: 96e8f1bcc1329e269330f99770ad4285d9003e52
+  FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
+  Reveal-iOS-SDK: e2250b3c155bcfac53ae223ddc1f76d08f206c33
 
-PODFILE CHECKSUM: 9aaec6b14a1b96682600391b9335905d42d2ebd2
+PODFILE CHECKSUM: c3faf1b0d9fc8607ab9a9696050c843867579b51
 
 COCOAPODS: 1.0.1
